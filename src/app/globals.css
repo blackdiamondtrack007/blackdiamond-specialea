@@ -125,7 +125,6 @@
 }
 
 /* Language Switcher Style */
-/* Remove Google default junk */
 .goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
@@ -135,7 +134,6 @@
   font-size: 0;
 }
 
-/* Style the select */
 .gt-wrapper select {
   appearance: none;
   -webkit-appearance: none;
@@ -169,17 +167,14 @@
     hover:bg-gray-800;
 }
 
-/* Hide top google bar if injected */
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
 
-/* Prevent page shifting */
 body {
   top: 0 !important;
 }
 
-/* Hide branding text outside iframe */
 .goog-logo-link {
   display: none !important;
 }
@@ -188,13 +183,11 @@ body {
   font-size: 0 !important;
 }
 
-/* Target SIMPLE layout */
 .goog-te-gadget-simple {
   border: none !important;
   background: transparent !important;
 }
 
-/* Hide "Powered by Google" text (Bangla + English) */
 .goog-te-gadget-simple span {
   display: none !important;
 }
