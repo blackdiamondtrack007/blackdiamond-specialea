@@ -123,9 +123,9 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="border-b bg-white pt-20 dark:bg-transparent">
+    <div className="border-b bg-white pt-20 dark:bg-transparent">
       <div className="mb-8 border-b md:mb-12">
-        <div className="mx-auto flex max-w-5xl flex-wrap items-end justify-between gap-6 px-6 pb-6">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-6 px-6 pb-6">
           <Link href="/" aria-label="go home" className="block size-fit">
             <Image src="/logo.gif" alt="Logo" width={45} height={45} />
           </Link>
@@ -258,7 +258,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-12 md:grid-cols-5 md:gap-0 lg:grid-cols-4">
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:col-span-5 md:row-start-1 lg:col-span-3">
             {links.map((link, index) => (
@@ -303,6 +303,6 @@ export default function Footer() {
           </small>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
