@@ -6,6 +6,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ThemeToggleButton } from "./theme-toggle-button";
+import GoogleTranslate from "./google-translate";
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -92,7 +93,7 @@ export const Header = () => {
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <ThemeToggleButton />
-                <Button
+                {/* <Button
                   asChild
                   variant="outline"
                   size="sm"
@@ -110,16 +111,8 @@ export const Header = () => {
                   <Link href="#">
                     <span>Sign Up</span>
                   </Link>
-                </Button>
-                {/* <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
-                >
-                  <Link href="#">
-                    <span>Get Started</span>
-                  </Link>
                 </Button> */}
+                <GoogleTranslate />
               </div>
             </div>
           </div>
