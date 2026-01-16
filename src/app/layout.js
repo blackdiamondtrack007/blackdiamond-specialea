@@ -11,16 +11,22 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Header />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <header>
+            <Header />
+          </header>
+
+          <main>{children}</main>
+
+          <footer>
+            <Footer />
+          </footer>
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );

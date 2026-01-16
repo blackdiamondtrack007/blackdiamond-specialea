@@ -123,3 +123,82 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Language Switcher Style */
+/* Remove Google default junk */
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0;
+}
+
+/* Style the select */
+.gt-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @apply w-full
+    min-w-[160px]
+    rounded-xl
+    border
+    border-gray-300
+    bg-none
+    px-4
+    py-2
+    pr-10
+    text-sm
+    text-white
+    shadow-sm
+    cursor-pointer
+    transition
+    hover:bg-gray-100
+    focus:outline-none
+    focus:ring-2
+    focus:ring-blue-500;
+}
+
+/* Dark mode */
+.dark .gt-wrapper select {
+  @apply bg-gray-900
+    text-white
+    border-gray-700
+    hover:bg-gray-800;
+}
+
+/* Hide top google bar if injected */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Prevent page shifting */
+body {
+  top: 0 !important;
+}
+
+/* Hide branding text outside iframe */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+/* Target SIMPLE layout */
+.goog-te-gadget-simple {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Hide "Powered by Google" text (Bangla + English) */
+.goog-te-gadget-simple span {
+  display: none !important;
+}
+
+.goog-te-gadget .goog-te-combo{
+  margin: 0px !important;
+}
