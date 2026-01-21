@@ -87,6 +87,7 @@ export const Header = () => {
               </ul>
             </div>
             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:items-center">
+              <button className="bg-primary rounded-2xl py-2 px-4">Join Telegram Channel ↗</button>
               <GoogleTranslate />
               <ThemeToggleButton />
             </div>

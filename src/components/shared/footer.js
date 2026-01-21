@@ -299,8 +299,12 @@ export default function Footer() {
         </div>
         <div className="mt-12 flex flex-wrap items-end justify-between gap-6 border-t py-6">
           <small className="text-muted-foreground order-last block text-center text-sm md:order-first">
-            © {new Date().getFullYear()} Back Diamond EA, All rights reserved
+            2018-2026 © BlackDiamondEA | <Link href={"/privacy"}>Privacy</Link>{" "}
+            | <Link href={"/terms"}>Terms</Link> |{" "}
+            <Link href={"/sitemap"}>Sitemap</Link>
           </small>
+
+          <div></div>
         </div>
       </div>
     </div>
