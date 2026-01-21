@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function OurPartners() {
   return (
     <div className="mx-auto max-w-7xl px-8 mt-96 py-36">
-      <h2 className="text-center text-4xl mb-6">Our Partners</h2>
+      <h2 className="text-center text-4xl mb-6 text-[#0f5071] dark:text-[#AA570B]">Our Partners</h2>
       <div className="flex gap-6">
         <Link href={"https://www.markets4you.com/en"} target="_blank">
           <Image
