@@ -6,14 +6,20 @@
 /* Theme */
 @theme inline {
   --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
 }
 
 :root {
   --background: oklch(1 0 0);
+  --primary: #aa570b;
+  --secondary: #0f5071;
 }
 
 .dark {
   --background: oklch(0.13 0.028 261.692);
+  --primary: #0f5071;
+  --secondary: #aa570b;
 }
 
 /* Base */
