@@ -7,15 +7,6 @@ import Image from "next/image";
 import { ThemeToggleButton } from "./theme-toggle-button";
 import GoogleTranslate from "./google-translate";
 
-const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Client Reviews", href: "/client-reviews" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Contact Us", href: "/contact-us" },
-];
-
 export const Header = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -33,7 +24,7 @@ export const Header = () => {
         className={cn(
           "mx-auto mt-2 max-w-7xl px-6 transition-all duration-300 lg:px-5",
           isScrolled &&
-            "bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg"
+            "bg-background/50 max-w-7xl rounded-2xl border backdrop-blur-lg",
         )}
       >
         <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
@@ -58,36 +49,82 @@ export const Header = () => {
 
           <div className="hidden size-fit lg:block">
             <ul className="flex gap-8 text-sm">
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <Link
-                    href={item.href}
-                    className="text-white/95 hover:text-accent-foreground block duration-150"
-                  >
-                    <span>{item.name}</span>
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href={"/"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Home"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/forex-ea"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Forex EA"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/indicator"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Indicator"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/copy-trading"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Copy Trading"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/brokers"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Brokers"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/live-chart"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Live Chart"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/contact"}
+                  className="text-white/95 hover:text-accent-foreground block duration-150"
+                >
+                  <span>{"Contact"}</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
             <div className="lg:hidden">
               <ul className="space-y-6 text-base">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                    >
-                      <span>{item.name}</span>
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    href={""}
+                    className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                  >
+                    <span>{""}</span>
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:items-center">
-              <button className="bg-primary rounded-2xl py-2 px-4">Join Telegram Channel ↗</button>
+              <button className="bg-primary rounded-2xl py-2 px-4">
+                Join Telegram Channel ↗
+              </button>
               <GoogleTranslate />
               <ThemeToggleButton />
             </div>
