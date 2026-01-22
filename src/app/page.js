@@ -10,14 +10,11 @@ import Markets from "@/components/home/Markets";
 
 export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <WhatMakeUsDifferent />
-      <OurPartners />
-      <Products />
-      <Categories />
-      <Testimonial />
-      <Markets />
-    </>
+    <div className="container">
+      <h1>Hello BlackDiamondEA!</h1>
+      <h2>Hello BlackDiamondEA!</h2>
+      <h3>Hello BlackDiamondEA!</h3>
+      <h4>Hello BlackDiamondEA!</h4>
+    </div>
   );
 }
