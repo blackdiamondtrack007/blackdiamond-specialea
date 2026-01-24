@@ -15,7 +15,7 @@ import SocialMedia from "./social-media";
 
 export default function Footer() {
   return (
-    <div className="w-full text-text-primary bg-white dark:white">
+    <div className="w-full text-text-primary bg-white dark:bg-black">
       <div className="container my-0 lg:flex lg:gap-12 py-8 lg:py-10">
         <div className="w-full lg:w-[30%]">
           <div>
