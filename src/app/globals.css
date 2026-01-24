@@ -8,18 +8,27 @@
   --color-background: var(--background);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-text: var(--nav-text);
+  --color-text-primary: var(--text-primary);
 }
 
 :root {
   --background: oklch(1 0 0);
   --primary: #aa570b;
   --secondary: #0f5071;
+  --nav-bg: #aa570b12;
+  --nav-text: #333333;
+  --text-primary: #0f0f0f;
 }
 
 .dark {
   --background: oklch(0.13 0.028 261.692);
   --primary: #0f5071;
   --secondary: #aa570b;
+  --nav-bg: #0f507112;
+  --nav-text: #eddfdf;
+  --text-primary: oklch(95.155% 0.00753 16.5);
 }
 
 /* Base */
@@ -58,19 +67,20 @@
 /* Components */
 @layer components {
   .container {
-    @apply mx-auto max-w-7xl my-10 md:my-14 lg:my-20;
+    @apply mx-auto px-4 max-w-7xl my-10 md:my-14 lg:my-20;
+  }
+
+  .text-body {
+    @apply text-sm md:text-base lg:text-base font-normal;
+  }
+
+  .text-body-large {
+    @apply text-base md:text-lg lg:text-xl font-normal;
   }
 }
 
 /* Utilities */
 @layer utilities {
-  .text-body {
-    @apply text-sm md:text-base lg:text-base font-medium;
-  }
-
-  .text-body-large {
-    @apply text-base md:text-lg lg:text-xl font-medium;
-  }
 }
 
 /* Language Switcher Style */
@@ -111,7 +121,7 @@
 /* Dark mode */
 .dark .gt-wrapper select {
   @apply bg-gray-900
-    text-white
+    text-secondary
     border-gray-700
     hover:bg-gray-800;
 }

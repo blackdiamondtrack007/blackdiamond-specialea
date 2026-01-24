@@ -23,15 +23,15 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {/* <header>
+          <header>
             <Header />
-          </header> */}
+          </header>
 
-          <main>{children}</main>
+          <main className="min-h-[70vh]">{children}</main>
 
-          {/* <footer>
+          <footer>
             <Footer />
-          </footer> */}
+          </footer>
         </ThemeProvider>
       </body>
     </html>
