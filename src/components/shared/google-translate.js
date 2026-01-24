@@ -24,10 +24,10 @@ export default function GoogleTranslate() {
   return (
     <div className="relative inline-block gt-container w-40">
       <div id="google_translate_element" className="gt-wrapper" />
-      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
+      <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
         <span className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2">
           <svg
-            className="h-6 w-6 text-gray-500"
+            className="h-6 w-6 text-primary"
             viewBox="0 0 20 20"
             fill="currentColor"
           >

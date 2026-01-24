@@ -14,39 +14,37 @@ export const Header = () => {
   const pathname = usePathname();
   return (
     <StickyHeader>
-      <nav className="w-full py-4">
-        <div className={cn("transition-all duration-300 my-0")}>
-          <div className="container my-0 flex justify-between">
-            <div>
-              <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
-                <Image src="/logo.gif" alt="Logo" width={45} height={45} />
-              </Link>
-            </div>
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-              <div className="lg:hidden">
-                <ul className="space-y-6 text-base">
-                  <li>
-                    <Link
-                      href={""}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                    >
-                      <span>{""}</span>
-                    </Link>
-                  </li>
-                </ul>
+      <nav className="w-full">
+        <div className={cn("transition-all duration-300")}>
+          <div className="bg-black py-3">
+            <div className="container my-0 flex justify-between">
+              <div>
+                <Link href="/" className="flex items-center space-x-2">
+                  <Image src="/logo.gif" alt="Logo" width={200} height={45} />
+                </Link>
               </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:items-center">
-                <GoogleTranslate />
-                <ThemeToggleButton />
+              <div className="bg-background mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+                <div className="lg:hidden">
+                  <ul className="space-y-6 text-base">
+                    <li>
+                      <Link
+                        href={""}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      >
+                        <span>{""}</span>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:items-center">
+                  <GoogleTranslate />
+                  <ThemeToggleButton />
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="relative py-3 lg:gap-0 lg:py-4 bg-nav-bg mt-4">
+          <div className="relative py-3 lg:gap-0 lg:py-4 bg-nav-bg">
             <div className="container my-0 flex flex-wrap items-center justify-between gap-6">
               {/* <div className="flex w-full justify-between lg:w-auto">
               <button
@@ -127,7 +125,7 @@ export const Header = () => {
                   </li>
                 </ul>
               </div>
-              <Button className="bg-primary text-white rounded py-2 px-4">
+              <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
                 Join Telegram Channel ↗
               </Button>
             </div>
