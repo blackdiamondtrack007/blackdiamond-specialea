@@ -13,8 +13,10 @@ export default function Footer() {
     <div className="w-full text-text-primary bg-white dark:bg-black">
       <div className="container my-0 lg:flex lg:gap-12 py-8 lg:py-10">
         <div className="w-full lg:w-[30%]">
-          <div>
-            <Image width={200} height={45} src={footerLogo} alt="Footer Logo" />
+          <div className="w-40 md:w-50">
+            <Link href="/" className="flex items-center space-x-2">
+              <Image src={footerLogo} alt="Logo" />
+            </Link>
           </div>
           <div className="my-4 lg:my-5">
             <p className="text-text-primary">
