@@ -9,6 +9,14 @@ import GoogleTranslate from "./google-translate";
 import StickyHeader from "./sticky-header";
 import { Button } from "../ui/button";
 import { usePathname } from "next/navigation";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "../ui/navigation-menu";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -52,20 +60,20 @@ export const Header = () => {
                 aria-label={menuState == true ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden text-white"
               >
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-2000" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-2000" />
               </button>
             </div> */}
 
               <div className="hidden size-fit lg:block">
-                <ul className="flex gap-8 text-sm">
+                <ul className="flex gap-8">
                   <li>
                     <Link
                       href={"/"}
                       className={
                         pathname === "/"
-                          ? "text-primary hover:text-primary block duration-150 text-body-large font-bold"
-                          : "text-nav-text hover:text-primary block duration-150 text-body-large"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
                       }
                     >
                       {"Home"}
@@ -76,51 +84,198 @@ export const Header = () => {
                       href={"/forex-ea"}
                       className={
                         pathname === "/forex-ea"
-                          ? "text-primary block duration-150 text-body-large font-bold"
-                          : "text-nav-text hover:text-primary block duration-150 text-body-large hover:font-bold"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
                       }
                     >
-                      <p className="text-body-large">{"Forex EA"}</p>
+                      {"Forex EA"}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href={"/indicator"}
-                      className="text-nav-text hover:text-accent-foreground block duration-150"
+                      className={
+                        pathname === "/indicator"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
                     >
-                      <p className="text-body-large">{"Indicator"}</p>
+                      {"Indicator"}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href={"/copy-trading"}
-                      className="text-nav-text hover:text-accent-foreground block duration-150"
+                      className={
+                        pathname === "/copy-trading"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
                     >
-                      <p className="text-body-large">{"Copy Trading"}</p>
+                      {"Copy Trading"}
                     </Link>
                   </li>
                   <li>
                     <Link
                       href={"/brokers"}
-                      className="text-nav-text hover:text-accent-foreground block duration-150"
+                      className={
+                        pathname === "/brokers"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
                     >
-                      <p className="text-body-large">{"Brokers"}</p>
+                      {"Brokers"}
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href={"/live-chart"}
-                      className="text-nav-text hover:text-accent-foreground block duration-150"
-                    >
-                      <p className="text-body-large">{"Live Chart"}</p>
-                    </Link>
+                    <NavigationMenu>
+                      <NavigationMenuList>
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger
+                            className={
+                              "bg-transparent rounded-none text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer"
+                            }
+                          >
+                            <span className="text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer">
+                              Live Chart
+                            </span>
+                          </NavigationMenuTrigger>
+
+                          <NavigationMenuContent className={""}>
+                            <ul className="w-[200px] p-1">
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/live-forex-chart"}
+                                    className={
+                                      pathname === "/live-forex-chart"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Live Forex Chart"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/forex-factory-calendar"}
+                                    className={
+                                      pathname === "/forex-factory-calendar"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Forex Factory Calendar"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/forex-heat-map"}
+                                    className={
+                                      pathname === "/forex-heat-map"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Forex Heat Map"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/forex-screener"}
+                                    className={
+                                      pathname === "/forex-screener"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Forex Screener"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/forex-calendar"}
+                                    className={
+                                      pathname === "/forex-calendar"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"FOREX CALENDAR"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/most-traded-cryptocurrencies"}
+                                    className={
+                                      pathname ===
+                                      "/most-traded-cryptocurrencies"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Most Traded Cryptocurrencies"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={"/crypto-currency-current-price"}
+                                    className={
+                                      pathname ===
+                                      "/crypto-currency-current-price"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Crypto Currency Current Price"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink className="p-1">
+                                  <Link
+                                    href={
+                                      "/cryptocurrency-market-capitalization"
+                                    }
+                                    className={
+                                      pathname ===
+                                      "/cryptocurrency-market-capitalization"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Cryptocurrency Market Capitalization"}
+                                  </Link>
+                                </NavigationMenuLink>
+                              </li>
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      </NavigationMenuList>
+                    </NavigationMenu>
                   </li>
                   <li>
                     <Link
                       href={"/contact"}
-                      className="text-nav-text hover:text-accent-foreground block duration-150"
+                      className={
+                        pathname === "/contact"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
                     >
-                      <p className="text-body-large">{"Contact"}</p>
+                      {"Contact"}
                     </Link>
                   </li>
                 </ul>

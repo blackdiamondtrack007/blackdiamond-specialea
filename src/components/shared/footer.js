@@ -1,10 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
-import { ChevronsUpDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import payments from "../../../public/assets/footer/payments.webp";
@@ -105,10 +100,10 @@ export default function Footer() {
       <div className="w-full border-t-1 py-4">
         <div className="container my-0">
           <div className="flex flex-wrap items-center justify-center gap-1">
-            <span>2018-{new Date().getFullYear()} © BLACKDIAMONDEA |</span>
-            <Link href={"/privacy"}>Privacy</Link> |
-            <Link href={"/terms"}>Terms</Link> |
-            <Link href={"/sitemap"}>Sitemap</Link>
+            <span>2011-{new Date().getFullYear()} © BLACKDIAMONDEA |</span>
+            <Link href={"/privacy-policy"}>Privacy Policy</Link> |
+            <Link href={"/terms-condition"}>Terms & Condition</Link> |
+            <Link href={"/faq"}>FAQs</Link>
           </div>
 
           <div className="flex justify-center  gap-4 md:gap-5 lg:gap-7 items-center flex-wrap mt-4">
