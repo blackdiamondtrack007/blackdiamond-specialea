@@ -144,9 +144,11 @@ export const Header = () => {
                           <NavigationMenuContent className={""}>
                             <ul className="w-[200px] p-1">
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/live-forex-chart"}
+                                <NavigationMenuLink
+                                  href={"/live-forex-chart"}
+                                  className={"p-1"}
+                                >
+                                  <span
                                     className={
                                       pathname === "/live-forex-chart"
                                         ? "text-primary text-body font-semibold"
@@ -154,13 +156,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Live Forex Chart"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/forex-factory-calendar"}
+                                <NavigationMenuLink
+                                  href={"/forex-factory-calendar"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname === "/forex-factory-calendar"
                                         ? "text-primary text-body font-semibold"
@@ -168,13 +172,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Forex Factory Calendar"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/forex-heat-map"}
+                                <NavigationMenuLink
+                                  href={"/forex-heat-map"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname === "/forex-heat-map"
                                         ? "text-primary text-body font-semibold"
@@ -182,13 +188,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Forex Heat Map"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/forex-screener"}
+                                <NavigationMenuLink
+                                  href={"/forex-screener"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname === "/forex-screener"
                                         ? "text-primary text-body font-semibold"
@@ -196,13 +204,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Forex Screener"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/forex-calendar"}
+                                <NavigationMenuLink
+                                  href={"/forex-calendar"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname === "/forex-calendar"
                                         ? "text-primary text-body font-semibold"
@@ -210,13 +220,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"FOREX CALENDAR"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/most-traded-cryptocurrencies"}
+                                <NavigationMenuLink
+                                  href={"/most-traded-cryptocurrencies"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname ===
                                       "/most-traded-cryptocurrencies"
@@ -225,13 +237,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Most Traded Cryptocurrencies"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={"/crypto-currency-current-price"}
+                                <NavigationMenuLink
+                                  href={"/crypto-currency-current-price"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname ===
                                       "/crypto-currency-current-price"
@@ -240,15 +254,15 @@ export const Header = () => {
                                     }
                                   >
                                     {"Crypto Currency Current Price"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                               <li>
-                                <NavigationMenuLink className="p-1">
-                                  <Link
-                                    href={
-                                      "/cryptocurrency-market-capitalization"
-                                    }
+                                <NavigationMenuLink
+                                  href={"/cryptocurrency-market-capitalization"}
+                                  className="p-1"
+                                >
+                                  <span
                                     className={
                                       pathname ===
                                       "/cryptocurrency-market-capitalization"
@@ -257,7 +271,7 @@ export const Header = () => {
                                     }
                                   >
                                     {"Cryptocurrency Market Capitalization"}
-                                  </Link>
+                                  </span>
                                 </NavigationMenuLink>
                               </li>
                             </ul>
