@@ -47,35 +47,35 @@
   }
 
   h1 {
-    @apply text-[28px] md:text-4xl lg:text-5xl font-bold;
+    @apply text-[28px] md:text-4xl xl:text-5xl font-bold;
   }
   h2 {
-    @apply text-2xl md:text-[28px] lg:text-4xl font-semibold;
+    @apply text-2xl md:text-[28px] xl:text-4xl font-semibold;
   }
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl font-semibold;
+    @apply text-xl md:text-2xl xl:text-3xl font-semibold;
   }
   h4 {
-    @apply text-lg md:text-xl lg:text-2xl font-medium;
+    @apply text-lg md:text-xl xl:text-2xl font-medium;
   }
 
   button {
-    @apply text-sm md:text-base lg:text-base font-medium;
+    @apply text-sm md:text-base xl:text-base font-medium;
   }
 }
 
 /* Components */
 @layer components {
   .container {
-    @apply mx-auto px-4 max-w-7xl my-10 md:my-14 lg:my-20;
+    @apply mx-auto px-4 max-w-7xl my-10 md:my-14 xl:my-20;
   }
 
   .text-body {
-    @apply text-sm md:text-base lg:text-base font-normal;
+    @apply text-sm md:text-base xl:text-base font-normal;
   }
 
   .text-body-large {
-    @apply text-base md:text-lg lg:text-xl font-normal;
+    @apply text-base md:text-lg xl:text-xl font-normal;
   }
 }
 
@@ -98,16 +98,17 @@
   -webkit-appearance: none;
   -moz-appearance: none;
 
-  @apply w-full
+  @apply w-[160px]
+  md:w-40
     text-primary
-    min-w-[160px]
     rounded
     border
     bg-gray-900
     px-4
     py-2
     pr-10
-    text-sm
+    text-xs
+    md:text-sm
     shadow-sm
     cursor-pointer
     transition

@@ -20,22 +20,23 @@ import {
 import MobileMenu from "./mobile-menu";
 
 export const Header = () => {
-  const [menuState, setMenuState] = useState(false);
   const pathname = usePathname();
   return (
     <StickyHeader>
       <nav className="w-full">
-        <div className="bg-black py-3">
-          <div className="container my-0 flex justify-between">
-            <div className="w-40 md:w-50">
-              <Link href="/" className="flex items-center space-x-2">
+        <div className="bg-black py-2 lg:py-3">
+          <div className="container my-0 flex justify-between items-center gap-4 lg:gap-0">
+            <div className="w-32 md:w-50">
+              <Link href="/">
                 <Image src={Logo} alt="Logo" />
               </Link>
             </div>
 
-            <div className="bg-background mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit lg:items-center">
+            <div className="flex gap-4">
+              <div className="mt-1.5 lg:mt-0">
                 <GoogleTranslate />
+              </div>
+              <div className="hidden lg:block">
                 <ThemeToggleButton />
               </div>
             </div>
@@ -49,7 +50,7 @@ export const Header = () => {
         <div className="relative hidden py-3 lg:gap-0 lg:py-4 bg-nav-bg lg:block">
           <div className="container my-0 flex flex-wrap items-center justify-between gap-6">
             <div className="hidden size-fit lg:block">
-              <ul className="flex gap-8">
+              <ul className="flex gap-6 xl:gap-8">
                 <li>
                   <Link
                     href={"/"}

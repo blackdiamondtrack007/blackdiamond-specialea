@@ -22,16 +22,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const SHEET_rightS = ["top", "right", "bottom", "left"];
-
 export default function MobileMenu() {
   const pathname = usePathname();
   return (
     <div className="flex flex-wrap gap-2">
       <Sheet>
         <SheetTrigger asChild>
-          <Button className={"p-0 bg-transparent mr-[-12px]"}>
-            <Menu className="size-8 mt-2" />
+          <Button className={"p-0 bg-transparent mx-[-12px]"}>
+            <Menu className="size-6 text-white" />
           </Button>
         </SheetTrigger>
         <SheetContent
@@ -104,22 +102,25 @@ export default function MobileMenu() {
                 </Link>
               </li>
               <li>
-                <Accordion type="single" collapsible defaultValue="item-1">
-                  <AccordionItem
-                    value="item-1"
-                    className={
-                      "bg-transparent rounded-none text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer"
-                    }
-                  >
-                    <AccordionTrigger>
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full my-[-16px]"
+                >
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger
+                      className={
+                        "bg-transparent rounded-none text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer"
+                      }
+                    >
                       <span className="text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer">
                         Live Chart
                       </span>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="w-[200px] p-1">
+                      <ul className="space-y-1.5">
                         <li>
-                          <Link href={"/live-forex-chart"} className={"p-1"}>
+                          <Link href={"/live-forex-chart"}>
                             <span
                               className={
                                 pathname === "/live-forex-chart"
@@ -132,10 +133,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            href={"/forex-factory-calendar"}
-                            className="p-1"
-                          >
+                          <Link href={"/forex-factory-calendar"}>
                             <span
                               className={
                                 pathname === "/forex-factory-calendar"
@@ -148,7 +146,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/forex-heat-map"} className="p-1">
+                          <Link href={"/forex-heat-map"}>
                             <span
                               className={
                                 pathname === "/forex-heat-map"
@@ -161,7 +159,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/forex-screener"} className="p-1">
+                          <Link href={"/forex-screener"}>
                             <span
                               className={
                                 pathname === "/forex-screener"
@@ -174,7 +172,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/forex-calendar"} className="p-1">
+                          <Link href={"/forex-calendar"}>
                             <span
                               className={
                                 pathname === "/forex-calendar"
@@ -187,10 +185,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            href={"/most-traded-cryptocurrencies"}
-                            className="p-1"
-                          >
+                          <Link href={"/most-traded-cryptocurrencies"}>
                             <span
                               className={
                                 pathname === "/most-traded-cryptocurrencies"
@@ -203,10 +198,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            href={"/crypto-currency-current-price"}
-                            className="p-1"
-                          >
+                          <Link href={"/crypto-currency-current-price"}>
                             <span
                               className={
                                 pathname === "/crypto-currency-current-price"
@@ -219,10 +211,7 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link
-                            href={"/cryptocurrency-market-capitalization"}
-                            className="p-1"
-                          >
+                          <Link href={"/cryptocurrency-market-capitalization"}>
                             <span
                               className={
                                 pathname ===
@@ -254,8 +243,7 @@ export default function MobileMenu() {
               </li>
             </ul>
           </div>
-          <SheetFooter className={"flex"}>
-            <GoogleTranslate />
+          <SheetFooter>
             <ThemeToggleButton />
           </SheetFooter>
         </SheetContent>
