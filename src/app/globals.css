@@ -11,15 +11,17 @@
   --color-nav-bg: var(--nav-bg);
   --color-nav-text: var(--nav-text);
   --color-text-primary: var(--text-primary);
+  --color-section-bg: var(--section-bg);
 }
 
 :root {
   --background: oklch(1 0 0);
   --primary: #aa570b;
   --secondary: #0f5071;
-  --nav-bg: #F9F3EE;
+  --nav-bg: #f9f3ee;
   --nav-text: #333333;
   --text-primary: #0f0f0f;
+  --section-bg: #f6f6f6;
 }
 
 .dark {
@@ -29,6 +31,7 @@
   --nav-bg: #121719;
   --nav-text: #eddfdf;
   --text-primary: oklch(95.155% 0.00753 16.5);
+  --section-bg: #060f35;
 }
 
 /* Base */
