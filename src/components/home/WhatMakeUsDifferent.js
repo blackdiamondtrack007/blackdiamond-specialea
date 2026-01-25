@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function WhatMakeUsDifferent() {
-  return <div>What Make Us Different</div>;
+  return <div className="container mt-40 text-xl">What Make Us Different</div>;
 }

@@ -17,7 +17,7 @@
   --background: oklch(1 0 0);
   --primary: #aa570b;
   --secondary: #0f5071;
-  --nav-bg: #aa570b12;
+  --nav-bg: #F9F3EE;
   --nav-text: #333333;
   --text-primary: #0f0f0f;
 }
@@ -26,7 +26,7 @@
   --background: oklch(0.13 0.028 261.692);
   --primary: #0f5071;
   --secondary: #aa570b;
-  --nav-bg: #0f507112;
+  --nav-bg: #121719;
   --nav-text: #eddfdf;
   --text-primary: oklch(95.155% 0.00753 16.5);
 }
