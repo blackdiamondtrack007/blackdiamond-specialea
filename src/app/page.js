@@ -11,6 +11,7 @@ import Markets from "@/components/home/Markets";
 export default function Home() {
   return (
     <>
+      <HeroSection />
       <WhatMakeUsDifferent />
       <OurPartners />
     </>

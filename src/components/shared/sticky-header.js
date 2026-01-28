@@ -27,13 +27,13 @@ export default function StickyHeader({ children }) {
   }, [lastScrollY]);
 
   return (
-    <header
+    <div
       className={cn(
         "fixed top-0 left-0 z-50 w-full transition-transform duration-300 ease-in-out",
         show ? "translate-y-0" : "-translate-y-full",
       )}
     >
       {children}
-    </header>
+    </div>
   );
 }
