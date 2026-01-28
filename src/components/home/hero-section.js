@@ -72,7 +72,7 @@ export default function HeroSection() {
           </div>
           <div className="w-full lg:w-40/100 flex-col md:flex-row md:flex gap-5 mt-8 md:mt-12 lg:mt-0 space-y-5 md:space-y-0">
             <div className="md:w-1/2 space-y-5">
-              <div className="rounded-3xl bg-nav-bg text-center space-y-3.5 p-5">
+              <div className="rounded-3xl bg-nav-bg text-center space-y-3.5 px-5 py-7">
                 <div>
                   <p>Active Traders</p>
                   <h4>$8.5K</h4>
