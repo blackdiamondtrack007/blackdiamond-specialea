@@ -6,7 +6,6 @@ import heroImage1 from "../../../public/assets/home/hero-section/home-hero-image
 import heroImage2 from "../../../public/assets/home/hero-section/home-hero-image-2.webp";
 import increaseUpProfitIcon from "../../../public/assets/home/icons/increase-up-profit-icon.webp";
 import { CircleArrowRight } from "lucide-react";
-// import heroBg from "../../../public/assets/home/hero-section/hero-bg.webp"
 
 export default function HeroSection() {
   return (
