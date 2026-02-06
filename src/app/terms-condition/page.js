@@ -3,7 +3,7 @@ import React from "react";
 export default function TermsCondition() {
   return (
     <div className="w-full mt-18 lg:mt-36.75">
-      <div className="container py-10 lg:py-15">
+      <div className="container pt-10 lg:pt-15">
         <h1 className="text-center">Terms And Conditions</h1>
 
         <div className="text-text-primary mt-10">
@@ -20,18 +20,18 @@ export default function TermsCondition() {
               Forex trading has large potential rewards, but also large
               potential risk. You must be aware of the risks and be willing to
               accept them in order to invest in the futures, forex and options
-              markets. {"Don't"} trade with money you {"can't"} afford to lose.
-              This is neither a solicitation nor an offer to Buy/Sell futures,
-              stocks, options, forex currencies. No representation is being made
-              that any account will or is likely to achieve profits or losses
-              similar to those discussed on the blackdiamondea.info website. The
-              past performance of any trading system or methodology is not
+              markets. Don't trade with money you can't afford to lose. This is
+              neither a solicitation nor an offer to Buy/Sell futures, stocks,
+              options, forex currencies. No representation is being made that
+              any account will or is likely to achieve profits or losses similar
+              to those discussed on the blackdiamondea.info website. The past
+              performance of any trading system or methodology is not
               necessarily indicative of future results.
             </p>
 
             <p>
               The owner of the blackdiamondea.info website and provider of the
-              Forex Auto Bot Software (hereafter known as {`"The Developer"`})
+              Forex Auto Bot Software (hereafter known as "The Developer")
               develops trading systems with the intention of making profits.
               However due to the inherent risks of internet data transfer, data
               feed interruptions, rejected orders, the fact that currency prices
@@ -82,8 +82,9 @@ export default function TermsCondition() {
                 <p>
                   (3) Placing contingent orders, such as "stop-loss" or
                   "stop-limit" orders, will not necessarily limit your losses to
-                  the intended amounts, since market conditions may make it
-                  impossible to execute such orders.
+                  the intended amounts, since market conditions on the exchange
+                  where the order is placed may make it impossible to execute
+                  such orders.
                 </p>
 
                 <p>
@@ -109,8 +110,9 @@ export default function TermsCondition() {
               <p class="mt-4 font-bold uppercase">
                 ALL OF THE POINTS NOTED ABOVE APPLY TO ALL MARKET TRADING
                 WHETHER FOREIGN OR DOMESTIC. IN ADDITION, IF YOU ARE
-                CONTEMPLATING TRADING FOREIGN FUTURES OR OPTIONS CONTRACTS, YOU
-                SHOULD BE AWARE OF THE FOLLOWING ADDITIONAL RISKS:
+                CONTEMPLATING TRADING FOREIGN FUTURES, FOREX, STOCK, OR OPTIONS
+                CONTRACTS, YOU SHOULD BE AWARE OF THE FOLLOWING ADDITIONAL
+                RISKS:
               </p>
 
               <div class="space-y-3 pl-6 mt-3">
@@ -123,44 +125,44 @@ export default function TermsCondition() {
                   organization regulates the activities of a foreign exchange,
                   including the execution, delivery, and clearing of
                   transactions on such an exchange, and no domestic regulator
-                  has the power to compel enforcement of the rules of a foreign
-                  exchange or the laws of a foreign country. Moreover, such laws
-                  or regulations will vary depending on the foreign country in
-                  which the transaction occurs. For these reasons, customers who
-                  trade on foreign exchanges may not be afforded certain of the
-                  protections which apply to domestic transactions, including
-                  the right to use domestic alternative dispute resolution
-                  procedures. In particular, funds received from customers to
-                  margin foreign futures transactions may not be provided the
-                  same protections as funds received to margin futures
-                  transactions on domestic exchanges. Before you trade, you
-                  should familiarize yourself with the foreign rules which will
-                  apply to your particular transaction.
+                  has the power to compel enforcement of the rules of the
+                  foreign exchange or the laws of the foreign country. Moreover,
+                  such laws or regulations will vary depending on the foreign
+                  country in which the transaction occurs. For these reasons,
+                  customers who trade on foreign exchanges may not be afforded
+                  certain of the protections which apply to domestic
+                  transactions, including the right to use domestic alternative
+                  dispute resolution procedures. In particular, funds received
+                  from customers to margin foreign futures transactions may not
+                  be provided the same protections as funds received to margin
+                  futures transactions on domestic exchanges. Before you trade,
+                  you should familiarize yourself with the foreign rules which
+                  will apply to your particular transaction.
                 </p>
 
                 <p>
                   (8) Finally, you should be aware that the price of any foreign
                   futures or option contract and, therefore, the potential
-                  profit and any resulting from it, may be affected by any
+                  profit and loss resulting therefrom, may be affected by any
                   fluctuation in the foreign exchange rate between the time the
-                  order is placed and the foreign currency contract is
-                  liquidated or offset.
+                  order is placed and the foreign futures contract is liquidated
+                  or the foreign option contract is liquidated or exercised.
                 </p>
               </div>
 
               <p class="mt-4 font-bold uppercase">
                 THIS BRIEF STATEMENT CANNOT, OF COURSE, DISCLOSE ALL THE RISKS
-                AND OTHER ASPECTS OF THE FOREIGN EXCHANGE OR COMMODITY MARKETS.
+                AND OTHER ASPECTS OF THE FOREIGN EXCHANGE OR COMMODITY MARKETS
               </p>
             </div>
 
             <div class="mt-6">
               <h4 class="mb-3">
-                CFTC SEC. 4.41 HYPOTHETICAL PERFORMANCE RESULTS DISCLOSURE
+                CFTC REG SEC. 4.41 HYPOTHETICAL PERFORMANCE RESULTS DISCLOSURE
               </h4>
               <p class="mb-3 uppercase font-semibold">
-                THE RESULTS DISCUSSED OR SHOWN ON THIS BLACKALGOBOX.INFO SITES,
-                WHETHER OR OTHER MARKETING MATERIALS ARE BASED ON SIMULATIONS OR
+                THE RESULTS DISCUSSED OR SHOWS ON THE BLACKDIAMONDEA.INFO
+                WEBSITE OR OTHER MARKETING MATERIALS ARE BASED ON SIMULATED OR
                 HYPOTHETICAL PERFORMANCE RESULTS THAT HAVE CERTAIN INHERENT
                 LIMITATIONS. UNLIKE THE RESULTS SHOWN IN AN ACTUAL PERFORMANCE
                 RECORD, THESE RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO,
@@ -176,217 +178,215 @@ export default function TermsCondition() {
 
               <p>
                 These programs and information are provided by "The Developer".
-                Please be advised that The Developer, it's owners and/or any and
-                it's registered broker, (hereafter affiliated companies, or its
-                agents etc.) any way nor be guaranteed results on any way, nor
-                the Developer makes this information, its products and services
-                available through the blackalgobox.info website and/or by
-                telephone and email support. The Developers have made great
-                efforts to list all information to be very accurate. All
-                information and data posted is the opinion of The Developer. The
-                Developer and its affiliates are not liable, under any
-                circumstance, for any damage which involves substantial risk and
-                is not suitable for all investors. The Developer products and
-                services are not suitable for everyone. Trading should only be
-                done with funds obtained from an investor, that an investor can
-                afford to lose. Past results and/or testimonials are in no way
-                an indication of future results.
+                Please be advised that The Developer, it's owners and/or
+                operators are not a registered broker, financial advisor, nor is
+                registered in any way with any government regulator agency. The
+                Developer makes this information, its products and services
+                available through the blackdiamondea.info website under the
+                First Amendment of the Unites States Constitution. The Developer
+                has made great effort to list all information to be very
+                accurate. All data included on the blackdiamondea.info website
+                is considered HYPOTHETICAL. Futures, Forex, and Options on
+                Futures trading involves substantial risk and is not suitable
+                for all investors. The Developer products and services are not
+                suitable for everyone. Trading should only be done with true
+                risk capital. Past performance is not necessarily indicative of
+                future results.
               </p>
 
               <p class="mt-3">
                 The software is provided FREE of charge and you agree to use it
                 at your own risk. You agree to indemnify, defend and hold
-                harmless The Developer, its officers, including, employees,
-                agents, directors, suppliers, affiliates, data/chart vendors and
-                licensors and any third parties from and against any and all
-                claims, demands, actions, suits, damages, liabilities, losses,
-                settlements, judgments, costs and expenses (including without
-                limitation reasonable attorney's fees and costs, whether
-                incurred by a lawsuit by our any other person accessing the
-                Service, software, or information.
+                harmless The Developer, its officers, directors, employees,
+                agents, licensors, suppliers, affiliates from and against all
+                losses, expenses, damages and costs, including reasonable
+                attorneys fees, resulting from any violation of this Agreement
+                (including negligent or wrongful conduct) or loss of any kind,
+                by you or any other person accessing the Service, software, or
+                information.
               </p>
 
               <p class="mt-3">
-                Fully-automated trading can be extremely risky. Nothing on this
-                site should be construed as investment or trading advice. It is
-                biased. It is biased that should be used only by sophisticated,
-                experienced traders who are very comfortable with countertrend
-                electronic trading. The futures in NOT designed for beginners,
-                or persons lacking sufficient capital to trade the futures and
-                stocks markets. An investor could only lose some of his profits,
-                not his actual investment, by using this product if he has
-                sufficient capital to finance short term cash flow problems
-                caused by string of losses. Do not invest any money that you
-                cannot afford to lose. Trading may be restricted because of
-                market don't sale rules. At times like The Developer may useof
-                to fully enter or exit a position but for some reason, you must
-                use your proper broker trader's trading desk support. An
-                investor should only consider proper investment with his broker.
-                If you do not have sufficient investment capital, then you
-                should not purchase The Developer software. Such warning are not
-                intended to be exhaustive. For another example, the buy
-                requirement of your brokerage account may be insufficient to
-                execute a trade that your strategy has triggered. You should
-                have the opportunity to modify your leverage capacity by having
-                more funds into the account. Basically, you should have
-                sufficient liquidity in your account. The Developer makes no
-                guarantee, representation or warranty in any form that your
-                results will be the same as that posted, due to such actions you
-                described as appropriate. Another example is The Developer will
-                not fund your account. This data is NOT designed for beginners,
-                or persons who need complementary advice should be requested
-                from your broker (financial advisor). It is understand that any
-                testimony posted on blackalgobox.info or at any sites are not
-                intended to be exhaustive. There are likely several scenarios
-                that could arise, under may require prompt intervention and
-                active capital. PLEASE REVIEW THE RISK DISCLOSURE THAT PRECEDES
-                THIS ORDER AS WELL AS THE RISK STATEMENTS AT blackalgobox.info
+                "Fully automated trading of a strategy - automated trading that
+                requires no confirmation of the decision to place the trade
+                before it is placed - is a tool that should be used only by
+                sophisticated, experienced traders who are very comfortable with
+                computerized electronic trading. This feature is NOT designed to
+                enable you to trade without paying close attention to your
+                transactions on-screen as they occur, as situations may arise
+                that require your prompt intervention. For example, in the case
+                of short selling, your order may be rejected because of market
+                short sale rules. At times the The Developer may successfully
+                enter or exit a position but for some reason your copier doesn't
+                react due to internet or data issues or your metatrader platform
+                and/or broker doesn't properly execute the trade, or some other
+                mishap. You certainly would want to be aware of this when it
+                happened and react as you deem appropriate. For another example,
+                the buying power of your brokerage account may be insufficient
+                to execute a trade that your strategy has triggered. You would
+                want to be aware of this when it happened, so that you have the
+                opportunity to modify your strategy to a lower share volume,
+                provide additional funds to your account, or take other actions
+                you deem appropriate. Another example is a delay in receiving
+                the signal and the market closes by the time your platform
+                executes. You would certainly want to be aware of this and
+                available upon the re-open of the market in order to manage the
+                trade as you deem appropriate. These examples are not intended
+                to be exhaustive. There are likely several scenarios that could
+                arise which may require prompt intervention and decision-making.
+                IT IS YOUR RESPONSIBILITY TO MONITOR THE TRADING ACTIVITY IN
+                YOUR ACCOUNT AT ALL TIMES.
               </p>
 
               <p class="mt-3">
                 The sole purpose of fully-automated trading is to increase the
-                speed of the execution of your trading strategies. The
-                Developer's through fully-automated trading app and forex
-                information may have the highest to engage any and all examples
-                that are mentioned on this document and we recommend that you
-                familiarize yourself with all of the Risk and Reward parameters
-                so that you are very comfortable about the fact that fully-you
-                automate you trade placement.
+                speed of the execution of your trading strategies. The Developer
+                strongly recommends that you do not use fully automated trading
+                until you have used, for an extended period, and are comfortable
+                with, the trading methodology or program. This can be done by
+                using a DEMO Account provided by your broker. You should ensure
+                that you are very comfortable about this before you automate
+                your trade placement.
               </p>
 
               <p class="mt-3">
                 You agree to indemnify, defend and hold harmless The Developer,
-                its officers, directors, shareholders, employees, agents,
-                licensors, suppliers, affiliates from and against all losses,
-                expenses, damages and costs, including reasonable attorneys
-                fees, resulting from any violation of these terms and conditions
-                or negligent wrongful conduct of you or any with any other
-                person using the purchased or access software.
+                its officers, directors, employees, agents, licensors,
+                suppliers, affiliates from and against all losses, expenses,
+                damages and costs, including reasonable attorneys fees,
+                resulting from any violation of this Agreement (including
+                negligent or wrongful conduct) or loss of any kind, by you or
+                any other person using the purchased or subscribed to program.
               </p>
             </div>
 
             <div class="mt-6">
               <h4 class="mb-3">Confidentiality</h4>
               <p>
-                The agreement proprietary information belonging to The Developer
-                ("The Developer") that is made available or disclosed to the
-                party signing this agreement (the "Recipient"). This information
-                (referred to as the "Confidential Information") includes, but is
-                not limited to, software products ("Software Products"), trading
-                documentation provided by The Developer, software code, trade
-                and business knowledge. Confidential Information shall not
-                include information which the recipient can demonstrate: (a) was
-                publicly available to the recipient prior to disclosure by The
-                Developer; or (b) was in the recipient's lawful possession prior
-                to disclosure by The Developer and have not otherwise been made
-                publicly available by The Developer. Confidential Information,
-                however, does not include: (a) information that is or becomes
-                generally available to the public through no fault of the
-                recipient, or (b) information that was rightfully in the
-                possession of the recipient prior to agreeing to this agreement.
+                This agreement covers proprietary information belonging to The
+                Developer ("The Developer") that is made available or disclosed
+                to the party signing this agreement (the "Recipient"). This
+                information (referred to as the "Confidential Information")
+                includes, but is not limited to, software products ("Software
+                Products"), trading recommendations generated by the software,
+                software source code ("Software Source Code"), documentation,
+                and correspondences, all rights to which are owned or controlled
+                by The Developer, that have not otherwise been made publicly
+                available by The Developer. Confidential Information, however,
+                does not include: (a) information generally available to the
+                public; (b) widely used programming practices or algorithms, (c)
+                information rightfully in the possession of the Recipient prior
+                to agreeing to this agreement.
+              </p>
+              <p>
+                This agreement covers proprietary information belonging to The
+                Developer ("The Developer") that is made available or disclosed
+                to the party signing this agreement (the "Recipient"). This
+                information (referred to as the "Confidential Information")
+                includes, but is not limited to, software products ("Software
+                Products"), trading recommendations generated by the software,
+                software source code ("Software Source Code"), documentation,
+                and correspondences, all rights to which are owned or controlled
+                by The Developer, that have not otherwise been made publicly
+                available by The Developer. Confidential Information, however,
+                does not include: (a) information generally available to the
+                public; (b) widely used programming practices or algorithms, (c)
+                information rightfully in the possession of the Recipient prior
+                to agreeing to this agreement.
               </p>
             </div>
 
             <div class="mt-6">
-              <h4 class="mb-3">Use of Software</h4>
               <p class="mb-3">
-                The Recipient agrees to use such information solely for its own
-                interests, or designing, creating, manufacturing, selling or
-                otherwise dealing with any item or product containing the
-                Confidential Information received by Recipient under this
-                agreement. The Recipient acknowledges that any breach of these
-                conditions may cause harm to The Developer for which monetary
-                damages is no adequate remedy and, therefore, in the event of
-                any breach of such conditions, The Developer is entitled to
-                preliminary and permanent injunctions, in addition to any legal
-                or equitable relief to which The Developer is entitled.
+                The Recipient shall refrain from directly or indirectly
+                acquiring any interest in, or designing, creating,
+                manufacturing, selling or otherwise dealing with any item or
+                product containing the Confidential Information received by
+                Recipient under this agreement. The Recipient acknowledges and
+                agrees that any Software Source Code and Software Products
+                received under this agreement, and any Software Products derived
+                or compiled from the Software Source Code, are subject to the
+                following limitations:
               </p>
 
               <div class="space-y-3 pl-6">
                 <p>
-                  1.) Recipient may use the Software products only on their own
-                  computer or VPS and forex Broker Account at the Broker that is
-                  nominated and that is signed under proper dealer's
-                  subscriber's and for the purpose for which it was designed.
-                  Recipient may not transfer, rent or lease any the Software
-                  products to any third party by any agreement.
+                  1.) Recipient may use the Software Products only on their own
+                  computer or VPS and Forex Broker Account at the Broker that is
+                  compatible with the software, as stated and directed upton
+                  installation. All other use expressly forbidden by this
+                  agreement.
                 </p>
 
                 <p>
                   2.) Recipient MAY NOT distribute the trade signals to third
                   parties or allow others to copy the trades received by the
-                  software. By agreeing to these terms and using the software,
-                  it is understood that any resulting trade shall be The
-                  Developer for ALL LOSS Suffered as a result of those actions,
-                  plus additional damages. Recipient may direct others to The
-                  Developer and make purchase from The Developer directly.
+                  software. By agreeing to these terms and using the software
+                  you agree to by held fully financially and legally responsible
+                  and to re-imbursment The Developer for ALL LOSS suffered as a
+                  result of those actions, plus additional damages. Recipient
+                  may direct others to the freeforexautobot.com website so that
+                  they may download their own copy, free of charge.
                 </p>
 
                 <p>
                   3.) Recipient may not grant rights to use the Software Source
                   Code or Software Products to any other individual or entity.
-                  Usage of these is at recipient's risk.
+                  Usage of these is limited to the Recipient agreeing below.
                 </p>
 
                 <p>
                   4.) Recipient is subject to all terms and limitations set
                   forth in all separate software licenses provided by The
-                  Developer to Recipient for use with the Software products.
+                  Developer to Recipient with the Software Source Code.
                 </p>
               </div>
 
               <p class="mt-3">
                 This agreement shall be governed by and construed in accordance
-                with the laws of the United States, and State of Florida.
+                with the laws of the United States, and state of Florida.
               </p>
             </div>
 
             <div class="mt-6">
-              <h4 class="mb-3">Entire Agreement</h4>
               <p>
-                This Agreement constitutes the entire agreement between the
-                parties in relation to the subject matter of this Agreement and
-                supersedes all prior negotiations and understandings relating to
-                such subject matter. Each party has entered into this Agreement
-                without reliance on any warranty, representation, assurance,
-                covenant or other statement made by any person that is not
-                expressly set out in this Agreement. The use of the Confidential
-                Information made available under this agreement. Neither party
-                of this Agreement may assign this Agreement or delegate any of
-                its obligations under this Agreement and any attempted
-                assignment or delegation without the prior written consent of
-                the other party is void. This Agreement shall be binding on and
-                inure to the benefit of each of the parties and the other party,
-                successors under any mergers or reorganization.
+                The Developer provides the Confidential Information on an AS IS
+                basis and is not responsible for any loss or damages arising
+                from the use of the Confidential Information made available
+                under this agreement. Neither party of this Agreement may assign
+                this Agreement or any rights or obligations under it, without
+                prior written consent by both parties, and any attempt to do so
+                is void; neither grants the other any licenses under any patents
+                or copyrights.
               </p>
             </div>
 
             <div class="mt-6">
-              <h4 class="mb-3">Termination</h4>
+              <h4 class="mb-3">Termination.</h4>
               <p>
-                This Agreement shall survive any termination of this Agreement
-                and be governed and construed in accordance with the laws of The
-                United States. The Parties agree that any disputes arising under
-                this Agreement shall be governed and construed in accordance
-                with the laws of The United States and any suit seeking judicial
-                enforcement of the provisions of this Agreement of the parties'
-                obligations hereunder shall be brought exclusively in a federal
-                or state court of competent jurisdiction sitting in State of
-                Florida. Recipient hereby irrevocably and unconditionally
-                consents to the exclusive jurisdiction of such courts with
-                respect to any cause of action or claim you may have with
-                respect to the terms must be commenced within one (1) year after
-                the claim or cause of action arose except to the extent such
-                period is extended. The parties acknowledge that this is a
-                material condition of this Agreement and that but for this
-                provision no license rights would be granted. If any provision
-                is held to be unenforceable, in whole or in part, such provision
-                shall be deemed not a part of this Agreement and the remaining
-                provisions of this Agreement will continue in full force and
-                effect. No delay on the course of conduct between the parties
-                made practice shall act to modify any provision of this
-                Agreement. The Developer, it's owners and affiliates makes no
-                guarantee.
+                This Agreement may be terminated by either party without notice
+                at any time for any reason. This Agreement shall survive any
+                termination of this Agreement and be governed and construed in
+                accordance with the laws of The United States of America
+                applicable to agreements made and to be performed in The United
+                States of America. You agree that any legal action or proceeding
+                between The Developer, it's owners and/or operators and you for
+                any purpose concerning this Agreement or the parties obligations
+                hereunder shall be brought exclusively in a federal or state
+                court of competent jurisdiction sitting in the State of Florida
+                in The United States of America, unless otherwise decided by The
+                Developer, it's owners and/or operators. Any cause of action or
+                claim you may have with respect to the Service must be commenced
+                within one (1) year after the claim or cause of action arises or
+                such claim or cause of action is barred. The Developer, it's
+                owners and/or operators failure to insist upon or enforce strict
+                performance of any provision of this Agreement shall not be
+                construed as a waiver of any provision or right. Neither the
+                course of conduct between the parties nor trade practice shall
+                act to modify any provision of this Agreement. The Developer,
+                it's owners and/or operators may assign its rights and duties
+                under this Agreement to any party at any time without notice to
+                you.
               </p>
             </div>
           </div>
