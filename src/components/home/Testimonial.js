@@ -114,7 +114,6 @@ function AnimatedModal({
   );
 }
 
-
 export default function Testimonial() {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -126,7 +125,7 @@ export default function Testimonial() {
     Autoplay({
       delay: 3000,
       stopOnInteraction: false,
-    })
+    }),
   );
 
   return (
@@ -143,10 +142,7 @@ export default function Testimonial() {
         />
 
         <div className="flex justify-center mt-10 mx-20">
-          <Carousel
-            plugins={[plugin.current]}
-            className="w-full"
-          >
+          <Carousel plugins={[plugin.current]} className="w-full">
             <CarouselContent>
               {clientReviewsItems.map((review, index) => (
                 <CarouselItem
@@ -158,7 +154,7 @@ export default function Testimonial() {
                       <Image
                         src={review.item}
                         alt="Client Review"
-                        className="rounded-md shadow-lg hover:scale-105 duration-300 cursor-pointer"
+                        className="rounded-md shadow-lg hover:scale-103 duration-300 cursor-pointer h-[500px]"
                         onClick={() => {
                           setCurrentIndex(index);
                           setOpen(true);
