@@ -147,14 +147,14 @@ export default function Testimonial() {
               {clientReviewsItems.map((review, index) => (
                 <CarouselItem
                   key={review.id}
-                  className="basis-1/2 lg:basis-1/4"
+                  className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
-                  <Card className="p-2 m-1">
+                  <Card className="p-2">
                     <CardContent className="flex items-center justify-center p-2">
                       <Image
                         src={review.item}
                         alt="Client Review"
-                        className="rounded-md shadow-lg hover:scale-103 duration-300 cursor-pointer h-[500px]"
+                        className="rounded-md shadow-lg hover:scale-105 duration-300 cursor-pointer h-[400px] md:h-[450px] xl:h-[500px]"
                         onClick={() => {
                           setCurrentIndex(index);
                           setOpen(true);
