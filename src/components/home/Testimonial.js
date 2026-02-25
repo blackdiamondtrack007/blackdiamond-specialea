@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -14,6 +14,7 @@ import {
 import Image from "next/image";
 import BlackdiamondeaClientReview1 from "../../../public/assets/home/client-reviews/blackdiamondea-client-review1.jpg";
 import BlackdiamondeaClientReview2 from "../../../public/assets/home/client-reviews/blackdiamondea-client-review2.jpg";
+import Autoplay from "embla-carousel-autoplay";
 
 const clientReviewsItems = [
   { id: 1, item: BlackdiamondeaClientReview1 },
@@ -113,11 +114,20 @@ function AnimatedModal({
   );
 }
 
+
 export default function Testimonial() {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = clientReviewsItems.map((item) => item.item);
+
+  // Autoplay plugin
+  const plugin = useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+    })
+  );
 
   return (
     <div className="w-full">
@@ -132,15 +142,18 @@ export default function Testimonial() {
           setCurrentIndex={setCurrentIndex}
         />
 
-        <div className="flex gap-6 flex-wrap justify-center mt-10">
-          <Carousel>
+        <div className="flex justify-center mt-10 mx-20">
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+          >
             <CarouselContent>
               {clientReviewsItems.map((review, index) => (
                 <CarouselItem
                   key={review.id}
-                  className="basis-1/2 pl-1 lg:basis-1/4"
+                  className="basis-1/2 lg:basis-1/4"
                 >
-                  <Card className="p-2 m-4">
+                  <Card className="p-2 m-1">
                     <CardContent className="flex items-center justify-center p-2">
                       <Image
                         src={review.item}
@@ -156,8 +169,10 @@ export default function Testimonial() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+
+            {/* Manual Arrows */}
+            <CarouselPrevious className="left-[-50px] cursor-pointer" />
+            <CarouselNext className="right-[-50px] cursor-pointer" />
           </Carousel>
         </div>
       </div>
