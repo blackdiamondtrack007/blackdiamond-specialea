@@ -14,7 +14,7 @@ export default function Articles() {
           </p>
         </div>
         <div className="mt-8 md:mt-10 lg:mt-15 space-y-8 lg:space-y-12 xl:space-y-15">
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
             <div className="w-full xl:w-[60%]">
               <Image
                 src={bestForexEABlackDiamondSpecialEA}
@@ -45,8 +45,8 @@ export default function Articles() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
             <div className="w-full xl:w-[40%] p-6 lg:p-10 text-black">
               <h3>Why Choose BlackDiamond Special EA</h3>
               <div className="mt-3 lg:mt-5 text-body">
@@ -76,8 +76,8 @@ export default function Articles() {
                 className="w-full"
               />
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
             <div className="w-full xl:w-[60%]">
               <Image
                 src={bestForexEABlackDiamondSpecialEA}
@@ -104,8 +104,8 @@ export default function Articles() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
             <div className="w-full xl:w-[40%] p-6 lg:p-10 text-black">
               <h3>Low Drawdown & Risk Management Focus</h3>
               <div className="mt-3 lg:mt-5 text-body">
@@ -136,8 +136,8 @@ export default function Articles() {
                 className="w-full"
               />
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
             <div className="w-full xl:w-[60%]">
               <Image
                 src={bestForexEABlackDiamondSpecialEA}
@@ -164,8 +164,8 @@ export default function Articles() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
             <div className="w-full xl:w-[40%] p-6 lg:p-10 text-black">
               <h3>Easy MT4 Setup & User‑Friendly Operation</h3>
               <div className="mt-3 lg:mt-5 text-body">
@@ -192,8 +192,8 @@ export default function Articles() {
                 className="w-full"
               />
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
             <div className="w-full xl:w-[60%]">
               <Image
                 src={bestForexEABlackDiamondSpecialEA}
@@ -219,8 +219,8 @@ export default function Articles() {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
+          </article>
+          <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col-reverse">
             <div className="w-full xl:w-[40%] p-6 lg:p-10 text-black">
               <h3>Start Automated Trading with Confidence</h3>
               <div className="mt-3 lg:mt-5 text-body">
@@ -245,7 +245,7 @@ export default function Articles() {
                 className="w-full"
               />
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
