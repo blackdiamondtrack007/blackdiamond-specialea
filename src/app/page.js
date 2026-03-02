@@ -7,6 +7,7 @@ import WhatMakeUsDifferent from "@/components/home/WhatMakeUsDifferent";
 import Categories from "@/components/home/Categories";
 import Testimonial from "@/components/home/Testimonial";
 import Markets from "@/components/home/Markets";
+import Articles from "@/components/home/articles";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <WhatMakeUsDifferent />
       <OurPartners />
+      <Articles />
       <Testimonial />
     </>
   );

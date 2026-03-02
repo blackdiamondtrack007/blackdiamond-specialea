@@ -10,7 +10,7 @@ import totalSupport from "../../../public/assets/home/icons/total-support.svg";
 export default function WhatMakeUsDifferent() {
   return (
     <section className="bg-section-bg">
-      <div className="container mt-0 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
+      <div className="container my-0 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">
             What makes us different

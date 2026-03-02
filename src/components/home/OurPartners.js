@@ -13,10 +13,16 @@ import Link from "next/link";
 
 export default function OurPartners() {
   return (
-    <div className="w-full">
-      <div className="container space-y-10">
-        <h2 className="text-center text-text-primary">Our Partners</h2>
-        <div className="flex gap-6 flex-wrap justify-center">
+    <section className="w-full">
+      <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+        <div className="space-y-4 md:space-y-6 xl:space-y-8">
+          <h2 className="text-text-primary text-center">Our Partners</h2>
+          <p className="text-body text-center mt-3 lg:mt-5">
+            Description of the section
+          </p>
+        </div>
+
+        <div className="flex gap-6 flex-wrap justify-center mt-8 md:mt-10 lg:mt-15">
           <Link href={"https://www.markets4you.com/en"} target="_blank">
             <Image
               className="w-36 w-36 rounded-md shadow-lg hover:scale-110 duration-300"
@@ -82,6 +88,6 @@ export default function OurPartners() {
           </Link>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

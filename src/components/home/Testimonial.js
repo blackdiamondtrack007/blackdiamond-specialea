@@ -129,10 +129,14 @@ export default function Testimonial() {
   );
 
   return (
-    <div className="w-full">
-      <div className="container">
-        <h2 className="text-center text-text-primary">Testimonials</h2>
-
+    <section className="w-full">
+      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+        <div className="space-y-4 md:space-y-6 xl:space-y-8">
+          <h2 className="text-text-primary text-center">Testimonials</h2>
+          <p className="text-body text-center mt-3 lg:mt-5">
+            Our clients share their valuable thoughts
+          </p>
+        </div>
         <AnimatedModal
           isOpen={open}
           onClose={() => setOpen(false)}
@@ -141,7 +145,7 @@ export default function Testimonial() {
           setCurrentIndex={setCurrentIndex}
         />
 
-        <div className="flex justify-center mt-10 mx-20">
+        <div className="flex justify-center mx-20 mt-8 md:mt-10 lg:mt-15">
           <Carousel plugins={[plugin.current]} className="w-full">
             <CarouselContent>
               {clientReviewsItems.map((review, index) => (
@@ -172,6 +176,6 @@ export default function Testimonial() {
           </Carousel>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
