@@ -11,7 +11,7 @@ export default function Login() {
       <div className="container pt-10 lg:pt-15">
         <form
           action=""
-          className="bg-card m-auto h-fit w-full max-w-sm rounded-md border p-0.5 shadow-md dark:[--color-muted:var(--color-zinc-900)]"
+          className="bg-card m-auto h-fit w-full max-w-xl rounded-md border p-0.5 shadow-md dark:[--color-muted:var(--color-zinc-900)]"
         >
           <div className="p-8 pb-6">
             <div>
@@ -125,7 +125,7 @@ export default function Login() {
             <p className="text-accent-foreground text-center text-sm">
               {"Don't"} have an account ?
               <Button asChild variant="link" className="px-2">
-                <Link href="#">Create account</Link>
+                <Link href="/register">Create account</Link>
               </Button>
             </p>
           </div>
