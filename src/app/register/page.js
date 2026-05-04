@@ -1,11 +1,59 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import LogoIcon from "../../../public/logo.gif";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import {
+  auth,
+  registerInWithGoogle,
+  registerWithEmailAndPassword,
+} from "@/lib/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Login() {
+  const navigate = useRouter();
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const [user, loading] = useAuthState(auth);
+
+  useEffect(() => {
+    if (!loading && user) {
+      navigate.back();
+    }
+  }, [user, loading, navigate]);
+
+  const handleRegister = async (event) => {
+    event.preventDefault();
+    try {
+      const user = await registerWithEmailAndPassword(email, password);
+      if (user) {
+        navigate.push("/login");
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  const handleRegisterWithGoogle = async () => {
+    try {
+      const user = await registerInWithGoogle();
+      if (user) {
+        navigate.push("/");
+      }
+      return user;
+    } catch (err) {
+      throw(err);
+    }
+  };
+
   return (
     <div className="w-full mt-18 lg:mt-36.75">
       <div className="container pt-10 lg:pt-15">
@@ -30,8 +78,13 @@ export default function Login() {
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <Button type="button" variant="outline">
+            <div className="mt-6 w-full">
+              <Button
+                type="button"
+                variant="outline"
+                className={"w-full"}
+                onClick={handleRegisterWithGoogle}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="0.98em"
@@ -57,26 +110,6 @@ export default function Login() {
                 </svg>
                 <span>Google</span>
               </Button>
-              <Button type="button" variant="outline">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 256 256"
-                >
-                  <path fill="#f1511b" d="M121.666 121.666H0V0h121.666z"></path>
-                  <path fill="#80cc28" d="M256 121.666H134.335V0H256z"></path>
-                  <path
-                    fill="#00adef"
-                    d="M121.663 256.002H0V134.336h121.663z"
-                  ></path>
-                  <path
-                    fill="#fbbc09"
-                    d="M256 256.002H134.335V134.336H256z"
-                  ></path>
-                </svg>
-                <span>Microsoft</span>
-              </Button>
             </div>
 
             <hr className="my-4 border-dashed" />
@@ -92,6 +125,8 @@ export default function Login() {
                     required
                     name="firstname"
                     id="firstname"
+                    value={firstname}
+                    onChange={(e) => setFirstname(e.target.value)}
                     placeholder="Enter your first name"
                   />
                 </div>
@@ -104,6 +139,8 @@ export default function Login() {
                     required
                     name="lastname"
                     id="lastname"
+                    value={lastname}
+                    onChange={(e) => setLastname(e.target.value)}
                     placeholder="Enter your last name"
                   />
                 </div>
@@ -117,6 +154,8 @@ export default function Login() {
                   required
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                 />
               </div>
@@ -141,6 +180,8 @@ export default function Login() {
                   name="pwd"
                   id="pwd"
                   className="input sz-md variant-mixed"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                 />
               </div>
@@ -153,11 +194,15 @@ export default function Login() {
                   required
                   name="phoneNumber"
                   id="phoneNumber"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
                   placeholder="Enter your phone number"
                 />
               </div>
 
-              <Button className="w-full">Sign Up</Button>
+              <Button className="w-full" type="submit" onClick={handleRegister}>
+                Sign Up
+              </Button>
             </div>
           </div>
 

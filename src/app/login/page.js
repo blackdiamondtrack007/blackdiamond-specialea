@@ -1,11 +1,56 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import LogoIcon from "../../../public/logo.gif";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import {
+  auth,
+  loginWithEmailAndPassword,
+  registerInWithGoogle,
+} from "@/lib/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Login() {
+  const navigate = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [user, loading] = useAuthState(auth);
+
+  useEffect(() => {
+    if (!loading && user) {
+      navigate.back();
+    }
+  }, [user, loading, navigate]);
+
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      const user = await loginWithEmailAndPassword(email, password);
+      if (user) {
+        navigate.push("/");
+      }
+    } catch (err) {
+      throw err;
+    }
+  };
+
+  const handleLoginWithGoogle = async () => {
+    try {
+      const user = await registerInWithGoogle();
+      if (user) {
+        navigate.push("/");
+      }
+      return user;
+    } catch (err) {
+      throw err;
+    }
+  };
+
   return (
     <div className="w-full mt-18 lg:mt-36.75">
       <div className="container pt-10 lg:pt-15">
@@ -28,8 +73,13 @@ export default function Login() {
               <p className="text-sm">Welcome back! Sign in to continue</p>
             </div>
 
-            <div className="mt-6 grid grid-cols-2 gap-3">
-              <Button type="button" variant="outline">
+            <div className="mt-6 w-full">
+              <Button
+                type="button"
+                variant="outline"
+                className={"w-full"}
+                onClick={handleLoginWithGoogle}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="0.98em"
@@ -55,26 +105,6 @@ export default function Login() {
                 </svg>
                 <span>Google</span>
               </Button>
-              <Button type="button" variant="outline">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 256 256"
-                >
-                  <path fill="#f1511b" d="M121.666 121.666H0V0h121.666z"></path>
-                  <path fill="#80cc28" d="M256 121.666H134.335V0H256z"></path>
-                  <path
-                    fill="#00adef"
-                    d="M121.663 256.002H0V134.336h121.663z"
-                  ></path>
-                  <path
-                    fill="#fbbc09"
-                    d="M256 256.002H134.335V134.336H256z"
-                  ></path>
-                </svg>
-                <span>Microsoft</span>
-              </Button>
             </div>
 
             <hr className="my-4 border-dashed" />
@@ -89,6 +119,8 @@ export default function Login() {
                   required
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                 />
               </div>
@@ -100,7 +132,7 @@ export default function Login() {
                   </Label>
                   <Button asChild variant="link" size="sm">
                     <Link
-                      href="#"
+                      href="/change-password"
                       className="link intent-info variant-ghost text-sm"
                     >
                       Forgot your Password ?
@@ -113,11 +145,15 @@ export default function Login() {
                   name="pwd"
                   id="pwd"
                   className="input sz-md variant-mixed"
-                  placeholder="Enter your email"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
                 />
               </div>
 
-              <Button className="w-full">Sign In</Button>
+              <Button className="w-full" onClick={handleLogin}>
+                Sign In
+              </Button>
             </div>
           </div>
 

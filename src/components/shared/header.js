@@ -6,7 +6,8 @@ import { ThemeToggleButton } from "./theme-toggle-button";
 import GoogleTranslate from "./google-translate";
 import StickyHeader from "./sticky-header";
 import { Button } from "../ui/button";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,9 +18,25 @@ import {
 } from "../ui/navigation-menu";
 import MobileMenu from "./mobile-menu";
 import LoginIcon from "./login-icon";
+import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
+import LogoutIcon from "./login-icon";
 
 export const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [user, loading, error] = useAuthState(auth);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        router.push("/login");
+      })
+      .catch((err) => {
+        throw err;
+      });
+  };
+
   return (
     <StickyHeader>
       <nav className="w-full">
@@ -281,12 +298,22 @@ export const Header = () => {
               <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
                 Join Telegram Channel ↗
               </Button>
-              <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                <Link href="/login" className="flex gap-0.5 items-center">
-                  <LoginIcon className="text-white" />
-                  <span>Login</span>
-                </Link>
-              </Button>
+              {user ? (
+                <Button
+                  className="bg-primary text-white rounded py-2 px-4 cursor-pointer"
+                  onClick={handleLogout}
+                >
+                  <LogoutIcon className="text-white" />
+                  <span>Logout</span>
+                </Button>
+              ) : (
+                <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                  <Link href="/login" className="flex gap-0.5 items-center">
+                    <LoginIcon className="text-white" />
+                    <span>Login</span>
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
