@@ -21,6 +21,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import LoginIconMobile from "./login-icon";
 
 export default function MobileMenu() {
   const pathname = usePathname();
@@ -244,7 +245,19 @@ export default function MobileMenu() {
             </ul>
           </div>
           <SheetFooter>
-            <ThemeToggleButton />
+            <div className={"flex items-center gap-4"}>
+              <ThemeToggleButton />
+              <Button
+                className={
+                  "w-24 text-primary bg-gray-900 rounded border p-4.5 text-sm shadow-sm cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-700 hover:bg-gray-800"
+                }
+              >
+                <Link href="/login" className="flex gap-0.5 items-center">
+                  <LoginIconMobile className="text-primary" />
+                  <span>Login</span>
+                </Link>
+              </Button>
+            </div>
           </SheetFooter>
         </SheetContent>
       </Sheet>

@@ -16,6 +16,7 @@ export default function Home() {
       <WhatMakeUsDifferent />
       <OurPartners />
       <Articles />
+      {/* <Pricing /> */}
       <Testimonial />
     </>
   );

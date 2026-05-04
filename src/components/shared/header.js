@@ -1,7 +1,5 @@
 "use client";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "../../../public/logo.gif";
 import { ThemeToggleButton } from "./theme-toggle-button";
@@ -18,6 +16,7 @@ import {
   NavigationMenuTrigger,
 } from "../ui/navigation-menu";
 import MobileMenu from "./mobile-menu";
+import LoginIcon from "./login-icon";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -277,9 +276,18 @@ export const Header = () => {
                 </li>
               </ul>
             </div>
-            <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
-              Join Telegram Channel ↗
-            </Button>
+
+            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+              <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                Join Telegram Channel ↗
+              </Button>
+              <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                <Link href="/login" className="flex gap-0.5 items-center">
+                  <LoginIcon className="text-white" />
+                  <span>Login</span>
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
