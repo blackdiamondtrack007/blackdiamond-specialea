@@ -149,10 +149,10 @@ export default function Login() {
                   Phone Number
                 </Label>
                 <Input
-                  type="email"
+                  type="text"
                   required
-                  name="email"
-                  id="email"
+                  name="phoneNumber"
+                  id="phoneNumber"
                   placeholder="Enter your phone number"
                 />
               </div>
