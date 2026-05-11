@@ -14,7 +14,7 @@ import {
 } from "@/lib/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-export default function Login() {
+export default function Register() {
   const navigate = useRouter();
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -30,17 +30,39 @@ export default function Login() {
   //   }
   // }, [user, loading, navigate]);
 
+  // const handleRegister = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const user = await registerWithEmailAndPassword(email, password);
+  //     if (user) {
+  //       navigate.push("/login");
+  //     }
+  //   } catch (err) {
+  //     throw err;
+  //   }
+  // };
+
+  const [message, setMessage] = useState("");
+
   const handleRegister = async (event) => {
     event.preventDefault();
     try {
-      const user = await registerWithEmailAndPassword(email, password);
-      if (user) {
-        navigate.push("/login");
-      }
+      await registerWithEmailAndPassword(email, password);
+      // Don't navigate — show a message to check their email
+      setMessage(
+        "A verification email has been sent. Please verify your email before logging in.",
+      );
     } catch (err) {
-      throw err;
+      if (err.code === "auth/email-already-in-use") {
+        setMessage("This email is already registered. Please log in.");
+      } else {
+        setMessage(err.message);
+      }
     }
   };
+
+  // In your JSX, show the message below the button:
+  // {message && <p className="text-sm text-center text-red-500 mt-2">{message}</p>}
 
   const handleRegisterWithGoogle = async () => {
     try {
@@ -50,7 +72,7 @@ export default function Login() {
       }
       return user;
     } catch (err) {
-      throw(err);
+      throw err;
     }
   };
 
@@ -215,6 +237,10 @@ export default function Login() {
             </p>
           </div>
         </form>
+
+        {message && (
+          <p className="text-sm text-center text-red-500 mt-2">{message}</p>
+        )}
       </div>
     </div>
   );

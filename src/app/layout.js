@@ -4,6 +4,8 @@ import Footer from "@/components/shared/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
 import { bodyFont, headingFont } from "@/lib/fonts";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "Best Forex Robot",
@@ -32,6 +34,18 @@ export default function RootLayout({ children }) {
           <footer>
             <Footer />
           </footer>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
         </ThemeProvider>
       </body>
     </html>

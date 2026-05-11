@@ -13,6 +13,7 @@ import {
   registerInWithGoogle,
 } from "@/lib/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const navigate = useRouter();
@@ -27,22 +28,40 @@ export default function Login() {
   //   }
   // }, [user, loading, navigate]);
 
+  // const handleLogin = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const user = await loginWithEmailAndPassword(email, password);
+  //     if (user) {
+  //       navigate.push("/");
+  //     }
+  //   } catch (err) {
+  //     throw err;
+  //   }
+  // };
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const user = await loginWithEmailAndPassword(email, password);
       if (user) {
+        toast.success("Successfully logged in!");
         navigate.push("/");
       }
     } catch (err) {
-      throw err;
+      if (err.message === "email-not-verified") {
+        toast.error("Your email is not verified. Please check your inbox.");
+      } else if (err.code === "auth/invalid-credential") {
+        toast.error("Invalid email or password.");
+      } else {
+        toast.error(err.message);
+      }
     }
   };
-
   const handleLoginWithGoogle = async () => {
     try {
       const user = await registerInWithGoogle();
       if (user) {
+        toast.success("Successfully logged in!");
         navigate.push("/");
       }
       return user;
