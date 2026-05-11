@@ -12,57 +12,100 @@ import {
   registerInWithGoogle,
   registerWithEmailAndPassword,
 } from "@/lib/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
+
+import { toast } from "react-toastify";
+import { showVerificationToast } from "@/components/popup/CustomToast";
+
+// --- Password strength helper ---
+function getPasswordStrength(password) {
+  if (!password) return { score: 0, label: "", color: "" };
+  let score = 0;
+  if (password.length >= 8) score++;
+  if (password.length >= 12) score++;
+  if (/[A-Z]/.test(password)) score++;
+  if (/[0-9]/.test(password)) score++;
+
+  if (score <= 1) return { score, label: "Weak", color: "#ef4444" };
+  if (score === 2) return { score, label: "Fair", color: "#f97316" };
+  if (score === 3) return { score, label: "Good", color: "#eab308" };
+  return { score, label: "Strong", color: "#22c55e" };
+}
 
 export default function Register() {
   const navigate = useRouter();
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
-  const [user, loading] = useAuthState(auth);
+  const fullName = firstName + " " + lastName;
+  const passwordStrength = getPasswordStrength(password);
 
-  // useEffect(() => {
-  //   if (!loading && user) {
-  //     navigate.back();
-  //   }
-  // }, [user, loading, navigate]);
+  const formReset = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setPhoneNumber("");
+    setErrors({});
+    setSubmitted(false);
+  };
 
-  // const handleRegister = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const user = await registerWithEmailAndPassword(email, password);
-  //     if (user) {
-  //       navigate.push("/login");
-  //     }
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
-
-  const [message, setMessage] = useState("");
+  // Validate all fields, return error object
+  const validate = () => {
+    const newErrors = {};
+    if (!firstName.trim()) newErrors.firstName = "First name is required.";
+    if (!lastName.trim()) newErrors.lastName = "Last name is required.";
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!password) {
+      newErrors.password = "Password is required.";
+    } else if (password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters.";
+    } else if (passwordStrength.score < 3) {
+      newErrors.password = "Please use a stronger password.";
+    }
+    if (!phoneNumber.trim())
+      newErrors.phoneNumber = "Phone number is required.";
+    return newErrors;
+  };
 
   const handleRegister = async (event) => {
     event.preventDefault();
+    setSubmitted(true);
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
+    const savedName = fullName;
+    const savedEmail = email;
+    const savedPassword = password;
+    const savedPhone = phoneNumber;
+    formReset();
     try {
-      await registerWithEmailAndPassword(email, password);
-      // Don't navigate — show a message to check their email
-      setMessage(
-        "A verification email has been sent. Please verify your email before logging in.",
+      await registerWithEmailAndPassword(
+        savedName,
+        savedEmail,
+        savedPassword,
+        savedPhone,
       );
+      showVerificationToast();
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
-        setMessage("This email is already registered. Please log in.");
+        toast.error("This email is already registered. Please log in.");
       } else {
-        setMessage(err.message);
+        toast.error("Something happening wrong. Try Again!");
       }
     }
   };
-
-  // In your JSX, show the message below the button:
-  // {message && <p className="text-sm text-center text-red-500 mt-2">{message}</p>}
 
   const handleRegisterWithGoogle = async () => {
     try {
@@ -75,6 +118,14 @@ export default function Register() {
       throw err;
     }
   };
+
+  // Re-validate on change if form was submitted once
+  useEffect(() => {
+    if (submitted) {
+      setErrors(validate());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [firstName, lastName, email, password, phoneNumber, submitted]);
 
   return (
     <div className="w-full mt-18 lg:mt-36.75">
@@ -139,34 +190,55 @@ export default function Register() {
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-2">
-                  <Label htmlFor="firstname" className="block text-sm">
+                  <Label htmlFor="firstName" className="block text-sm">
                     First Name
                   </Label>
                   <Input
                     type="text"
                     required
-                    name="firstname"
-                    id="firstname"
-                    value={firstname}
-                    onChange={(e) => setFirstname(e.target.value)}
+                    name="firstName"
+                    id="firstName"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
                     placeholder="Enter your first name"
+                    className={
+                      errors.firstName
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : ""
+                    }
                   />
+                  {errors.firstName && (
+                    <p className="text-xs text-red-500 mt-1">
+                      {errors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastname" className="block text-sm">
+                  <Label htmlFor="lastName" className="block text-sm">
                     Last Name
                   </Label>
                   <Input
                     type="text"
                     required
-                    name="lastname"
-                    id="lastname"
-                    value={lastname}
-                    onChange={(e) => setLastname(e.target.value)}
+                    name="lastName"
+                    id="lastName"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
                     placeholder="Enter your last name"
+                    className={
+                      errors.lastName
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : ""
+                    }
                   />
+                  {errors.lastName && (
+                    <p className="text-xs text-red-500 mt-1">
+                      {errors.lastName}
+                    </p>
+                  )}
                 </div>
               </div>
+
               <div className="space-y-2">
                 <Label htmlFor="email" className="block text-sm">
                   Email
@@ -179,7 +251,15 @@ export default function Register() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
+                  className={
+                    errors.email
+                      ? "border-red-500 focus-visible:ring-red-500"
+                      : ""
+                  }
                 />
+                {errors.email && (
+                  <p className="text-xs text-red-500 mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div className="space-y-0.5">
@@ -201,14 +281,67 @@ export default function Register() {
                   required
                   name="pwd"
                   id="pwd"
-                  className="input sz-md variant-mixed"
+                  className={`input sz-md variant-mixed ${errors.password ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                 />
+
+                {/* Password strength meter */}
+                {password.length > 0 && (
+                  <div className="mt-2 space-y-1">
+                    <div className="flex gap-1">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div
+                          key={i}
+                          className="h-1 flex-1 rounded-full transition-all duration-300"
+                          style={{
+                            backgroundColor:
+                              i <= passwordStrength.score
+                                ? passwordStrength.color
+                                : "#e5e7eb",
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <p
+                      className="text-xs font-medium"
+                      style={{ color: passwordStrength.color }}
+                    >
+                      {passwordStrength.label}
+                    </p>
+                    <ul className="text-xs text-muted-foreground space-y-0.5 mt-1">
+                      <li
+                        className={password.length >= 8 ? "text-green-500" : ""}
+                      >
+                        {password.length >= 8 ? "✓" : "·"} At least 8 characters
+                      </li>
+                      <li
+                        className={
+                          /[A-Z]/.test(password) ? "text-green-500" : ""
+                        }
+                      >
+                        {/[A-Z]/.test(password) ? "✓" : "·"} One uppercase
+                        letter
+                      </li>
+                      <li
+                        className={
+                          /[0-9]/.test(password) ? "text-green-500" : ""
+                        }
+                      >
+                        {/[0-9]/.test(password) ? "✓" : "·"} One number
+                      </li>
+                    </ul>
+                  </div>
+                )}
+
+                {errors.password && (
+                  <p className="text-xs text-red-500 mt-1">{errors.password}</p>
+                )}
               </div>
+
               <div className="space-y-2">
-                <Label htmlFor="email" className="block text-sm">
+                <Label htmlFor="phoneNumber" className="block text-sm">
                   Phone Number
                 </Label>
                 <Input
@@ -219,7 +352,17 @@ export default function Register() {
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   placeholder="Enter your phone number"
+                  className={
+                    errors.phoneNumber
+                      ? "border-red-500 focus-visible:ring-red-500"
+                      : ""
+                  }
                 />
+                {errors.phoneNumber && (
+                  <p className="text-xs text-red-500 mt-1">
+                    {errors.phoneNumber}
+                  </p>
+                )}
               </div>
 
               <Button className="w-full" type="submit" onClick={handleRegister}>
@@ -237,10 +380,6 @@ export default function Register() {
             </p>
           </div>
         </form>
-
-        {message && (
-          <p className="text-sm text-center text-red-500 mt-2">{message}</p>
-        )}
       </div>
     </div>
   );

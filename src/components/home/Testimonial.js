@@ -120,7 +120,6 @@ export default function Testimonial() {
 
   const images = clientReviewsItems.map((item) => item.item);
 
-  // Autoplay plugin
   const plugin = useRef(
     Autoplay({
       delay: 3000,

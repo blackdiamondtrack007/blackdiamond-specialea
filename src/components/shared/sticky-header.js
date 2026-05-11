@@ -12,10 +12,8 @@ export default function StickyHeader({ children }) {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY < lastScrollY) {
-        // scrolling up
         setShow(true);
       } else {
-        // scrolling down
         setShow(false);
       }
 

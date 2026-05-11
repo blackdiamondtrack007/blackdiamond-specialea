@@ -19,28 +19,43 @@ export default function Login() {
   const navigate = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const [user, loading] = useAuthState(auth);
 
-  // useEffect(() => {
-  //   if (!loading && user) {
-  //     navigate.back();
-  //   }
-  // }, [user, loading, navigate]);
+  const validate = () => {
+    const newErrors = {};
+    if (!email.trim()) {
+      newErrors.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Please enter a valid email address.";
+    }
+    if (!password) {
+      newErrors.password = "Password is required.";
+    } else if (password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+    }
+    return newErrors;
+  };
 
-  // const handleLogin = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const user = await loginWithEmailAndPassword(email, password);
-  //     if (user) {
-  //       navigate.push("/");
-  //     }
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
+  // Re-validate live after first submit attempt
+  useEffect(() => {
+    if (submitted) {
+      setErrors(validate());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [email, password, submitted]);
+
   const handleLogin = async (event) => {
     event.preventDefault();
+    setSubmitted(true);
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
     try {
       const user = await loginWithEmailAndPassword(email, password);
       if (user) {
@@ -48,15 +63,30 @@ export default function Login() {
         navigate.push("/");
       }
     } catch (err) {
-      if (err.message === "email-not-verified") {
-        toast.error("Your email is not verified. Please check your inbox.");
-      } else if (err.code === "auth/invalid-credential") {
-        toast.error("Invalid email or password.");
-      } else {
-        toast.error(err.message);
-      }
+      const firebaseErrors = {
+        "email-not-verified":
+          "Your email is not verified. Please check your inbox.",
+        "auth/invalid-credential":
+          "Invalid email or password. Please try again.",
+        "auth/user-not-found": "No account found with this email.",
+        "auth/wrong-password": "Incorrect password. Please try again.",
+        "auth/too-many-requests":
+          "Too many failed attempts. Please try again later or reset your password.",
+        "auth/user-disabled":
+          "This account has been disabled. Please contact support.",
+        "auth/network-request-failed":
+          "Network error. Please check your connection and try again.",
+      };
+
+      const message =
+        firebaseErrors[err.message] ||
+        firebaseErrors[err.code] ||
+        "Something went wrong. Please try again.";
+
+      toast.error(message);
     }
   };
+
   const handleLoginWithGoogle = async () => {
     try {
       const user = await registerInWithGoogle();
@@ -66,7 +96,21 @@ export default function Login() {
       }
       return user;
     } catch (err) {
-      throw err;
+      const firebaseErrors = {
+        "auth/popup-closed-by-user":
+          "Sign-in popup was closed. Please try again.",
+        "auth/popup-blocked":
+          "Popup was blocked by the browser. Please allow popups and try again.",
+        "auth/account-exists-with-different-credential":
+          "An account already exists with this email using a different sign-in method.",
+        "auth/network-request-failed":
+          "Network error. Please check your connection and try again.",
+      };
+
+      const message =
+        firebaseErrors[err.code] || "Google sign-in failed. Please try again.";
+
+      toast.error(message);
     }
   };
 
@@ -141,7 +185,15 @@ export default function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
+                  className={
+                    errors.email
+                      ? "border-red-500 focus-visible:ring-red-500"
+                      : ""
+                  }
                 />
+                {errors.email && (
+                  <p className="text-xs text-red-500 mt-1">{errors.email}</p>
+                )}
               </div>
 
               <div className="space-y-0.5">
@@ -163,11 +215,14 @@ export default function Login() {
                   required
                   name="pwd"
                   id="pwd"
-                  className="input sz-md variant-mixed"
+                  className={`input sz-md variant-mixed ${errors.password ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                 />
+                {errors.password && (
+                  <p className="text-xs text-red-500 mt-1">{errors.password}</p>
+                )}
               </div>
 
               <Button className="w-full" onClick={handleLogin}>
