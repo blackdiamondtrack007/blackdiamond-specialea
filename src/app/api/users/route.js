@@ -1,4 +1,11 @@
+import { getSheetsData } from "@/lib/googleSheet";
 import { checkUserExists, addUser } from "@/lib/googleSheet";
+
+export async function GET() {
+  const data = await getSheetsData();
+
+  return Response.json(data);
+}
 
 export async function POST(req) {
   try {

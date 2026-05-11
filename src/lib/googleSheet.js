@@ -17,7 +17,16 @@ const sheets = google.sheets({
 
 const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
-const range = "Sheet1!A:C";
+const range = "Sheet1!A:Z";
+
+export async function getSheetsData() {
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId,
+    range,
+  });
+
+  return response.data.values || [];
+}
 
 export async function checkUserExists(email) {
   const rows = await getSheetsData();

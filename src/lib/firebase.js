@@ -118,11 +118,10 @@ const registerInWithGoogle = async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        uid: user.uid,
-        name: user.displayName || "No Name",
-        email: user.email,
-        phone: user.phoneNumber || "No Phone",
-        verified: user.emailVerified,
+        uid: auth.currentUser.uid,
+        name: auth.currentUser.displayName || "No Name",
+        email: auth.currentUser.email,
+        phone: localStorage.getItem("phoneNumber") || "No Phone",
       }),
     });
 
