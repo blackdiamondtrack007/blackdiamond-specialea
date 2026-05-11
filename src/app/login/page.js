@@ -21,11 +21,11 @@ export default function Login() {
 
   const [user, loading] = useAuthState(auth);
 
-  useEffect(() => {
-    if (!loading && user) {
-      navigate.back();
-    }
-  }, [user, loading, navigate]);
+  // useEffect(() => {
+  //   if (!loading && user) {
+  //     navigate.back();
+  //   }
+  // }, [user, loading, navigate]);
 
   const handleLogin = async (event) => {
     event.preventDefault();
