@@ -6,6 +6,7 @@ import { Poppins } from "next/font/google";
 import { bodyFont, headingFont } from "@/lib/fonts";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import TelegramButton from "@/components/shared/TelegramButton";
 
 export const metadata = {
   title: "Best Forex Robot",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
           <footer>
             <Footer />
           </footer>
+          <TelegramButton />
           <ToastContainer
             position="top-right"
             autoClose={5000}

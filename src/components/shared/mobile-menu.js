@@ -80,18 +80,6 @@ export default function MobileMenu() {
               </li>
               <li>
                 <Link
-                  href={"/copy-trading"}
-                  className={
-                    pathname === "/copy-trading"
-                      ? "text-primary text-body-large font-bold"
-                      : "text-nav-text hover:text-primary  duration-200 text-body-large"
-                  }
-                >
-                  {"Copy Trading"}
-                </Link>
-              </li>
-              <li>
-                <Link
                   href={"/brokers"}
                   className={
                     pathname === "/brokers"
@@ -100,6 +88,18 @@ export default function MobileMenu() {
                   }
                 >
                   {"Brokers"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/blogs"}
+                  className={
+                    pathname === "/blogs"
+                      ? "text-primary text-body-large font-bold"
+                      : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                  }
+                >
+                  {"Blogs"}
                 </Link>
               </li>
               <li>
