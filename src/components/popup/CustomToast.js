@@ -10,7 +10,7 @@ export const showVerificationToast = () => {
     return (
       <div className="bg-white flex flex-col items-center p-4">
         <p className="text-nav-bg mb-4 text-center text-text-body">
-          A verification email has been sent. Please verify your email before
+          A verification email has been sent your email. Please check your inbox or spam folder to verify your email before
           logging in.
         </p>
         <button

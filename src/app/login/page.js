@@ -65,7 +65,7 @@ export default function Login() {
     } catch (err) {
       const firebaseErrors = {
         "email-not-verified":
-          "Your email is not verified. Please check your inbox.",
+          "Your email is not verified. Please check your inbox or spam folder.",
         "auth/invalid-credential":
           "Invalid email or password. Please try again.",
         "auth/user-not-found": "No account found with this email.",

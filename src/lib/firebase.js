@@ -121,7 +121,7 @@ const registerInWithGoogle = async () => {
         uid: auth.currentUser.uid,
         name: auth.currentUser.displayName || "No Name",
         email: auth.currentUser.email,
-        phone: localStorage.getItem("phoneNumber") || "No Phone",
+        phone: "No Phone",
       }),
     });
 
