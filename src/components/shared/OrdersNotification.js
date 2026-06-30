@@ -31,9 +31,9 @@ export default function OrdersNotification() {
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(100);
 
-  const INITIAL_DELAY = 12000; // Wait 12 seconds after entering page before first popup
-  const DISPLAY_DURATION = 5000; // How long each notification stays visible (5s)
-  const ROTATION_INTERVAL = 15000; // Time interval between consecutive popups (15s)
+  const INITIAL_DELAY = 120000; // Wait 1.2 seconds after entering page before first popup
+  const DISPLAY_DURATION = 7000; // How long each notification stays visible (7s)
+  const ROTATION_INTERVAL = 10000; // Time interval between consecutive popups (10s)
 
   // 1. Fetch the sorted latest 10 orders from the API
   useEffect(() => {
