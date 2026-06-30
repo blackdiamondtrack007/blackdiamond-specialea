@@ -296,7 +296,9 @@ export const Header = () => {
 
             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
               <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                Join Telegram Channel ↗
+                <a href="https://t.me/bdspecialea" target="_blank">
+                  Join Telegram Channel ↗
+                </a>
               </Button>
               {user ? (
                 <Button
