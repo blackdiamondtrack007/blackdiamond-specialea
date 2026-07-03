@@ -8,12 +8,14 @@ import Categories from "@/components/home/Categories";
 import Testimonial from "@/components/home/Testimonial";
 import Markets from "@/components/home/Markets";
 import Articles from "@/components/home/articles";
+import OurSpecialty from "@/components/home/OurSpecialty";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <WhatMakeUsDifferent />
+      <OurSpecialty />
       <OurPartners />
       <Articles />
       {/* <Pricing /> */}

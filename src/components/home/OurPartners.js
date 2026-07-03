@@ -25,7 +25,7 @@ export default function OurPartners() {
         <div className="flex gap-6 flex-wrap justify-center mt-8 md:mt-10 lg:mt-15">
           <Link href={"https://www.markets4you.com/en"} target="_blank">
             <Image
-              className="w-36 w-36 rounded-md shadow-lg hover:scale-110 duration-300"
+              className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={markets4YouForexBroker}
               alt="Markets4you Forex Broker"
             />
