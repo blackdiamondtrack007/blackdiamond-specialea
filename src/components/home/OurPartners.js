@@ -79,13 +79,6 @@ export default function OurPartners() {
               alt="XBTFX Logo"
             />
           </Link>
-          <Link href={"https://www.binance.com/en"} target="_blank">
-            <Image
-              className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
-              src={binanceLogo}
-              alt="Binance Logo"
-            />
-          </Link>
         </div>
       </div>
     </section>
