@@ -5,7 +5,7 @@ import Image from "next/image";
 import BlackDiamondEABrandCover from "../../../public/assets/home/hero-section/blackdiamondea-brand-cover.webp";
 import BestForexEA from "../../../public/assets/home/hero-section/best-forex-ea.webp";
 import increaseUpProfitIcon from "../../../public/assets/home/icons/increase-up-profit-icon.webp";
-import { CircleArrowRight } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { getActiveTraders } from "@/lib/utils";
 import TypewriterText from "./TypewriterText";
 
@@ -51,8 +51,8 @@ export default function HeroSection() {
                 size="lg"
                 className={"p-6 rounded-full text-lg w-60 text-white"}
               >
-                {"What's Special"}
-                <CircleArrowRight />
+                {"Buy Now"}
+                <ShoppingCart />
               </Button>
               <Button
                 size="lg"
@@ -101,7 +101,11 @@ export default function HeroSection() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <Image className="rounded-3xl w-full h-110" src={BestForexEA} alt="" />
+              <Image
+                className="rounded-3xl w-full h-110"
+                src={BestForexEA}
+                alt=""
+              />
             </div>
           </div>
         </div>
