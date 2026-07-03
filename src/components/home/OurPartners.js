@@ -17,9 +17,9 @@ export default function OurPartners() {
       <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">Our Partners</h2>
-          <p className="text-body text-center mt-3 lg:mt-5">
+          {/* <p className="text-body text-center mt-3 lg:mt-5">
             Description of the section
-          </p>
+          </p> */}
         </div>
 
         <div className="flex gap-6 flex-wrap justify-center mt-8 md:mt-10 lg:mt-15">

@@ -161,17 +161,17 @@ export const Header = () => {
                             </li>
                             <li>
                               <NavigationMenuLink
-                                href={"/forex-factory-calendar"}
+                                href={"/economic-calendar"}
                                 className="p-1"
                               >
                                 <span
                                   className={
-                                    pathname === "/forex-factory-calendar"
+                                    pathname === "/economic-calendar"
                                       ? "text-primary text-body font-semibold"
                                       : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
                                   }
                                 >
-                                  {"Forex Factory Calendar"}
+                                  {"Economic Calendar"}
                                 </span>
                               </NavigationMenuLink>
                             </li>
@@ -191,7 +191,7 @@ export const Header = () => {
                                 </span>
                               </NavigationMenuLink>
                             </li>
-                            <li>
+                            {/* <li>
                               <NavigationMenuLink
                                 href={"/forex-screener"}
                                 className="p-1"
@@ -272,7 +272,7 @@ export const Header = () => {
                                   {"Cryptocurrency Market Capitalization"}
                                 </span>
                               </NavigationMenuLink>
-                            </li>
+                            </li> */}
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem>

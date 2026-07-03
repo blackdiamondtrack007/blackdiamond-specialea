@@ -131,10 +131,10 @@ export default function Testimonial() {
     <section className="w-full">
       <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
-          <h2 className="text-text-primary text-center">Testimonials</h2>
-          <p className="text-body text-center mt-3 lg:mt-5">
+          <h2 className="text-text-primary text-center">{"Client's"} Feedback</h2>
+          {/* <p className="text-body text-center mt-3 lg:mt-5">
             Our clients share their valuable thoughts
-          </p>
+          </p> */}
         </div>
         <AnimatedModal
           isOpen={open}

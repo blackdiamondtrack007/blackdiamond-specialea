@@ -11,7 +11,7 @@ export default function WhatMakeUsDifferent() {
   return (
     <section className="bg-section-bg">
       <div className="container my-0 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
-        <div className="space-y-4 md:space-y-6 xl:space-y-8">
+        {/* <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">
             What makes us different
           </h2>
@@ -22,7 +22,7 @@ export default function WhatMakeUsDifferent() {
             Make stable and consistent profits with our collection of the most
             up-to-date AI enabled Forex Trading Tools
           </p>
-        </div>
+        </div> */}
         <div className="grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 px-12">
           <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
             <Image

@@ -5,14 +5,14 @@ export default function Articles() {
   return (
     <section className="w-full bg-section-bg">
       <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
-        <div className="space-y-4 md:space-y-6 xl:space-y-8">
+        {/* <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">
             Title of the section
           </h2>
           <p className="text-body text-center mt-3 lg:mt-5">
             Description of the section
           </p>
-        </div>
+        </div> */}
         <div className="mt-8 md:mt-10 lg:mt-15 space-y-8 lg:space-y-12 xl:space-y-15">
           <article className="bg-[#ffd000] rounded-2xl overflow-hidden flex xl:flex-row flex-col">
             <div className="w-full xl:w-[60%]">

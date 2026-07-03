@@ -134,15 +134,15 @@ export default function MobileMenu() {
                           </Link>
                         </li>
                         <li>
-                          <Link href={"/forex-factory-calendar"}>
+                          <Link href={"/economic-calendar"}>
                             <span
                               className={
-                                pathname === "/forex-factory-calendar"
+                                pathname === "/economic-calendar"
                                   ? "text-primary text-body font-semibold"
                                   : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
                               }
                             >
-                              {"Forex Factory Calendar"}
+                              {"Economic Calendar"}
                             </span>
                           </Link>
                         </li>
@@ -159,7 +159,7 @@ export default function MobileMenu() {
                             </span>
                           </Link>
                         </li>
-                        <li>
+                        {/* <li>
                           <Link href={"/forex-screener"}>
                             <span
                               className={
@@ -224,7 +224,7 @@ export default function MobileMenu() {
                               {"Cryptocurrency Market Capitalization"}
                             </span>
                           </Link>
-                        </li>
+                        </li> */}
                       </ul>
                     </AccordionContent>
                   </AccordionItem>
