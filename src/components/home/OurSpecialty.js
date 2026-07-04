@@ -1,15 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import markets4YouForexBroker from "../../../public/assets/home/partners/Markets4you-Forex-Broker.webp";
-import avaTradeForexBroker from "../../../public/assets/home/partners/AvaTrade-Forex-Broker.webp";
-import exnessLogo from "../../../public/assets/home/partners/exness_logo.webp";
-import roboforexBestBroker from "../../../public/assets/home/partners/roboforex-best-broker.webp";
-import icMarketsForexBroker from "../../../public/assets/home/partners/ICMarkets-Forex-Broker.webp";
-import fbsForexBroker from "../../../public/assets/home/partners/FBS-Forex-Broker.webp";
-import vantageFullLogo from "../../../public/assets/home/partners/vantage-full-logo.webp";
-import xbtfxLogo from "../../../public/assets/home/partners/xbtfx-logo.webp";
-import binanceLogo from "../../../public/assets/home/partners/Binance-Logo.webp";
-import Link from "next/link";
 import { Gem } from "lucide-react";
 
 export default function OurSpecialty() {

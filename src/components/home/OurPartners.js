@@ -8,7 +8,6 @@ import icMarketsForexBroker from "../../../public/assets/home/partners/ICMarkets
 import fbsForexBroker from "../../../public/assets/home/partners/FBS-Forex-Broker.webp";
 import vantageFullLogo from "../../../public/assets/home/partners/vantage-full-logo.webp";
 import xbtfxLogo from "../../../public/assets/home/partners/xbtfx-logo.webp";
-import binanceLogo from "../../../public/assets/home/partners/Binance-Logo.webp";
 import Link from "next/link";
 
 export default function OurPartners() {
