@@ -16,7 +16,7 @@ export default function Brokers() {
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">Top Forex Brokers</h2>
         </div>
-        <div className="grid grid-cols-5 place-items-center gap-x-5 gap-y-10 mt-8 md:mt-10 lg:mt-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 place-items-center gap-x-5 gap-y-10 mt-8 md:mt-10 lg:mt-15">
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
               <Image
