@@ -47,13 +47,15 @@ export default function HeroSection() {
             </div>
 
             <div className="text-center md:space-x-5 space-y-5 md:space-y-0">
-              <Button
-                size="lg"
-                className={"p-6 rounded-full text-lg w-60 text-white"}
-              >
-                {"Buy Now"}
-                <ShoppingCart />
-              </Button>
+              <Link href={"/pricing"}>
+                <Button
+                  size="lg"
+                  className={"p-6 rounded-full text-lg w-60 text-white"}
+                >
+                  {"Buy Now"}
+                  <ShoppingCart />
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 className={"p-6 rounded-full text-lg w-60 text-white"}
