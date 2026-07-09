@@ -32,9 +32,9 @@ export default function OrdersNotification() {
   const [progress, setProgress] = useState(100);
 
   // --- TIMING CONFIGURATION (In Milliseconds) ---
-  const INITIAL_DELAY = 80000;     // 80 seconds initial entry delay on layout load
-  const DISPLAY_DURATION = 7000;   // The toast stays completely open for 7 seconds
-  const ROTATION_INTERVAL = 10000; // Intervals between notifications (10s visibility + buffer time)
+  const INITIAL_DELAY = 100000;     // 100 seconds initial entry delay on layout load
+  const DISPLAY_DURATION = 5000;   // The toast stays completely open for 5 seconds
+  const ROTATION_INTERVAL = 30000; // Intervals between notifications (30s visibility + buffer time)
 
   // 1. Fetch the sorted latest 10 orders from the API
   useEffect(() => {

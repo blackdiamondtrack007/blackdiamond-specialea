@@ -6,6 +6,7 @@ import payments from "../../../public/assets/footer/payments.webp";
 import securedByGoogle from "../../../public/assets/footer/Secured-by-Google.webp";
 import dmcaProtected from "../../../public/assets/footer/dmca_protected.png";
 import footerLogo from "../../../public/logo.gif";
+import _24x7 from "../../../public/assets/footer/24x7.webp";
 import SocialMedia from "./social-media";
 
 export default function Footer() {
@@ -30,6 +31,7 @@ export default function Footer() {
             <h5 className="text-body-large font-semibold">Contact Us</h5>
             <div className="mt-3">
               <SocialMedia />
+              <Image className="w-60 mt-6" src={_24x7} alt="24x7" />
             </div>
           </div>
         </div>
@@ -99,7 +101,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="w-full border-t-1 py-4">
+      <div className="w-full border-t py-4">
         <div className="container my-0">
           <div className="flex flex-wrap items-center justify-center gap-1">
             <span>2011-{new Date().getFullYear()} © BLACKDIAMONDEA |</span>
