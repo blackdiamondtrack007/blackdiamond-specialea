@@ -9,6 +9,7 @@ import Testimonial from "@/components/home/Testimonial";
 import Markets from "@/components/home/Markets";
 import Articles from "@/components/home/articles";
 import OurSpecialty from "@/components/home/OurSpecialty";
+import BacktestResult from "@/components/home/BacktestResult";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <HeroSection />
       <WhatMakeUsDifferent />
       <OurSpecialty />
+      <BacktestResult />
       <Articles />
       {/* <Pricing /> */}
       <Testimonial />
