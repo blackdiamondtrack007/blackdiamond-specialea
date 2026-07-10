@@ -1,5 +1,7 @@
 import React from "react";
 import { Gem } from "lucide-react";
+import DiamondIcon from "../../../public/assets/icons/diamond.png";
+import Image from "next/image";
 
 export default function OurSpecialty() {
   return (
@@ -12,138 +14,138 @@ export default function OurSpecialty() {
           </p> */}
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-6 justify-center mt-8 md:mt-10 lg:mt-15">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 justify-center mt-8 md:mt-10 lg:mt-15">
           <div className="w-full">
             <ul className="space-y-3">
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Any Broker & Any Account Type Support
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Works on Live, Demo, Prop Firm & FTMO Accounts
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Any Currency Pair Trading
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Auto Market Analysis with Advanced Algorithm
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Smart Entry & Exit System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Auto Profit Lock & Dynamic Stop Loss Protection
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Built-in Risk Management System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   No Signal Service Required
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Fully Automated Trading Solution
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Free Lifetime Updates
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   One-Time Payment with Lifetime VIP Support
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Minimum Recommended Deposit: $100
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Consistent Monthly Growth Strategy
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Optimized for M30 Timeframe
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Professional Trade Management
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Low Risk Trading Mode Available
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   News Filter Protection System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Fixed Lot & Custom Lot Options
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Scalping & Swing Trading Combined
                 </span>
               </li>
@@ -152,134 +154,134 @@ export default function OurSpecialty() {
           <div className="w-full">
             <ul className="space-y-3">
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   5 Premium Indicators Included Inside EA
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Maximum Supported Spread Up to 20 Pips
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Low Drawdown Strategy
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Fast Trade Execution Logic
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   VPS Friendly & Low Resource Usage
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Multi-Layer Trade Protection System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Smart Recovery & Capital Protection Features
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Beginner Friendly – No Trading Experience Needed
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Easy Installation & Setup
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Regular Performance Optimization
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Real Account Tested Strategy
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Suitable for Small and Large Accounts
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   24/7 Market Monitoring System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Emotion-Free Trading Decisions
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   No Martingale Strategy
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   No Grid Trading
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Stable Performance During Market Volatility
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Advanced Money Management System
                 </span>
               </li>
 
               <li className="flex gap-2 items-center">
-                <Gem className="text-primary" />
-                <span className="text-text-primary text-body-large hover:ml-5 duration-300 cursor-pointer">
+                <Image className="w-4" src={DiamondIcon} alt="Diamond Icon" />
+                <span className="text-text-primary text-body-large hover:ml-6 duration-200 cursor-pointer">
                   Detailed Trading Reports & Statistics
                 </span>
               </li>
