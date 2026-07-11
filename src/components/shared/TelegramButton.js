@@ -35,7 +35,7 @@ export default function TelegramButton() {
 
       {/* Telegram Link Wrapper with updated Zoom -> Shake -> Zoom Out sequence */}
       <a
-        href="https://t.me/bdspecialea"
+        href="https://t.me/bdeaspecial"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Join our Telegram"

@@ -10,11 +10,13 @@ import Markets from "@/components/home/Markets";
 import Articles from "@/components/home/articles";
 import OurSpecialty from "@/components/home/OurSpecialty";
 import BacktestResult from "@/components/home/BacktestResult";
+import BestForexEA from "@/components/home/BestForexEA";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <BestForexEA />
       <WhatMakeUsDifferent />
       <OurSpecialty />
       <BacktestResult />
