@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import TelegramButton from "@/components/shared/TelegramButton";
 import OrdersNotification from "@/components/shared/OrdersNotification";
 import ScrollToTop from "@/components/shared/scroll-to-top";
+import SocialSidebar from "@/components/shared/SocialSidebar";
 
 export const metadata = {
   title: "Best Forex Robot",
@@ -38,6 +39,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </footer>
           <OrdersNotification />
+          <SocialSidebar />
           <ScrollToTop />
           <TelegramButton />
           <ToastContainer
