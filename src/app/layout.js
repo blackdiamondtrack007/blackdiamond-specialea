@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/shared/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
-import { bodyFont, headingFont } from "@/lib/fonts";
+import { Oswald, Playfair_Display } from 'next/font/google';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TelegramButton from "@/components/shared/TelegramButton";
@@ -15,12 +15,25 @@ export const metadata = {
   title: "Best Forex Robot",
 };
 
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'], 
+  variable: '--font-oswald',
+  display: 'swap',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${bodyFont.variable} ${headingFont.variable}`}
+      className={`${oswald.variable} ${playfair.variable}`}
     >
       <body className="antialiased">
         <ThemeProvider
