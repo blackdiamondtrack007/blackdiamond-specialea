@@ -88,9 +88,9 @@ export default function Pricing() {
           <h2 className="text-text-primary text-center">
             Choose Your Special System Plan
           </h2>
-          <p className="text-body text-center mt-3 lg:mt-5">
+          {/* <p className="text-body text-center mt-3 lg:mt-5">
             Description of the section
-          </p>
+          </p> */}
         </div>
         <div className="mx-auto max-w-6xl px-6">
           <div className="mt-8 grid gap-10 lg:gap-6 md:mt-20 lg:grid-cols-3">

@@ -281,9 +281,9 @@ export const Header = () => {
                 </li>
                 <li>
                   <Link
-                    href={"/contact"}
+                    href={"/contact-us"}
                     className={
-                      pathname === "/contact"
+                      pathname === "/contact-us"
                         ? "text-primary text-body-large font-bold"
                         : "text-nav-text hover:text-primary  duration-200 text-body-large"
                     }
