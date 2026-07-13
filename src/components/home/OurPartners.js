@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function OurPartners() {
   return (
-    <section className="w-full bg-[url('/assets/home/usd.webp')] bg-cover bg-center bg-no-repeat">
+    <section className="w-full bg-[url('/assets/home/usd.webp')] bg-cover bg-center bg-no-repeat bg-fixed">
       <div className="bg-black/90">
         <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
