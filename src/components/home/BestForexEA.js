@@ -1,12 +1,13 @@
 export default function BestForexEA() {
   return (
     <section className="w-full bg-[url('/assets/home/best-forex-ea/best-forex-ea-bg.webp')] bg-cover bg-center bg-no-repeat">
-      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20 bg-black/80">
+      <div className="w-full bg-black/70">
+        <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8 max-w-6xl mx-auto">
-          <h2 className="text-text-primary text-center">
+          <h2 className="text-white text-center">
             Best Forex EA – BlackDiamond Special EA
           </h2>
-          <p className="text-body-large text-center mt-3 lg:mt-5">
+          <p className="text-body-large text-white text-center mt-3 lg:mt-5">
             BlackDiamond Special EA is a premium AI‑powered Forex Expert Advisor
             designed for traders who want consistent, automated trading results
             with controlled risk. This advanced Forex robot for MT4 uses
@@ -18,6 +19,7 @@ export default function BestForexEA() {
             long‑term performance.
           </p>
         </div>
+      </div>
       </div>
     </section>
   );
