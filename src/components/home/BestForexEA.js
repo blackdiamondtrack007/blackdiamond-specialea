@@ -1,7 +1,7 @@
 export default function BestForexEA() {
   return (
-    <section className="w-full bg-section-bg">
-      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+    <section className="w-full bg-[url('/assets/home/best-forex-ea/best-forex-ea-bg.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20 bg-black/80">
         <div className="space-y-4 md:space-y-6 xl:space-y-8 max-w-6xl mx-auto">
           <h2 className="text-text-primary text-center">
             Best Forex EA – BlackDiamond Special EA
