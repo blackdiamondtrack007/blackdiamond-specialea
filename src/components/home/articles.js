@@ -24,7 +24,7 @@ export default function Articles() {
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl flex flex-col justify-center">
                   <h3>Best Forex EA – BlackDiamond Special EA</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
@@ -49,7 +49,7 @@ export default function Articles() {
                 </div>
               </article>
               <article className="container my-0 flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl flex flex-col justify-center">
                   <h3>Why Choose BlackDiamond Special EA</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
@@ -98,7 +98,7 @@ export default function Articles() {
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl flex flex-col justify-center">
                   <h3>AI‑Powered Automated Forex Trading</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
@@ -120,7 +120,7 @@ export default function Articles() {
                 </div>
               </article>
               <article className="container my-0 flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl flex flex-col justify-center">
                   <h3>Low Drawdown & Risk Management Focus</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
@@ -166,7 +166,7 @@ export default function Articles() {
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl flex flex-col justify-center">
                   <h3>Verified Results & Transparent Performance</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
@@ -187,7 +187,7 @@ export default function Articles() {
                 </div>
               </article>
               <article className="container my-0 flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl flex flex-col justify-center">
                   <h3>Easy MT4 Setup & User‑Friendly Operation</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
@@ -227,7 +227,7 @@ export default function Articles() {
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl flex flex-col justify-center">
                   <h3>Who Is BlackDiamond Special EA For?</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
@@ -250,7 +250,7 @@ export default function Articles() {
                 </div>
               </article>
               <article className="container my-0 flex xl:flex-row flex-col-reverse pb-10 md:pb-15 lg:pb-20 xl:pb-25">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl flex flex-col justify-center">
                   <h3>Start Automated Trading with Confidence</h3>
                   <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
