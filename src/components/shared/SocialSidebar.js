@@ -15,7 +15,7 @@ export default function SocialSidebar() {
     {
       name: 'YouTube',
       url: 'https://youtube.com',
-      bgColor: 'bg-[#FF0000]',
+      bgColor: 'bg-[#FF0000]', // Official YouTube Brand Red
       icon: (
         <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
           <path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.507 9.388.507 9.388.507s7.518 0 9.388-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -55,22 +55,22 @@ export default function SocialSidebar() {
   ];
 
   return (
-    <div className="fixed right-0 top-1/2 z-50 flex -translate-y-1/2 flex-col items-end">
+    <div className="fixed left-0 top-1/2 z-50 flex -translate-y-1/2 flex-col">
       {socialLinks.map((link, index) => (
         <a
           key={index}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className={`group flex h-12 w-12 flex-row-reverse items-center overflow-hidden pl-0 text-white transition-[width,padding] duration-300 ease-in-out hover:w-40 hover:pl-5 ${link.bgColor}`}
+          className={`group flex h-12 w-12 items-center overflow-hidden pr-0 text-white transition-[width,padding] duration-300 ease-in-out hover:w-40 hover:pr-5 ${link.bgColor}`}
         >
-          {/* Icon frame fixed to the rightmost side */}
+          {/* Icon frame */}
           <div className="flex h-12 w-12 shrink-0 items-center justify-center">
             {link.icon}
           </div>
           
-          {/* Label reveals dynamically, sliding leftwards */}
-          <span className="opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 font-medium text-sm whitespace-nowrap pr-2">
+          {/* Label reveals dynamically */}
+          <span className="opacity-0 transition-opacity duration-200 ease-in-out group-hover:opacity-100 font-medium text-sm whitespace-nowrap pl-2">
             {link.name}
           </span>
         </a>
