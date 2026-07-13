@@ -22,8 +22,8 @@ export default function Home() {
       <OurSpecialty />
       <BacktestResult />
       <Testimonial />
+      <Pricing />
       <Articles />
-      {/* <Pricing /> */}
       <AnimatedBuyNow />
       <OurPartners />
     </>
