@@ -129,9 +129,9 @@ export default function Testimonial() {
 
   return (
     <section className="w-full">
-      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+      <div className="container my-0 py-10 md:py-12 lg:py-15 xl:py-20 -mt-10 md:-mt-12 lg:-mt-15 xl:-mt-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
-          <h2 className="text-text-primary text-center">{"Client's"} Feedback</h2>
+          <h2 className="text-white text-center">{"Client's"} Feedback</h2>
           {/* <p className="text-body text-center mt-3 lg:mt-5">
             Our clients share their valuable thoughts
           </p> */}
@@ -152,7 +152,7 @@ export default function Testimonial() {
                   key={review.id}
                   className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
-                  <Card className="p-2">
+                  <Card className="p-2 border-2 border-primary">
                     <CardContent className="flex items-center justify-center p-2">
                       <Image
                         src={review.item}

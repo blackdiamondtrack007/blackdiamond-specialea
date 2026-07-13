@@ -20,8 +20,12 @@ export default function Home() {
       <BestForexEA />
       <WhatMakeUsDifferent />
       <OurSpecialty />
-      <BacktestResult />
-      <Testimonial />
+      <div className="bg-[url('/assets/home/backtest-result/performance_bg.webp')] bg-cover bg-center bg-no-repeat bg-fixed">
+        <div className="w-full bg-black/80">
+          <BacktestResult />
+          <Testimonial />
+        </div>
+      </div>
       <Pricing />
       <Articles />
       <AnimatedBuyNow />

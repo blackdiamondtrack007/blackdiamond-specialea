@@ -12,10 +12,11 @@ import Link from "next/link";
 
 export default function OurPartners() {
   return (
-    <section className="w-full">
-      <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+    <section className="w-full bg-[url('/assets/home/usd.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="bg-black/90">
+        <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
-          <h2 className="text-text-primary text-center">Our Partners</h2>
+          <h2 className="text-white text-center">Our Partners</h2>
           {/* <p className="text-body text-center mt-3 lg:mt-5">
             Description of the section
           </p> */}
@@ -79,6 +80,7 @@ export default function OurPartners() {
             />
           </Link>
         </div>
+      </div>
       </div>
     </section>
   );
