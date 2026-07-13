@@ -20,9 +20,9 @@ export default function Home() {
       <WhatMakeUsDifferent />
       <OurSpecialty />
       <BacktestResult />
+      <Testimonial />
       <Articles />
       {/* <Pricing /> */}
-      <Testimonial />
       <OurPartners />
     </>
   );

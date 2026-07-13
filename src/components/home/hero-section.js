@@ -46,7 +46,7 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="text-center md:space-x-5 space-y-5 md:space-y-0">
+            <div className="text-center flex flex-col md:flex-row items-center justify-center gap-5">
               <Link href={"/pricing"}>
                 <Button
                   size="lg"

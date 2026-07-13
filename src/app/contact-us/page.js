@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import SocialMedia from "@/components/shared/social-media";
 import _24x7 from "../../../public/assets/footer/24x7.webp";
+import OurPartners from "@/components/home/OurPartners";
 
 export default function ContactUs() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -201,6 +202,8 @@ export default function ContactUs() {
             )}
           </form>
         </div>
+
+        <OurPartners />
       </div>
     </section>
   );
