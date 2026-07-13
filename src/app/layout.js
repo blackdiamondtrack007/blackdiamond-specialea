@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/shared/footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
-import { Oswald, Playfair_Display } from 'next/font/google';
+import { Oswald, Lato } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TelegramButton from "@/components/shared/TelegramButton";
@@ -16,16 +16,17 @@ export const metadata = {
 };
 
 const oswald = Oswald({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'], 
-  variable: '--font-oswald',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-oswald",
+  display: "swap",
 });
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  display: 'swap',
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "700", "900"],
+  variable: "--font-lato",
+  display: "swap",
 });
 
 export default function RootLayout({ children }) {
@@ -33,7 +34,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${oswald.variable} ${playfair.variable}`}
+      className={`${oswald.variable} ${lato.variable}`}
     >
       <body className="antialiased">
         <ThemeProvider

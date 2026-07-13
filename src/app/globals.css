@@ -13,7 +13,7 @@
   --color-text-primary: var(--text-primary);
   --color-section-bg: var(--section-bg);
   --font-heading: var(--font-oswald), sans-serif;
-  --font-body: var(--font-playfair), serif;
+  --font-body: var(--font-lato), serif;
 }
 
 :root {
