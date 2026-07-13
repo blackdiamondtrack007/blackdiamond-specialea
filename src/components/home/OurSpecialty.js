@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function OurSpecialty() {
   return (
     <section className="w-full">
-      <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20">
+      <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20 -mt-10 md:-mt-12 lg:-mt-15 xl:-mt-20">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">Our Specialty</h2>
           {/* <p className="text-body text-center mt-3 lg:mt-5">
