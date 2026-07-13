@@ -189,3 +189,26 @@ body {
     transform: scale(1) rotate(0deg);
   }
 }
+
+
+@utility animate-shadow-pulse {
+  animation: shadowPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shadowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+    box-shadow: 0 0 0 0px rgba(239, 68, 68, 0.7); /* Starts tight */
+  }
+  70% {
+    transform: scale(1.04, 1.30); /* Expands slightly outwards */
+    opacity: 0;
+    box-shadow: 0 0 0 24px rgba(239, 68, 68, 0); /* Fades into transparency */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: 0 0 0 0px rgba(239, 68, 68, 0);
+  }
+}
