@@ -16,17 +16,17 @@ export default function Articles() {
         <div className="mt-8 md:mt-10 lg:mt-15">
           <div className="bg-article-bg-2 bg-cover bg-center bg-no-repeat bg-fixed">
             <div className="flex flex-col gap-8 lg:gap-12 xl:gap-15 bg-black/90 pt-10 md:pt-15 lg:pt-20 xl:pt-25">
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col">
+              <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
                   <h3>Best Forex EA – BlackDiamond Special EA</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
                       BlackDiamond Special EA is a{" "}
                       <strong>premium AI‑powered Forex Expert Advisor</strong>{" "}
@@ -48,10 +48,10 @@ export default function Articles() {
                   </div>
                 </div>
               </article>
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+              <article className="container my-0 flex xl:flex-row flex-col-reverse">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                   <h3>Why Choose BlackDiamond Special EA</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
                       BlackDiamond Special EA is developed with a professional
                       trading algorithm that focuses on high‑probability setups
@@ -81,7 +81,7 @@ export default function Articles() {
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
               </article>
@@ -90,17 +90,17 @@ export default function Articles() {
 
           <div className="bg-article-bg-1 bg-cover bg-center bg-no-repeat bg-fixed">
             <div className="flex flex-col gap-8 lg:gap-12 xl:gap-15 bg-black/90 pt-8 lg:pt-12 xl:pt-15">
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col">
+              <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
                   <h3>AI‑Powered Automated Forex Trading</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
                       The core of BlackDiamond Special EA is its{" "}
                       <strong>AI‑driven market analysis engine</strong>. The EA
@@ -119,10 +119,10 @@ export default function Articles() {
                   </div>
                 </div>
               </article>
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+              <article className="container my-0 flex xl:flex-row flex-col-reverse">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                   <h3>Low Drawdown & Risk Management Focus</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
                       Risk control is a top priority. BlackDiamond Special EA
                       uses:
@@ -149,7 +149,7 @@ export default function Articles() {
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
               </article>
@@ -158,17 +158,17 @@ export default function Articles() {
 
           <div className="bg-article-bg-2 bg-cover bg-center bg-no-repeat bg-fixed">
             <div className="flex flex-col gap-8 lg:gap-12 xl:gap-15 bg-black/90 pt-8 lg:pt-12 xl:pt-15">
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col">
+              <article className="container my-0 flex xl:flex-row flex-col rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                 <div className="w-full xl:w-[60%]">
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
                   <h3>Verified Results & Transparent Performance</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
                       BlackDiamond Special EA is designed to trade on{" "}
                       <strong>real market conditions</strong>, and performance
@@ -186,10 +186,10 @@ export default function Articles() {
                   </div>
                 </div>
               </article>
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col-reverse">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+              <article className="container my-0 flex xl:flex-row flex-col-reverse">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                   <h3>Easy MT4 Setup & User‑Friendly Operation</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
                       Getting started is simple:
                     </p>
@@ -210,7 +210,7 @@ export default function Articles() {
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
               </article>
@@ -219,17 +219,17 @@ export default function Articles() {
 
           <div className="bg-article-bg-1 bg-cover bg-center bg-no-repeat bg-fixed">
             <div className="flex flex-col gap-8 lg:gap-12 xl:gap-15 bg-black/90 pt-8 lg:pt-12 xl:pt-15">
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col">
+              <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl">
                   <h3>Who Is BlackDiamond Special EA For?</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p className="font-bold mt-3 lg:mt-5">
                       BlackDiamond Special EA is ideal for:
                     </p>
@@ -249,10 +249,10 @@ export default function Articles() {
                   </div>
                 </div>
               </article>
-              <article className="container my-0 overflow-hidden flex xl:flex-row flex-col-reverse pb-10 md:pb-15 lg:pb-20 xl:pb-25">
-                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary">
+              <article className="container my-0 flex xl:flex-row flex-col-reverse pb-10 md:pb-15 lg:pb-20 xl:pb-25">
+                <div className="w-full xl:w-[40%] p-6 lg:p-10 text-white bg-primary rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                   <h3>Start Automated Trading with Confidence</h3>
-                  <div className="mt-3 lg:mt-5 text-body">
+                  <div className="mt-3 lg:mt-5 text-body text-justify">
                     <p>
                       If you are searching for a{" "}
                       <strong>reliable Forex robot for MT4</strong>,
@@ -271,7 +271,7 @@ export default function Articles() {
                   <Image
                     src={bestForexEABlackDiamondSpecialEA}
                     alt="Best Forex EA – BlackDiamond Special EA"
-                    className="w-full"
+                    className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
               </article>
