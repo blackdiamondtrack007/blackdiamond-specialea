@@ -81,10 +81,10 @@ export default function Pricing() {
 
   return (
     <section className="w-full">
-      <div className="container space-y-10 my-0 py-10 md:py-12 lg:py-15 xl:py-20 -mb-16 md:-mb-18 lg:-mb-22 xl:-mb-26">
+      <div className="container space-y-10 py-10 md:py-12 lg:py-15 xl:py-20 -mb-16 md:-mb-18 lg:-mb-22 xl:-mb-26 -mt-5 xl:-mt-10">
         <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">
-            Pricing that Scales with You
+            Get Our Special System Now
           </h2>
           {/* <p className="text-body text-center mt-3 lg:mt-5">
             Choose Your Special System Plan
@@ -96,12 +96,13 @@ export default function Pricing() {
           <Card className="flex flex-col h-full">
             <CardHeader>
               <CardTitle className="font-medium">BlackDiamond_Basic</CardTitle>
-              <span className="my-3 block text-2xl font-semibold">
-                $300 / mo
+              <span className="my-3 block text-2xl font-semibold space-x-2">
+                <span>$299</span>{" "}
+                <span className="text-body line-through">$450</span>
               </span>
             </CardHeader>
 
-            <CardContent className="space-y-4 flex-grow">
+            <CardContent className="space-y-4 grow">
               <hr className="border-dashed" />
               <ul className="list-outside space-y-3 text-sm">
                 {(basicExpanded
@@ -142,19 +143,20 @@ export default function Pricing() {
 
           {/* CARD 2: PRO */}
           <div className="relative h-full flex flex-col">
-            <span className="bg-linear-to-br absolute inset-x-0 -top-3 mx-auto flex h-6 w-fit items-center rounded-full from-purple-400 to-amber-300 px-3 py-1 text-xs font-medium text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5 z-10">
+            <span className="bg-linear-to-br absolute inset-x-0 -top-5 mx-auto flex h-6 w-fit items-center rounded-full from-red-400 to-amber-300 px-5 py-5 text-xl font-semibold text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5 z-10">
               Popular
             </span>
 
-            <Card className="flex flex-col h-full flex-grow">
+            <Card className="flex flex-col h-full grow">
               <CardHeader>
                 <CardTitle className="font-medium">BlackDiamond_Pro</CardTitle>
-                <span className="my-3 block text-2xl font-semibold">
-                  $700 / mo
+                <span className="my-3 block text-2xl font-semibold space-x-2">
+                  <span>$699</span>{" "}
+                  <span className="text-body line-through">$850</span>
                 </span>
               </CardHeader>
 
-              <CardContent className="space-y-4 flex-grow">
+              <CardContent className="space-y-4 grow">
                 <hr className="border-dashed" />
                 <ul className="list-outside space-y-3 text-sm">
                   {(proExpanded ? proFeatures : proFeatures.slice(0, 4)).map(
@@ -199,12 +201,13 @@ export default function Pricing() {
               <CardTitle className="font-medium">
                 BlackDiamond_Unlimited
               </CardTitle>
-              <span className="my-3 block text-2xl font-semibold">
-                $2500 / mo
+              <span className="my-3 block text-2xl font-semibold space-x-2">
+                <span>$2499</span>{" "}
+                <span className="text-body line-through">$2700</span>
               </span>
             </CardHeader>
 
-            <CardContent className="space-y-4 flex-grow">
+            <CardContent className="space-y-4 grow">
               <hr className="border-dashed" />
               <ul className="list-outside space-y-3 text-sm">
                 {(unlimitedExpanded

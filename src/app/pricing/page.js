@@ -6,7 +6,8 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "BlackDiamond_Basic",
-    price: 300,
+    price: 299,
+    previous_price: 450,
     variant: "outline",
     popular: false,
     features: [
@@ -28,7 +29,8 @@ const plans = [
   },
   {
     name: "BlackDiamond_Pro",
-    price: 700,
+    price: 699,
+    previous_price: 850,
     variant: "default",
     popular: true,
     features: [
@@ -54,7 +56,8 @@ const plans = [
   },
   {
     name: "BlackDiamond_Unlimited",
-    price: 2500,
+    price: 2499,
+    previous_price: 2700,
     variant: "outline",
     popular: false,
     features: [
@@ -100,9 +103,9 @@ export default function Pricing() {
                 className={`py-10 ${plan.popular ? "relative" : ""}`}
               >
                 {plan.popular && (
-                  <p className="bg-linear-to-br/increasing absolute inset-x-0 -top-6 mx-auto flex h-6 w-fit items-center rounded-full from-red-300 to-amber-300 px-5 py-5 text-body-large font-medium text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5">
+                  <span className="bg-linear-to-br absolute inset-x-0 -top-5 mx-auto flex h-6 w-fit items-center rounded-full from-red-400 to-amber-300 px-5 py-5 text-2xl font-semibold text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5 z-10">
                     Popular
-                  </p>
+                  </span>
                 )}
 
                 <CardHeader>
@@ -110,8 +113,11 @@ export default function Pricing() {
                     {plan.name}
                   </CardTitle>
 
-                  <span className="my-3 block text-2xl font-semibold">
-                    ${plan.price}
+                  <span className="my-3 block text-2xl font-semibold space-x-2">
+                    <span>${plan.price}</span>{" "}
+                    <span className="text-body line-through">
+                      ${plan.previous_price}
+                    </span>
                   </span>
 
                   <Button
