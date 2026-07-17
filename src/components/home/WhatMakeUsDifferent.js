@@ -9,9 +9,10 @@ import totalSupport from "../../../public/assets/home/icons/total-support.svg";
 
 export default function WhatMakeUsDifferent() {
   return (
-    <section>
-      <div className="container my-0 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
-        {/* <div className="space-y-4 md:space-y-6 xl:space-y-8">
+    <section className="w-full bg-[url('/assets/home/what-make-us-different.webp')] bg-cover bg-center bg-no-repeat bg-fixed">
+      <div className="w-full bg-black/70">
+        <div className="container my-0 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
+          {/* <div className="space-y-4 md:space-y-6 xl:space-y-8">
           <h2 className="text-text-primary text-center">
             What makes us different
           </h2>
@@ -23,82 +24,83 @@ export default function WhatMakeUsDifferent() {
             up-to-date AI enabled Forex Trading Tools
           </p>
         </div> */}
-        <div className="grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 px-12">
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={aiPowered}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">AI-Powered</h5>
-            <p className="text-body text-black">
-              Driven by the Revolutionary 4D Nano Algorithm Technology
-            </p>
-          </div>
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={lowBalance}
-              width={50}
-              height={50}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">Low Balance</h5>
-            <p className="text-body text-black">
-              Trade now with as low as $1000!
-            </p>
-          </div>
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={accurateEntry}
-              width={50}
-              height={50}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">Accurate Entry</h5>
-            <p className="text-body text-black">
-              Formulated with the algorithm that surpass any speculation.
-            </p>
-          </div>
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={verifiedResults}
-              width={50}
-              height={50}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">Verified Results</h5>
-            <p className="text-body text-black">
-              MyFXbook, FxBlue & Live Trading Verified.
-            </p>
-          </div>
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={easySetup}
-              width={50}
-              height={50}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">Easy Setup</h5>
-            <p className="text-body text-black">
-              Plug-and-play with customizable settings for all trader levels.
-            </p>
-          </div>
-          <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
-            <Image
-              src={totalSupport}
-              width={50}
-              height={50}
-              alt="AI Powered"
-              className="w-12 h-12 mx-auto"
-            />
-            <h5 className="text-body-large text-black">Total Support</h5>
-            <p className="text-body text-black">
-              Guaranteed 365 day customer support for all your trades.
-            </p>
+          <div className="grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 px-12">
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={aiPowered}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">AI-Powered</h5>
+              <p className="text-body text-black">
+                Driven by the Revolutionary 4D Nano Algorithm Technology
+              </p>
+            </div>
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={lowBalance}
+                width={50}
+                height={50}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">Low Balance</h5>
+              <p className="text-body text-black">
+                Trade now with as low as $1000!
+              </p>
+            </div>
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={accurateEntry}
+                width={50}
+                height={50}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">Accurate Entry</h5>
+              <p className="text-body text-black">
+                Formulated with the algorithm that surpass any speculation.
+              </p>
+            </div>
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={verifiedResults}
+                width={50}
+                height={50}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">Verified Results</h5>
+              <p className="text-body text-black">
+                MyFXbook, FxBlue & Live Trading Verified.
+              </p>
+            </div>
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={easySetup}
+                width={50}
+                height={50}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">Easy Setup</h5>
+              <p className="text-body text-black">
+                Plug-and-play with customizable settings for all trader levels.
+              </p>
+            </div>
+            <div className="bg-[#ffd000] px-4 py-12 rounded-lg space-y-5 text-center">
+              <Image
+                src={totalSupport}
+                width={50}
+                height={50}
+                alt="AI Powered"
+                className="w-12 h-12 mx-auto"
+              />
+              <h5 className="text-body-large text-black">Total Support</h5>
+              <p className="text-body text-black">
+                Guaranteed 365 day customer support for all your trades.
+              </p>
+            </div>
           </div>
         </div>
       </div>
