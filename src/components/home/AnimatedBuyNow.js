@@ -4,15 +4,15 @@ import Link from "next/link";
 export default function AnimatedBuyNow() {
   return (
     <section className="w-full">
-      <div className="container space-y-10 my-0 -mt-10 lg:-mt-15 py-5 md:py-7 lg:py-15">
-        <div className="space-y-4 md:space-y-6 xl:space-y-8">
-          <h2 className="text-text-primary text-center">Get a Access</h2>
-          {/* <p className="text-body text-center mt-3 lg:mt-5">
+      <div className="container my-0 -mt-10 space-y-10 lg:space-y-15 py-10 md:py-12 lg:py-15 xl:py-20">
+        {/* <div className="space-y-4 md:space-y-6 xl:space-y-8">
+          {<h2 className="text-text-primary text-center">Get a Access</h2>}
+          <p className="text-body text-center mt-3 lg:mt-5">
                 Description of the section
-              </p> */}
-        </div>
+              </p>
+        </div> */}
 
-        <div className="max-w-6xl mx-auto -mt-5 md:mt-7 lg:mt-10 flex flex-col items-center justify-center">
+        <div className="max-w-6xl mx-auto flex flex-col items-center justify-center">
           <div className="relative inline-block">
             <div className="absolute inset-0 rounded-full animate-shadow-pulse pointer-events-none -z-10" />
 
