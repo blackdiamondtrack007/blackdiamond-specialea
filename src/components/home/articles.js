@@ -1,5 +1,12 @@
 import Image from "next/image";
-import bestForexEABlackDiamondSpecialEA from "../../../public/assets/home/articles/best-forex-ea–blackDiamond-specialea.jpeg";
+import articleImage01 from "../../../public/assets/home/articles/01_Best Forex EA.webp";
+import articleImage02 from "../../../public/assets/home/articles/02_No_emotion_trading_accuracy.webp";
+import articleImage03 from "../../../public/assets/home/articles/03_AI‑Powered-Automated-Forex-Trading.webp";
+import articleImage04 from "../../../public/assets/home/articles/04_Low-Drawdown-Risk-Management-Focus.webp";
+import articleImage05 from "../../../public/assets/home/articles/05_Verified_Results_Transparent_Performance.webp";
+import articleImage06 from "../../../public/assets/home/articles/06_Easy-MT4-Setup-User‑Friendly.webp";
+import articleImage07 from "../../../public/assets/home/articles/07_Who Is BlackDiamond Special EA.webp";
+import articleImage08 from "../../../public/assets/home/articles/08_Automated-Trading-with-Confidence.webp";
 
 export default function Articles() {
   return (
@@ -19,7 +26,7 @@ export default function Articles() {
               <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
+                    src={articleImage01}
                     alt="Best Forex EA – BlackDiamond Special EA"
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
@@ -79,8 +86,8 @@ export default function Articles() {
                 </div>
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage02}
+                    alt="Why Choose BlackDiamond Special EA"
                     className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
@@ -93,8 +100,8 @@ export default function Articles() {
               <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage03}
+                    alt="AI‑Powered Automated Forex Trading"
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
@@ -147,8 +154,8 @@ export default function Articles() {
                 </div>
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage04}
+                    alt="Low Drawdown & Risk Management Focus"
                     className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
@@ -161,8 +168,8 @@ export default function Articles() {
               <article className="container my-0 flex xl:flex-row flex-col rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl">
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage05}
+                    alt="Verified Results & Transparent Performance"
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
@@ -208,8 +215,8 @@ export default function Articles() {
                 </div>
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage06}
+                    alt="Easy MT4 Setup & User‑Friendly Operation"
                     className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
@@ -222,8 +229,8 @@ export default function Articles() {
               <article className="container my-0 flex xl:flex-row flex-col">
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage07}
+                    alt="Who Is BlackDiamond Special EA For"
                     className="w-full rounded-t-2xl xl:rounded-tr-none xl:rounded-l-2xl"
                   />
                 </div>
@@ -269,8 +276,8 @@ export default function Articles() {
                 </div>
                 <div className="w-full xl:w-[60%]">
                   <Image
-                    src={bestForexEABlackDiamondSpecialEA}
-                    alt="Best Forex EA – BlackDiamond Special EA"
+                    src={articleImage08}
+                    alt="Start Automated Trading with Confidence"
                     className="w-full rounded-b-2xl xl:rounded-bl-none xl:rounded-r-2xl"
                   />
                 </div>
