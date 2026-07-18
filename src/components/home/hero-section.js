@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import BlackDiamondEABrandCover from "../../../public/assets/home/hero-section/blackdiamondea-brand-cover.webp";
-import BestForexEA from "../../../public/assets/home/hero-section/best-forex-ea.webp";
+import BlackDiamond from "../../../public/assets/home/hero-section/blackdiamond.webp";
+import Mockup from "../../../public/assets/home/hero-section/mockup.webp";
 import increaseUpProfitIcon from "../../../public/assets/home/icons/increase-up-profit-icon.webp";
 import { ShoppingCart } from "lucide-react";
 import { getActiveTraders } from "@/lib/utils";
@@ -97,17 +97,13 @@ export default function HeroSection() {
               <div>
                 <Image
                   className="rounded-3xl w-full h-65"
-                  src={BlackDiamondEABrandCover}
-                  alt=""
+                  src={BlackDiamond}
+                  alt="BlackDiamond"
                 />
               </div>
             </div>
             <div className="md:w-1/2">
-              <Image
-                className="rounded-3xl w-full h-110"
-                src={BestForexEA}
-                alt=""
-              />
+              <Image className="rounded-3xl w-full h-110" src={Mockup} alt="BlackDiamond Mockup" />
             </div>
           </div>
         </div>

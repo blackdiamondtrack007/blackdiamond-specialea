@@ -8,7 +8,7 @@ import BlackDiamondEaV9_eurusd_Fix__no_03 from "../../../public/assets/home/back
 import BlackDiamondEaV9_eurusd_Fix__no_04 from "../../../public/assets/home/backtest-result/BlackDiamondEaV9_usdjpy_no 04.png";
 import BlackDiamondEaV9_eurusd_Fix__no_05 from "../../../public/assets/home/backtest-result/BlackDiamondEaV9_usdchf_no 05.png";
 import BlackDiamondEaV9_eurusd_Fix__no_06 from "../../../public/assets/home/backtest-result/BlackDiamondEaV9_audusd_no 06.png";
-import PerformanceCover from "../../../public/assets/home/backtest-result/performance_cover.jpg";
+import PerformanceCover from "../../../public/assets/home/backtest-result/blackdiamond back test result.webp";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function BacktestResult() {
