@@ -114,7 +114,7 @@ export default function BankTransferContent() {
                   {row.isBadge ? (
                     <Badge
                       variant="secondary"
-                      className="text-base font-bold px-3 py-1"
+                      className="bg-primary text-white text-base font-bold px-3 py-1"
                     >
                       ${parseFloat(price).toFixed(2)}
                     </Badge>
@@ -199,7 +199,7 @@ export default function BankTransferContent() {
             <p className="text-body text-muted-foreground text-sm">
               Email, Facebook, Skype or Telegram
             </p>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 text-sm">
               <div className="flex gap-2">
                 <span className="text-muted-foreground">Email</span>
                 <a

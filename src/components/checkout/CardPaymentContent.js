@@ -69,7 +69,7 @@ export default function CardPaymentContent() {
               <div className="px-5 py-4 bg-card border-b">
                 <Badge
                   variant="secondary"
-                  className="text-base font-bold px-3 py-1"
+                  className="bg-primary text-white text-base font-bold px-3 py-1"
                 >
                   ${parseFloat(price).toFixed(2)}
                 </Badge>
@@ -141,7 +141,7 @@ export default function CardPaymentContent() {
                   href={`/checkout/payment/bank?${currentParams}`}
                   title="Pay with Bank Transfer"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer border">
+                  <div className="w-12 h-12 rounded-lg bg-emerald-700 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
                     <span className="text-white font-black text-sm">BT</span>
                   </div>
                 </Link>
@@ -182,7 +182,7 @@ export default function CardPaymentContent() {
             <p className="text-body text-muted-foreground text-sm">
               Email, Facebook, Skype or Telegram
             </p>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-4 text-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 text-sm">
               <div className="flex gap-2">
                 <span className="text-muted-foreground">Email</span>
                 <a
