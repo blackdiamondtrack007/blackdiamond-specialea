@@ -26,12 +26,20 @@ const PAYMENT_METHODS = [
   { value: "paypal", label: "PayPal" },
   { value: "skrill", label: "Skrill" },
   { value: "bank_transfer", label: "Bank Transfer" },
+  { value: "card", label: "Visa / Mastercard" },
+  { value: "stripe", label: "Stripe" },
+  { value: "crypto", label: "Bitcoin / Cryptocurrency" },
+  { value: "perfect", label: "Perfect Money" },
 ];
 
 const PAYMENT_ROUTES = {
   paypal: "/checkout/payment/paypal",
   skrill: "/checkout/payment/skrill",
   bank_transfer: "/checkout/payment/bank",
+  card: "/checkout/payment/card",
+  stripe: "/checkout/payment/stripe",
+  crypto: "/checkout/payment/crypto",
+  perfect: "/checkout/payment/perfect",
 };
 
 export default function CheckoutContent() {
@@ -151,8 +159,7 @@ export default function CheckoutContent() {
                       Price
                     </span>
                     <Badge
-                      variant="secondary"
-                      className="text-base font-semibold px-3 py-1"
+                      className="text-base text-white font-semibold px-3 py-1 bg-primary"
                     >
                       ${price}
                     </Badge>
@@ -272,9 +279,9 @@ export default function CheckoutContent() {
                           required
                         >
                           <SelectTrigger id="payment" className="w-full">
-                            <SelectValue placeholder="Select payment method" />
+                            <SelectValue placeholder="Select payment method" className="mt-10" />
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className={"mt-10 bg-primary text-white"}>
                             {PAYMENT_METHODS.map((method) => (
                               <SelectItem
                                 key={method.value}
@@ -309,7 +316,7 @@ export default function CheckoutContent() {
                       <p className="text-xs text-muted-foreground text-center">
                         By placing your order, you agree to our{" "}
                         <Link
-                          href="/terms"
+                          href="/terms-condition"
                           className="underline underline-offset-4 hover:text-foreground transition-colors"
                         >
                           Terms of Service

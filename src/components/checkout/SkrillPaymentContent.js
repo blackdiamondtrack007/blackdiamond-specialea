@@ -24,6 +24,8 @@ export default function SkrillPaymentContent() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const currentParams = `product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`;
+
   return (
     <section className="w-full min-h-screen">
       <div className="container pt-12 md:pt-16 lg:pt-24 pb-20">
@@ -138,32 +140,60 @@ export default function SkrillPaymentContent() {
               </div>
             </div>
 
-            {/* Row: Go Another Payment Method */}
+            {/* Go another method row */}
             <div className="grid grid-cols-2">
               <div className="bg-black px-5 py-4 border-t border-white/10">
                 <span className="text-white font-semibold text-sm">
                   Go Another Payment Method
                 </span>
               </div>
-              <div className="px-5 py-5 bg-card flex items-center gap-3">
+              <div className="px-5 py-5 bg-card flex items-center gap-3 flex-wrap">
                 <Link
-                  href={`/checkout/payment/paypal?product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`}
+                  href={`/checkout/payment/paypal?${currentParams}`}
+                  title="Pay with PayPal"
                 >
-                  <div
-                    className="w-12 h-12 rounded-lg bg-[#003087] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer"
-                    title="Pay with PayPal"
-                  >
+                  <div className="w-12 h-12 rounded-lg bg-[#003087] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
                     <span className="text-white font-black text-sm">PP</span>
                   </div>
                 </Link>
                 <Link
-                  href={`/checkout/payment/bank?product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`}
+                  href={`/checkout/payment/bank?${currentParams}`}
+                  title="Pay with Bank Transfer"
                 >
-                  <div
-                    className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer border"
-                    title="Bank Transfer"
-                  >
-                    <ArrowLeftRight className="size-5 text-muted-foreground" />
+                  <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer border">
+                    <span className="text-white font-black text-sm">BT</span>
+                  </div>
+                </Link>
+                <Link
+                  href={`/checkout/payment/card?${currentParams}`}
+                  title="Pay with Card"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
+                    <span className="text-white font-black text-sm">CD</span>
+                  </div>
+                </Link>
+                <Link
+                  href={`/checkout/payment/stripe?${currentParams}`}
+                  title="Pay with Stripe"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#635bff] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
+                    <span className="text-white font-black text-sm">ST</span>
+                  </div>
+                </Link>
+                <Link
+                  href={`/checkout/payment/crypto?${currentParams}`}
+                  title="Pay with Crypto"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#f7931a] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
+                    <span className="text-white font-black text-sm">BTC</span>
+                  </div>
+                </Link>
+                <Link
+                  href={`/checkout/payment/perfect?${currentParams}`}
+                  title="Pay with Perfect Money"
+                >
+                  <div className="w-12 h-12 rounded-lg bg-[#ff0000] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
+                    <span className="text-white font-black text-sm">PM</span>
                   </div>
                 </Link>
               </div>
