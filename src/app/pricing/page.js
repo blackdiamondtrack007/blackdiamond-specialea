@@ -128,7 +128,7 @@ export default function Pricing() {
                     <Link
                       href={`/checkout?product=${encodeURIComponent(plan.name)}&price=${plan.price}`}
                     >
-                      Get Started
+                      Buy Now
                     </Link>
                   </Button>
                 </CardHeader>

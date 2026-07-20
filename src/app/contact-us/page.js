@@ -56,7 +56,7 @@ export default function ContactUs() {
               </p>
               <div className="space-y-6">
                 {/* Phone Row */}
-                <div className="flex items-center space-x-4">
+                {/* <div className="flex items-center space-x-4">
                   <div className="p-3 bg-primary rounded-lg text-white">
                     <svg
                       className="w-6 h-6"
@@ -76,9 +76,9 @@ export default function ContactUs() {
                     <p className="text-xs font-semibold uppercase tracking-wider">
                       Call us
                     </p>
-                    <p className="font-medium">+880 1672-922681</p>
+                    <p className="font-medium"></p>
                   </div>
-                </div>
+                </div> */}
                 {/* Email Row */}
                 <div className="flex items-center space-x-4">
                   <div className="p-3 bg-primary rounded-lg text-white">
@@ -202,9 +202,8 @@ export default function ContactUs() {
             )}
           </form>
         </div>
-
-        <OurPartners />
       </div>
+      <OurPartners />
     </section>
   );
 }

@@ -1,18 +1,39 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Copy, ExternalLink, ArrowLeftRight, CheckCircle2 } from "lucide-react";
+import { 
+  Copy, 
+  ExternalLink, 
+  CheckCircle2, 
+  ChevronDown,
+  Wallet,
+  Building2,
+  CreditCard,
+  Coins,
+  BadgeDollarSign
+} from "lucide-react";
 import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const STRIPE_EMAIL = "support@blackdiamondea.info";
 const STRIPE_LINK = "https://checkout.stripe.com/pay/YOUR_CUSTOM_ID"; // ← Replace with fallback link if preferred
 
 export default function StripePaymentContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+
   const product = searchParams.get("product") || "—";
   const price = searchParams.get("price") || "0";
   const orderId = searchParams.get("orderId") || "—";
@@ -26,6 +47,27 @@ export default function StripePaymentContent() {
   };
 
   const currentParams = `product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`;
+
+  // Helper builder to streamline alternative navigation links
+  const buildPath = (gateway) => `/checkout/payment/${gateway}?${currentParams}`;
+
+  // Complete settings array mapping every gateway target out beautifully
+  const alternativeMethods = [
+    { value: "card", label: "Visa / Mastercard", path: buildPath("card"), icon: CreditCard, color: "text-blue-600" },
+    { value: "paypal", label: "PayPal", path: buildPath("paypal"), icon: Wallet, color: "text-[#003087]" },
+    { value: "stripe", label: "Stripe", path: buildPath("stripe"), icon: CreditCard, color: "text-[#635bff]" },
+    { value: "crypto", label: "Bitcoin / Cryptocurrency", path: buildPath("crypto"), icon: Coins, color: "text-[#f7931a]" },
+    { value: "bank", label: "Bank Transfer", path: buildPath("bank"), icon: Building2, color: "text-emerald-600" },
+    { value: "skrill", label: "Skrill", path: buildPath("skrill"), icon: CreditCard, color: "text-[#862165]" },
+    { value: "perfect", label: "Perfect Money", path: buildPath("perfect"), icon: BadgeDollarSign, color: "text-[#ff0000]" },
+  ];
+
+  const handleMethodChange = (selectedValue) => {
+    const target = alternativeMethods.find((m) => m.value === selectedValue);
+    if (target) {
+      router.push(target.path);
+    }
+  };
 
   return (
     <section className="w-full min-h-screen">
@@ -132,62 +174,45 @@ export default function StripePaymentContent() {
               </div>
             </div>
 
-            {/* Go another method row */}
+            {/* Go another method row with dynamic Shadcn Dropdown component */}
             <div className="grid grid-cols-2">
-              <div className="bg-black px-5 py-4 border-t border-white/10">
+              <div className="bg-black px-5 py-4 border-t border-white/10 flex items-center">
                 <span className="text-white font-semibold text-sm">
                   Go Another Payment Method
                 </span>
               </div>
-              <div className="px-5 py-5 bg-card flex items-center gap-3 flex-wrap">
-                <Link
-                  href={`/checkout/payment/paypal?${currentParams}`}
-                  title="Pay with PayPal"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-[#003087] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">PP</span>
-                  </div>
-                </Link>
-                <Link
-                  href={`/checkout/payment/skrill?${currentParams}`}
-                  title="Pay with Skrill"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-[#862165] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">SK</span>
-                  </div>
-                </Link>
-                <Link
-                  href={`/checkout/payment/bank?${currentParams}`}
-                  title="Pay with Bank Transfer"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-emerald-700 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">BT</span>
-                  </div>
-                </Link>
-                <Link
-                  href={`/checkout/payment/card?${currentParams}`}
-                  title="Pay with Card"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-blue-600 flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">CD</span>
-                  </div>
-                </Link>
-                <Link
-                  href={`/checkout/payment/crypto?${currentParams}`}
-                  title="Pay with Crypto"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-[#f7931a] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">BTC</span>
-                  </div>
-                </Link>
-                <Link
-                  href={`/checkout/payment/perfect?${currentParams}`}
-                  title="Pay with Perfect Money"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-[#ff0000] flex items-center justify-center hover:opacity-80 transition-opacity cursor-pointer">
-                    <span className="text-white font-black text-sm">PM</span>
-                  </div>
-                </Link>
+              <div className="px-5 py-4 bg-card flex items-center justify-start">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-full max-w-[240px] justify-between text-sm">
+                      Stripe
+                      <ChevronDown className="size-4 opacity-50 ml-2" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="min-w-60 bg-primary text-white" align="start">
+                    <DropdownMenuGroup>
+                      <DropdownMenuLabel>Alternative Gateways</DropdownMenuLabel>
+                      <DropdownMenuRadioGroup
+                        value="stripe" 
+                        onValueChange={handleMethodChange}
+                      >
+                        {alternativeMethods.map((method) => {
+                          const IconComponent = method.icon;
+                          return (
+                            <DropdownMenuRadioItem 
+                              key={method.value} 
+                              value={method.value}
+                              className="flex items-center gap-2 cursor-pointer"
+                            >
+                              <IconComponent className={`size-4 ${method.color}`} />
+                              <span>{method.label}</span>
+                            </DropdownMenuRadioItem>
+                          );
+                        })}
+                      </DropdownMenuRadioGroup>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>

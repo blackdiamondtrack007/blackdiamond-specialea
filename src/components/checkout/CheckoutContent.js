@@ -23,12 +23,12 @@ import { auth } from "@/lib/firebase";
 
 // Payment method → internal redirect path
 const PAYMENT_METHODS = [
-  { value: "paypal", label: "PayPal" },
-  { value: "skrill", label: "Skrill" },
-  { value: "bank_transfer", label: "Bank Transfer" },
   { value: "card", label: "Visa / Mastercard" },
+  { value: "paypal", label: "PayPal" },
   { value: "stripe", label: "Stripe" },
   { value: "crypto", label: "Bitcoin / Cryptocurrency" },
+  { value: "bank_transfer", label: "Bank Transfer" },
+  { value: "skrill", label: "Skrill" },
   { value: "perfect", label: "Perfect Money" },
 ];
 
