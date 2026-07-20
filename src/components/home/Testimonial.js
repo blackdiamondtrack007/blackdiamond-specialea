@@ -12,17 +12,17 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
-import BlackdiamondeaClientReview1 from "../../../public/assets/home/client-reviews/blackdiamondea-client-review1.jpg";
-import BlackdiamondeaClientReview2 from "../../../public/assets/home/client-reviews/blackdiamondea-client-review2.jpg";
 import Autoplay from "embla-carousel-autoplay";
 
-const clientReviewsItems = [
-  { id: 1, item: BlackdiamondeaClientReview1 },
-  { id: 2, item: BlackdiamondeaClientReview1 },
-  { id: 3, item: BlackdiamondeaClientReview1 },
-  { id: 4, item: BlackdiamondeaClientReview2 },
-  { id: 5, item: BlackdiamondeaClientReview1 },
-];
+const clientFeedbacksItems = Array.from({ length: 99 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+
+  return {
+    id: i + 1,
+    item: `/assets/home/client-feedbacks/client-feedback-${num}.webp`,
+    alt: `Blackdiamondea Client Feedback ${num}`,
+  };
+});
 
 function AnimatedModal({
   isOpen,
@@ -97,6 +97,8 @@ function AnimatedModal({
                 <Image
                   src={images[currentIndex]}
                   alt="Full View"
+                  width={1200}
+                  height={1600}
                   className="max-h-[90vh] w-auto object-contain rounded-lg"
                 />
               </motion.div>
@@ -118,7 +120,7 @@ export default function Testimonial() {
   const [open, setOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = clientReviewsItems.map((item) => item.item);
+  const images = clientFeedbacksItems.map((item) => item.item);
 
   const plugin = useRef(
     Autoplay({
@@ -147,16 +149,18 @@ export default function Testimonial() {
         <div className="flex justify-center mx-20 mt-8 md:mt-10 lg:mt-15">
           <Carousel plugins={[plugin.current]} className="w-full">
             <CarouselContent>
-              {clientReviewsItems.map((review, index) => (
+              {clientFeedbacksItems.map((feedback, index) => (
                 <CarouselItem
-                  key={review.id}
+                  key={feedback.id}
                   className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
                 >
                   <Card className="p-2 border-2 border-primary">
                     <CardContent className="flex items-center justify-center p-2">
                       <Image
-                        src={review.item}
-                        alt="Client Review"
+                        src={feedback.item}
+                        alt={feedback.alt}
+                        width={500}
+                        height={700}
                         className="rounded-md shadow-lg hover:scale-105 duration-300 cursor-pointer h-[400px] md:h-[450px] xl:h-[500px]"
                         onClick={() => {
                           setCurrentIndex(index);
