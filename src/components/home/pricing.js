@@ -135,9 +135,11 @@ export default function Pricing() {
             </CardContent>
 
             <CardFooter className="mt-auto pt-4">
-              <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                <Link href="/pricing">Buy Now</Link>
-              </Button>
+              <Link href="/pricing" className="w-full">
+                <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                  Buy Now
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
 
@@ -188,9 +190,11 @@ export default function Pricing() {
               </CardContent>
 
               <CardFooter className="mt-auto pt-4">
-                <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                  <Link href="/pricing">Buy Now</Link>
-                </Button>
+                <Link href="/pricing" className="w-full">
+                  <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                    Buy Now
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           </div>
@@ -240,9 +244,11 @@ export default function Pricing() {
             </CardContent>
 
             <CardFooter className="mt-auto pt-4">
-              <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                <Link href="/pricing">Buy Now</Link>
-              </Button>
+              <Link href="/pricing" className="w-full">
+                <Button className="w-full bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                  Buy Now
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         </div>
