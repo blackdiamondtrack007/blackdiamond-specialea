@@ -21,10 +21,11 @@ export default function Footer() {
           </div>
           <div className="my-4 lg:my-5">
             <p className="text-text-primary">
-              Secure your financial future with BLACKDIAMONDEA. We make Forex
-              trading simple and reliable with top-performing MT4 EAs and proven
-              Forex strategies—helping your money stay protected and grow
-              consistently. Trade with confidence using tools built by experts.
+              Trade smarter with BLACKDIAMONDEA. We provide high-performance MT4
+              Expert Advisors (EAs) and advanced Forex trading solutions
+              designed to enhance your trading experience. Built with precision,
+              reliability, and professional expertise, our tools help traders
+              navigate the markets with greater confidence and consistency.
             </p>
           </div>
           <div>
@@ -37,66 +38,50 @@ export default function Footer() {
         </div>
         <div className="w-full lg:w-[70%] mt-8 lg:mt-0">
           <h5 className="text-body-large font-semibold">
-            Important Disclaimer for BLACKDIAMONDEA Users
+            Risk Disclaimer for BLACKDIAMONDEA Users
           </h5>
-          <div className="text-body space-y-2 md:space-y-3 lg:space-y-4 mt-2 md:mt-3 lg:mt-4 leading-7 lg:leading-8">
+          <div className="text-body space-y-2 md:space-y-3 lg:space-y-4 mt-2 md:mt-3 lg:mt-4">
             <p>
-              <strong>
-                Trading leveraged instruments such as Forex and derivatives
-                involves a significant level of risk and may result in the loss
-                of capital.
-              </strong>{" "}
-              Before trading, it is important to:
-            </p>
-
-            <ul className="list-disc ml-5">
-              <li>
-                <strong>Fully understand the risks involved</strong> and assess
-                your investment objectives, financial situation, and level of
-                experience.
-              </li>
-              <li>
-                <strong>
-                  Seek independent financial advice if you are unsure whether
-                  trading is suitable for you.
-                </strong>
-              </li>
-            </ul>
-
-            <p>
-              <strong>
-                Past performance and testimonials are not reliable indicators of
-                future results.
-              </strong>{" "}
-              We do not guarantee any specific outcomes, and individual results
-              may vary.
+              Trading Forex and other leveraged financial instruments carries a
+              high level of risk and may result in the partial or total loss of
+              your invested capital. Please ensure that you fully understand the
+              risks involved and carefully consider your investment objectives,
+              financial situation, and trading experience before participating
+              in the financial markets.
             </p>
 
             <p>
-              <strong>This website:</strong>
+              If you are uncertain whether trading is appropriate for you, we
+              strongly recommend seeking independent financial advice from a
+              qualified professional.
             </p>
 
-            <ul className="list-disc ml-5">
-              <li>
-                <strong>
-                  Is not affiliated with, endorsed by, or connected to
-                  MetaQuotes, Facebook, Google, or TikTok.
-                </strong>
-              </li>
-              <li>
-                Uses product names, logos, and trademarks that are the property
-                of their respective owners. Such usage is for identification
-                purposes only and does not imply endorsement.
-              </li>
-              <li>
-                <strong>
-                  {" "}
-                  Does not provide financial, investment, tax, or legal advice.
-                </strong>
-                Always consult with a qualified professional before making any
-                trading or investment decisions.
-              </li>
-            </ul>
+            <p>
+              Past performance, testimonials, and historical results are not
+              reliable indicators of future performance. We do not guarantee any
+              specific profits or outcomes, and individual trading results may
+              vary.
+            </p>
+          </div>
+          <h5 className="text-body-large font-semibold mt-5">Legal Disclaimer</h5>
+          <div className="text-body space-y-2 md:space-y-3 lg:space-y-4 mt-2 md:mt-3 lg:mt-4">
+            <p>
+              This website is not affiliated with, endorsed by, or associated
+              with MetaQuotes, Facebook, Google, TikTok, or any other
+              third-party companies mentioned herein. All product names,
+              trademarks, logos, and brand names are the property of their
+              respective owners and are used solely for identification purposes.
+              Their use does not imply any sponsorship, endorsement, or
+              affiliation.
+            </p>
+
+            <p>
+              The information provided on this website is for educational and
+              informational purposes only and should not be considered
+              financial, investment, tax, or legal advice. Always consult with a
+              qualified professional before making any trading or investment
+              decisions.
+            </p>
           </div>
         </div>
       </div>
