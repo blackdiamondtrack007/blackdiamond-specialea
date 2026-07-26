@@ -23,56 +23,56 @@ export default function OurPartners() {
         </div>
 
         <div className="flex gap-6 flex-wrap justify-center mt-8 md:mt-10 lg:mt-15">
-          <Link href={"https://www.markets4you.com/en"} target="_blank">
+          <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={markets4YouForexBroker}
               alt="Markets4you Forex Broker"
             />
           </Link>
-          <Link href={"https://www.avatrade.com"} target="_blank">
+          <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={avaTradeForexBroker}
               alt="AvaTrade Forex Broker"
             />
           </Link>
-          <Link href={"https://my.roboforex.com/en"} target="_blank">
+          <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={exnessLogo}
               alt="Exness Logo"
             />
           </Link>
-          <Link href={"https://my.roboforex.com/en"} target="_blank">
+          <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300 bg-white"
               src={roboforexBestBroker}
               alt="Roboforex Best Broker"
             />
           </Link>
-          <Link href={"https://www.icmarkets.com/global/en"} target="_blank">
+          <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={icMarketsForexBroker}
               alt="ICMarkets Forex Broker"
             />
           </Link>
-          <Link href={"https://fbs.com/"} target="_blank">
+          <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={fbsForexBroker}
               alt="FBS Forex Broker"
             />
           </Link>
-          <Link href={"https://www.vantagemarkets.com/en/"} target="_blank">
+          <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={vantageFullLogo}
               alt="Vantage Full Logo"
             />
           </Link>
-          <Link href={"https://my.xbtfx.com/"} target="_blank">
+          <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
             <Image
               className="w-36 rounded-md shadow-lg hover:scale-110 duration-300"
               src={xbtfxLogo}
