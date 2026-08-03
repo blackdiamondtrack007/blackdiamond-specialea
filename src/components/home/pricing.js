@@ -91,14 +91,17 @@ export default function Pricing() {
           </p> */}
         </div>
 
-        <div className="mt-8 grid gap-6 md:mt-20 md:grid-cols-3 mx-auto max-w-6xl px-6 items-start">
+        <div className="mt-8 grid gap-10 md:mt-20 md:grid-cols-3 mx-auto max-w-6xl px-3 md:px-6 items-start">
           {/* CARD 1: BASIC */}
-          <Card className="flex flex-col h-full">
-            <CardHeader>
+          <Card className="flex flex-col h-full relative">
+            <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
+              30%
+            </span>
+            <CardHeader className={"text-center"}>
               <CardTitle className="font-medium">BlackDiamond_Basic</CardTitle>
               <span className="my-3 block text-2xl font-semibold space-x-2">
-                <span>$299</span>{" "}
-                <span className="text-body line-through">$450</span>
+                <span>$312</span>{" "}
+                <span className="text-body line-through decoration-red-400">$410</span>
               </span>
             </CardHeader>
 
@@ -149,12 +152,15 @@ export default function Pricing() {
               Popular
             </span>
 
-            <Card className="flex flex-col h-full grow">
-              <CardHeader>
+            <Card className="flex flex-col h-full grow relative">
+              <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
+                30%
+              </span>
+              <CardHeader className={"text-center"}>
                 <CardTitle className="font-medium">BlackDiamond_Pro</CardTitle>
                 <span className="my-3 block text-2xl font-semibold space-x-2">
-                  <span>$699</span>{" "}
-                  <span className="text-body line-through">$850</span>
+                  <span>$730</span>{" "}
+                  <span className="text-body line-through decoration-red-400">$949</span>
                 </span>
               </CardHeader>
 
@@ -200,14 +206,17 @@ export default function Pricing() {
           </div>
 
           {/* CARD 3: UNLIMITED */}
-          <Card className="flex flex-col h-full">
-            <CardHeader>
+          <Card className="flex flex-col h-full relative">
+            <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
+              30%
+            </span>
+            <CardHeader className={"text-center"}>
               <CardTitle className="font-medium">
                 BlackDiamond_Unlimited
               </CardTitle>
               <span className="my-3 block text-2xl font-semibold space-x-2">
                 <span>$2499</span>{" "}
-                <span className="text-body line-through">$2700</span>
+                <span className="text-body line-through decoration-red-400">$3250</span>
               </span>
             </CardHeader>
 

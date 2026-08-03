@@ -98,13 +98,13 @@ export default function Pricing() {
             Description of the section
           </p> */}
         </div>
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mt-8 grid gap-10 lg:gap-6 md:mt-20 lg:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-3 md:px-6">
+          <div className="mt-8 grid gap-10 md:mt-20 lg:grid-cols-3">
             {plans.map((plan) => (
-              <Card
-                key={plan.name}
-                className={`py-10 ${plan.popular ? "relative" : ""}`}
-              >
+              <Card key={plan.name} className="py-10 relative">
+                <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
+                  {plan.price_off}%
+                </span>
                 {plan.popular && (
                   <span className="bg-linear-to-br absolute inset-x-0 -top-5 mx-auto flex h-6 w-fit items-center rounded-full from-red-400 to-amber-300 px-5 py-5 text-2xl font-semibold text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5 z-10">
                     Popular
@@ -118,7 +118,7 @@ export default function Pricing() {
 
                   <span className="my-3 block text-2xl font-semibold space-x-2 text-center">
                     <span>${plan.price}</span>{" "}
-                    <span className="text-body line-through">
+                    <span className="text-body line-through decoration-red-400">
                       ${plan.previous_price}
                     </span>
                   </span>

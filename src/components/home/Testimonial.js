@@ -146,7 +146,7 @@ export default function Testimonial() {
           setCurrentIndex={setCurrentIndex}
         />
 
-        <div className="flex justify-center mx-20 mt-8 md:mt-10 lg:mt-15">
+        <div className="flex justify-center mx-10 md:mx-20 mt-8 md:mt-10 lg:mt-15">
           <Carousel plugins={[plugin.current]} className="w-full">
             <CarouselContent>
               {clientFeedbacksItems.map((feedback, index) => (
