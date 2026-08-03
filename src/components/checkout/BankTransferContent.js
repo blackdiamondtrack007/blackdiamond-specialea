@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -9,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
   Copy,
-  ExternalLink,
   CheckCircle2,
   ChevronDown,
   Wallet,
@@ -17,6 +14,7 @@ import {
   CreditCard,
   Coins,
   BadgeDollarSign,
+  Globe,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -30,35 +28,60 @@ import {
 } from "@/components/ui/dropdown-menu";
 import UnlimitedPlan from "./UnlimitedPlan";
 
-// ← Replace all these with your actual bank details
-const BANK_DETAILS = {
-  bankName: "Your Bank Name",
-  accountName: "Your Account Name",
-  accountNumber: "1234567890",
-  routingNumber: "021000021",
-  swiftCode: "XXXXXX00",
-  branch: "Main Branch",
+// Real multi-region corporate bank details
+const BANK_ACCOUNTS = {
+  ach: {
+    label: "USA Local (ACH / Wire)",
+    bankName: "JP Morgan Chase NA",
+    accountName: "Abdullah Al Main",
+    accountNumber: "30000002947484",
+    routingNumber: "028000024",
+    branch: "270 Park Avenue, New York, NY 10017",
+    accountType: "Checking (Current)",
+    extraLabel: "Routing Number",
+    extraValue: "028000024",
+    extraField: "routing",
+  },
+  swift: {
+    label: "International (SWIFT Wire)",
+    bankName: "Clear Bank",
+    accountName: "Abdullah Al Main",
+    accountNumber: "21798496",
+    iban: "GB15CLRB04281221798496",
+    swiftCode: "CLRBGB22XXX",
+    branch: "133 Houndsditch, LONDON, EC3A 7BX",
+    accountType: "Checking (Current)",
+    extraLabel: "IBAN",
+    extraValue: "GB15CLRB04281221798496",
+    extraField: "iban",
+  },
+  sepa: {
+    label: "Eurozone Region (SEPA)",
+    bankName: "Clear Bank",
+    accountName: "Abdullah Al Main",
+    accountNumber: "05536627",
+    iban: "GB75CLRB04281205536627",
+    swiftCode: "CLRBGB22XXX",
+    sortCode: "042812",
+    branch: "133 Houndsditch, LONDON, EC3A 7BX",
+    accountType: "Checking (Current)",
+    extraLabel: "IBAN (EUR Transfer Only)",
+    extraValue: "GB75CLRB04281205536627",
+    extraField: "iban",
+  },
 };
 
-export default function BankTransferContent() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const product = searchParams.get("product") || "—";
-  const price = searchParams.get("price") || "0";
-  const orderId = searchParams.get("orderId") || "—";
-
+const CopyBtn = ({ value, field }) => {
   const [copiedField, setCopiedField] = useState(null);
-
   const handleCopy = (value, field) => {
+    if (!value) return;
     navigator.clipboard.writeText(value);
     setCopiedField(field);
     setTimeout(() => setCopiedField(null), 2000);
   };
-
-  const CopyBtn = ({ value, field }) => (
+  return (
     <button
-      onClick={() => handleCopy(value, field)}
+      onClick={() => handleCopy(value, field, copiedField)}
       className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
       title="Copy"
     >
@@ -69,38 +92,75 @@ export default function BankTransferContent() {
       )}
     </button>
   );
+};
 
-  const rows = [
+export default function BankTransferContent() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const product = searchParams.get("product") || "—";
+  const price = searchParams.get("price") || "0";
+  const orderId = searchParams.get("orderId") || "—";
+
+  // Default regional account configuration selection state
+  const [activeAccountKey, setActiveAccountKey] = useState("swift");
+
+  const activeAccount = BANK_ACCOUNTS[activeAccountKey];
+
+  // Core transaction rows that stay static
+  const commonRows = [
     { label: "Plan", value: product, field: null },
     { label: "Amount", value: null, field: null, isBadge: true },
-    { label: "Order ID", value: orderId, field: "orderId", mono: true },
-    { label: "Bank Name", value: BANK_DETAILS.bankName, field: "bank" },
+  ];
+
+  // System-level details mapping out dynamically according to active regional tab selection
+  const dynamicBankRows = [
+    { label: "Bank Name", value: activeAccount.bankName, field: "bank" },
     {
       label: "Account Name",
-      value: BANK_DETAILS.accountName,
+      value: activeAccount.accountName,
       field: "accName",
     },
+    ...(activeAccount.accountNumber
+      ? [
+          {
+            label: "Account Number",
+            value: activeAccount.accountNumber,
+            field: "accNum",
+          },
+        ]
+      : []),
     {
-      label: "Account Number",
-      value: BANK_DETAILS.accountNumber,
-      field: "accNum",
+      label: activeAccount.extraLabel,
+      value: activeAccount.extraValue,
+      field: activeAccount.extraField,
     },
-    {
-      label: "Routing Number",
-      value: BANK_DETAILS.routingNumber,
-      field: "routing",
-    },
-    { label: "SWIFT / BIC", value: BANK_DETAILS.swiftCode, field: "swift" },
-    { label: "Branch", value: BANK_DETAILS.branch, field: null },
+    ...(activeAccount.swiftCode
+      ? [
+          {
+            label: "SWIFT / BIC Code",
+            value: activeAccount.swiftCode,
+            field: "swift",
+          },
+        ]
+      : []),
+    ...(activeAccount.sortCode
+      ? [
+          {
+            label: "Sort Code",
+            value: activeAccount.sortCode,
+            field: "sortCode",
+          },
+        ]
+      : []),
+    { label: "Account Type", value: activeAccount.accountType, field: null },
+    { label: "Bank Address", value: activeAccount.branch, field: null },
   ];
 
   const currentParams = `product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`;
-
-  // Helper builder to streamline alternative navigation links
   const buildPath = (gateway) =>
     `/checkout/payment/${gateway}?${currentParams}`;
 
-  // Complete settings array mapping every gateway target out beautifully
   const alternativeMethods = [
     {
       value: "card",
@@ -160,7 +220,6 @@ export default function BankTransferContent() {
     }
   };
 
-  // Flag to check if this is the high-tier Unlimited plan
   const isUnlimitedPlan = product === "BlackDiamond_Unlimited";
 
   return (
@@ -194,113 +253,97 @@ export default function BankTransferContent() {
 
           {/* DYNAMIC DESIGN BOX */}
           {isUnlimitedPlan ? (
-            /* --- DESIGN FOR UNLIMITED PLAN --- */
             <UnlimitedPlan product={product} price={price} orderId={orderId} />
           ) : (
-            /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
-            <div className="rounded-xl overflow-hidden border">
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4">
-                  <span className="text-white font-semibold text-sm">Plan</span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <span className="text-body font-medium break-words">
-                    {product}
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Amount
-                  </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <Badge
-                    variant="secondary"
-                    className="bg-primary text-white text-base font-bold px-3 py-1"
+            /* --- INFO TABLE FOR REGULAR PLANS WITH REGIONAL SWITCHER INTEGRATION --- */
+            <div className="rounded-xl overflow-hidden border shadow-sm">
+              {/* Core System Rows (Plan details & price metrics) */}
+              {commonRows.map((row, i) => (
+                <div key={row.label} className="grid grid-cols-2">
+                  <div
+                    className={`bg-emerald-700 px-5 py-4 ${i > 0 ? "border-t border-emerald-600/40" : ""}`}
                   >
-                    ${parseFloat(price).toFixed(2)}
-                  </Badge>
+                    <span className="text-white font-semibold text-sm">
+                      {row.label}
+                    </span>
+                  </div>
+                  <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
+                    {row.isBadge ? (
+                      <Badge
+                        variant="secondary"
+                        className="bg-primary text-white text-base font-bold px-3 py-1"
+                      >
+                        ${parseFloat(price).toFixed(2)}
+                      </Badge>
+                    ) : (
+                      <span className="text-body text-sm font-medium break-all">
+                        {row.value}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
+              ))}
 
+              {/* Order Tracking Verification Identifier */}
               <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                <div className="bg-emerald-700 px-5 py-4 border-t border-emerald-600/40">
                   <span className="text-white font-semibold text-sm">
                     Order ID
                   </span>
                 </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <span className="text-body text-muted-foreground font-mono text-sm">
+                <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
+                  <span className="text-body text-sm font-mono text-muted-foreground break-all">
                     {orderId}
                   </span>
+                  <CopyBtn value={orderId} field="orderId" />
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Send Amount To The Address
+              {/* DYNAMIC ACCOUNT REGION DROPDOWN SWITCHER ROW */}
+              <div className="grid grid-cols-2 bg-muted/40 border-b border-t">
+                <div className="bg-emerald-800 px-5 py-4 flex items-center">
+                  <span className="text-white font-bold text-sm flex items-center gap-1.5">
+                    <Globe className="size-4 opacity-80" /> Switch Account Info
                   </span>
                 </div>
-                <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                  <span className="text-body text-sm font-medium break-all">
-                    {PAYPAL_EMAIL}
-                  </span>
-                  <button
-                    onClick={handleCopy}
-                    className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
-                    title="Copy email"
-                  >
-                    {copied ? (
-                      <CheckCircle2 className="size-4 text-green-500" />
-                    ) : (
-                      <Copy className="size-4" />
+                <div className="px-5 py-3 bg-card flex items-center">
+                  <div className="relative w-full">
+                    <select
+                      value={activeAccountKey}
+                      onChange={(e) => setActiveAccountKey(e.target.value)}
+                      className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-1 focus:ring-emerald-500 cursor-pointer appearance-none pr-8"
+                    >
+                      {Object.entries(BANK_ACCOUNTS).map(([key, config]) => (
+                        <option key={key} value={key}>
+                          {config.label}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 size-4 pointer-events-none text-muted-foreground opacity-60" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Dynamic Bank Account Information Processing Output */}
+              {dynamicBankRows.map((row) => (
+                <div key={row.label} className="grid grid-cols-2">
+                  <div className="bg-emerald-700 px-5 py-4 border-t border-emerald-600/40">
+                    <span className="text-white font-semibold text-sm">
+                      {row.label}
+                    </span>
+                  </div>
+                  <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
+                    <span className="text-body text-sm font-medium break-all">
+                      {row.value}
+                    </span>
+                    {row.field && (
+                      <CopyBtn value={row.value} field={row.field} />
                     )}
-                  </button>
+                  </div>
                 </div>
-              </div>
+              ))}
 
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Pay Directly via PayPal.me
-                  </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <a
-                    href={`${PAYPAL_LINK}/${price}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                  >
-                    Send ${price} via PayPal.me{" "}
-                    <ExternalLink className="size-3" />
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Don&apos;t have a PayPal Account?
-                  </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <a
-                    href="https://www.paypal.com/signup"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                  >
-                    Open PayPal Here <ExternalLink className="size-3" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Go another method row with dynamic Shadcn Dropdown component */}
+              {/* Alternative Payment Gateway Configuration Selection Router */}
               <div className="grid grid-cols-2">
                 <div className="bg-black px-5 py-4 border-t border-white/10 flex items-center">
                   <span className="text-white font-semibold text-sm">
@@ -314,7 +357,7 @@ export default function BankTransferContent() {
                         variant="outline"
                         className="w-full max-w-[240px] justify-between text-sm"
                       >
-                        PayPal
+                        Bank Transfer
                         <ChevronDown className="size-4 opacity-50 ml-2" />
                       </Button>
                     </DropdownMenuTrigger>
@@ -327,7 +370,7 @@ export default function BankTransferContent() {
                           Alternative Gateways
                         </DropdownMenuLabel>
                         <DropdownMenuRadioGroup
-                          value="paypal"
+                          value="bank"
                           onValueChange={handleMethodChange}
                         >
                           {alternativeMethods.map((method) => {
