@@ -28,8 +28,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import UnlimitedPlan from "./UnlimitedPlan";
 
-const PAYPAL_EMAIL = "support@blackdiamondea.info"; // ← replace with your PayPal email
-const PAYPAL_LINK = "https://paypal.me/YOUR_ID"; // ← replace with your PayPal.me link
+const PAYPAL_EMAIL = "guardiansgo.com@gmail.com"; // ← replace with your PayPal email
 const TELEGRAM_VIP_LINK = "https://t.me/bdeaspecial"; // ← replace with your VIP Telegram link
 
 export default function PayPalPaymentContent() {
@@ -152,7 +151,7 @@ export default function PayPalPaymentContent() {
           ) : (
             /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
             <div className="rounded-xl overflow-hidden border">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-[#003087] px-5 py-4">
                   <span className="text-white font-semibold text-sm">Plan</span>
                 </div>
@@ -163,7 +162,7 @@ export default function PayPalPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
                   <span className="text-white font-semibold text-sm">
                     Amount
@@ -179,7 +178,7 @@ export default function PayPalPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
                   <span className="text-white font-semibold text-sm">
                     Order ID
@@ -192,7 +191,7 @@ export default function PayPalPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
                   <span className="text-white font-semibold text-sm">
                     Send Amount To The Address
@@ -213,25 +212,6 @@ export default function PayPalPaymentContent() {
                       <Copy className="size-4" />
                     )}
                   </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Pay Directly via PayPal.me
-                  </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b">
-                  <a
-                    href={`${PAYPAL_LINK}/${price}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                  >
-                    Send ${price} via PayPal.me{" "}
-                    <ExternalLink className="size-3" />
-                  </a>
                 </div>
               </div>
 

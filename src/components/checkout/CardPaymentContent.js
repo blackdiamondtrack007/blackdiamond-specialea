@@ -26,6 +26,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import UnlimitedPlan from "./UnlimitedPlan";
+import { ExternalLink } from "lucide-react";
 
 const SUPPORT_EMAIL = "support@blackdiamondea.info";
 
@@ -112,6 +113,8 @@ export default function CardPaymentContent() {
   };
 
   // Flag to check if this is the high-tier Unlimited plan
+  const isBasic = product === "BlackDiamond_Basic";
+  const isPro = product === "BlackDiamond_Pro";
   const isUnlimitedPlan = product === "BlackDiamond_Unlimited";
 
   return (
@@ -148,7 +151,7 @@ export default function CardPaymentContent() {
           ) : (
             /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
             <div className="rounded-xl overflow-hidden border">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-blue-600 px-5 py-4">
                   <span className="text-white font-semibold text-sm">Plan</span>
                 </div>
@@ -159,8 +162,8 @@ export default function CardPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
-                <div className="bg-blue-600 px-5 py-4 border-t border-blue-600/50">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
+                <div className="bg-blue-600 px-5 py-4">
                   <span className="text-white font-semibold text-sm">
                     Amount
                   </span>
@@ -175,7 +178,7 @@ export default function CardPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-blue-600/80">
                 <div className="bg-blue-600 px-5 py-4 border-t border-blue-600/50">
                   <span className="text-white font-semibold text-sm">
                     Order ID
@@ -191,24 +194,32 @@ export default function CardPaymentContent() {
               <div className="grid grid-cols-2">
                 <div className="bg-blue-600 px-5 py-4 border-t border-blue-600/50">
                   <span className="text-white font-semibold text-sm">
-                    Billing Email Contact
+                    Send Amount To The Address
                   </span>
                 </div>
                 <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                  <span className="text-body text-sm font-medium break-all">
-                    {SUPPORT_EMAIL}
-                  </span>
-                  <button
-                    onClick={() => handleCopy(SUPPORT_EMAIL, "email")}
-                    className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
-                    title="Copy email"
-                  >
-                    {copiedField === "email" ? (
-                      <CheckCircle2 className="size-4 text-green-500" />
-                    ) : (
-                      <Copy className="size-4" />
-                    )}
-                  </button>
+                  {isBasic && (
+                    <a
+                      href={"https://buy.stripe.com/cN24ig6p1bvW1rieV4"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#635bff] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                    >
+                      Pay via Visa / Master Card{" "}
+                      <ExternalLink className="size-3" />
+                    </a>
+                  )}
+                  {isPro && (
+                    <a
+                      href={"https://buy.stripe.com/eVq00j4Pt9Ak5mca443840A"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#635bff] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                    >
+                      Pay via Visa / Master Card{" "}
+                      <ExternalLink className="size-3" />
+                    </a>
+                  )}
                 </div>
               </div>
 

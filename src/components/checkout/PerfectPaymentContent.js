@@ -28,7 +28,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import UnlimitedPlan from "./UnlimitedPlan";
 
-const PM_ACCOUNT = "U12345678"; // ← replace with your Perfect Money USD account id
+const PM_ACCOUNT = "U8536366"; // ← replace with your Perfect Money USD account id
 
 export default function PerfectPaymentContent() {
   const searchParams = useSearchParams();
@@ -149,7 +149,7 @@ export default function PerfectPaymentContent() {
           ) : (
             /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
             <div className="rounded-xl overflow-hidden border">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-red-400">
                 <div className="bg-[#ff0000] px-5 py-4">
                   <span className="text-white font-semibold text-sm">Plan</span>
                 </div>
@@ -160,7 +160,7 @@ export default function PerfectPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-red-400">
                 <div className="bg-[#ff0000] px-5 py-4 border-t border-[#ff0000]/50">
                   <span className="text-white font-semibold text-sm">
                     Amount
@@ -176,7 +176,7 @@ export default function PerfectPaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-red-400">
                 <div className="bg-[#ff0000] px-5 py-4 border-t border-[#ff0000]/50">
                   <span className="text-white font-semibold text-sm">
                     Order ID

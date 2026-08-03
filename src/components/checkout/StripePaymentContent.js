@@ -114,6 +114,8 @@ export default function StripePaymentContent() {
   };
 
   // Flag to check if this is the high-tier Unlimited plan
+  const isBasic = product === "BlackDiamond_Basic";
+  const isPro = product === "BlackDiamond_Pro";
   const isUnlimitedPlan = product === "BlackDiamond_Unlimited";
   return (
     <section className="w-full min-h-screen">
@@ -150,7 +152,7 @@ export default function StripePaymentContent() {
           ) : (
             /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
             <div className="rounded-xl overflow-hidden border">
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-purple-300">
                 <div className="bg-[#635bff] px-5 py-4">
                   <span className="text-white font-semibold text-sm">Plan</span>
                 </div>
@@ -161,7 +163,7 @@ export default function StripePaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-purple-300">
                 <div className="bg-[#635bff] px-5 py-4 border-t border-[#635bff]/50">
                   <span className="text-white font-semibold text-sm">
                     Amount
@@ -177,7 +179,7 @@ export default function StripePaymentContent() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-purple-300">
                 <div className="bg-[#635bff] px-5 py-4 border-t border-[#635bff]/50">
                   <span className="text-white font-semibold text-sm">
                     Order ID
@@ -193,42 +195,30 @@ export default function StripePaymentContent() {
               <div className="grid grid-cols-2">
                 <div className="bg-[#635bff] px-5 py-4 border-t border-[#635bff]/50">
                   <span className="text-white font-semibold text-sm">
-                    Stripe Account Email
-                  </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                  <span className="text-body text-sm font-medium break-all">
-                    {STRIPE_EMAIL}
-                  </span>
-                  <button
-                    onClick={handleCopy}
-                    className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
-                    title="Copy email"
-                  >
-                    {copied ? (
-                      <CheckCircle2 className="size-4 text-green-500" />
-                    ) : (
-                      <Copy className="size-4" />
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2">
-                <div className="bg-[#635bff] px-5 py-4 border-t border-[#635bff]/50">
-                  <span className="text-white font-semibold text-sm">
-                    Direct Checkout Hub
+                    Send Amount To The Address
                   </span>
                 </div>
                 <div className="px-5 py-4 bg-card border-b">
-                  <a
-                    href={`${STRIPE_LINK}?amount=${price}&orderId=${orderId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#635bff] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                  >
-                    Pay via Stripe Engine <ExternalLink className="size-3" />
-                  </a>
+                  {isBasic && (
+                    <a
+                      href={"https://buy.stripe.com/cN24ig6p1bvW1rieV4"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#635bff] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                    >
+                      Pay via Stripe <ExternalLink className="size-3" />
+                    </a>
+                  )}
+                  {isPro && (
+                    <a
+                      href={"https://buy.stripe.com/eVq00j4Pt9Ak5mca443840A"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#635bff] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                    >
+                      Pay via Stripe <ExternalLink className="size-3" />
+                    </a>
+                  )}
                 </div>
               </div>
 

@@ -154,7 +154,7 @@ export default function SkrillPaymentContent() {
             /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
             <div className="rounded-xl overflow-hidden border">
               {/* Row: Plan */}
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-pink-600/40">
                 <div className="bg-[#862165] px-5 py-4">
                   <span className="text-white font-semibold text-sm">Plan</span>
                 </div>
@@ -166,7 +166,7 @@ export default function SkrillPaymentContent() {
               </div>
 
               {/* Row: Amount */}
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-pink-600/40">
                 <div className="bg-[#862165] px-5 py-4 border-t border-[#862165]/50">
                   <span className="text-white font-semibold text-sm">
                     Amount
@@ -183,7 +183,7 @@ export default function SkrillPaymentContent() {
               </div>
 
               {/* Row: Order ID */}
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-pink-600/40">
                 <div className="bg-[#862165] px-5 py-4 border-t border-[#862165]/50">
                   <span className="text-white font-semibold text-sm">
                     Order ID
@@ -197,7 +197,7 @@ export default function SkrillPaymentContent() {
               </div>
 
               {/* Row: Send To */}
-              <div className="grid grid-cols-2">
+              <div className="grid grid-cols-2 border-b border-pink-600/40">
                 <div className="bg-[#862165] px-5 py-4 border-t border-[#862165]/50">
                   <span className="text-white font-semibold text-sm">
                     Send Amount To The Address
