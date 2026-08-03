@@ -54,7 +54,7 @@ export default function MobileMenu() {
                   {"Home"}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href={"/forex-ea"}
                   className={
@@ -65,8 +65,8 @@ export default function MobileMenu() {
                 >
                   {"Forex EA"}
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   href={"/indicator"}
                   className={
@@ -77,7 +77,7 @@ export default function MobileMenu() {
                 >
                   {"Indicator"}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href={"/brokers"}
@@ -90,7 +90,7 @@ export default function MobileMenu() {
                   {"Brokers"}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href={"/blogs"}
                   className={
@@ -101,7 +101,7 @@ export default function MobileMenu() {
                 >
                   {"Blogs"}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Accordion
                   type="single"

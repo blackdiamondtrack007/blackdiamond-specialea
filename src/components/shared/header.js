@@ -79,7 +79,7 @@ export const Header = () => {
                     {"Home"}
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href={"/forex-ea"}
                     className={
@@ -90,8 +90,8 @@ export const Header = () => {
                   >
                     {"Forex EA"}
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <Link
                     href={"/indicator"}
                     className={
@@ -102,7 +102,7 @@ export const Header = () => {
                   >
                     {"Indicator"}
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href={"/brokers"}
@@ -115,7 +115,7 @@ export const Header = () => {
                     {"Brokers"}
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href={"/blogs"}
                     className={
@@ -126,7 +126,7 @@ export const Header = () => {
                   >
                     {"Blogs"}
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <NavigationMenu>
                     <NavigationMenuList>

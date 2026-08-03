@@ -6,8 +6,9 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "BlackDiamond_Basic",
-    price: 299,
-    previous_price: 450,
+    price: 312,
+    previous_price: 410,
+    price_off: 30,
     variant: "outline",
     popular: false,
     features: [
@@ -29,8 +30,9 @@ const plans = [
   },
   {
     name: "BlackDiamond_Pro",
-    price: 699,
-    previous_price: 850,
+    price: 730,
+    previous_price: 949,
+    price_off: 30,
     variant: "default",
     popular: true,
     features: [
@@ -57,7 +59,8 @@ const plans = [
   {
     name: "BlackDiamond_Unlimited",
     price: 2499,
-    previous_price: 2700,
+    previous_price: 3250,
+    price_off: 30,
     variant: "outline",
     popular: false,
     features: [
@@ -109,11 +112,11 @@ export default function Pricing() {
                 )}
 
                 <CardHeader>
-                  <CardTitle className="font-medium text-body-large">
+                  <CardTitle className="font-medium text-body-large text-center">
                     {plan.name}
                   </CardTitle>
 
-                  <span className="my-3 block text-2xl font-semibold space-x-2">
+                  <span className="my-3 block text-2xl font-semibold space-x-2 text-center">
                     <span>${plan.price}</span>{" "}
                     <span className="text-body line-through">
                       ${plan.previous_price}
