@@ -7,14 +7,14 @@ export default function TermsCondition() {
         <h1 className="text-center">Terms And Conditions</h1>
 
         <div className="text-text-primary mt-10">
-          <div class="border-b-2 border-gray-300 pb-4 mb-6">
+          <div className="border-b-2 border-gray-300 pb-4 mb-6">
             <h4>
               * Risk & Liability Disclaimer / Terms and Conditions of Use and
               U.S. Government Required Disclaimer
             </h4>
           </div>
 
-          <div class="space-y-4 text-sm leading-relaxed">
+          <div className="space-y-4 text-sm leading-relaxed">
             <p>
               Commodity Futures Trading Commission Futures, Options trading, and
               Forex trading has large potential rewards, but also large
@@ -46,11 +46,11 @@ export default function TermsCondition() {
               Developer from any liability from trade aberrations.
             </p>
 
-            <div class="mt-6">
-              <h4 class="mb-3">
+            <div className="mt-6">
+              <h4 className="mb-3">
                 RISK DISCLOSURE STATEMENT (CFTC Reg. Sec. 1.55)
               </h4>
-              <p class="mb-3">
+              <p className="mb-3">
                 The risk of loss in trading commodity futures, securities and
                 forex can be substantial. You should, therefore, carefully
                 consider whether such trading is suitable for you in light of
@@ -58,7 +58,7 @@ export default function TermsCondition() {
                 of the following points:
               </p>
 
-              <div class="space-y-3 pl-6">
+              <div className="space-y-3 pl-6">
                 <p>
                   (1) You may sustain a total loss of the funds that you deposit
                   with your broker to establish or maintain a position in the
@@ -107,7 +107,7 @@ export default function TermsCondition() {
                 </p>
               </div>
 
-              <p class="mt-4 font-bold uppercase">
+              <p className="mt-4 font-bold uppercase">
                 ALL OF THE POINTS NOTED ABOVE APPLY TO ALL MARKET TRADING
                 WHETHER FOREIGN OR DOMESTIC. IN ADDITION, IF YOU ARE
                 CONTEMPLATING TRADING FOREIGN FUTURES, FOREX, STOCK, OR OPTIONS
@@ -115,7 +115,7 @@ export default function TermsCondition() {
                 RISKS:
               </p>
 
-              <div class="space-y-3 pl-6 mt-3">
+              <div className="space-y-3 pl-6 mt-3">
                 <p>
                   (7) Foreign futures transactions involve executing and
                   clearing trades on a foreign exchange. This is the case even
@@ -150,17 +150,17 @@ export default function TermsCondition() {
                 </p>
               </div>
 
-              <p class="mt-4 font-bold uppercase">
+              <p className="mt-4 font-bold uppercase">
                 THIS BRIEF STATEMENT CANNOT, OF COURSE, DISCLOSE ALL THE RISKS
                 AND OTHER ASPECTS OF THE FOREIGN EXCHANGE OR COMMODITY MARKETS
               </p>
             </div>
 
-            <div class="mt-6">
-              <h4 class="mb-3">
+            <div className="mt-6">
+              <h4 className="mb-3">
                 CFTC REG SEC. 4.41 HYPOTHETICAL PERFORMANCE RESULTS DISCLOSURE
               </h4>
-              <p class="mb-3 uppercase font-semibold">
+              <p className="mb-3 uppercase font-semibold">
                 THE RESULTS DISCUSSED OR SHOWS ON THE BLACKDIAMONDEA.INFO
                 WEBSITE OR OTHER MARKETING MATERIALS ARE BASED ON SIMULATED OR
                 HYPOTHETICAL PERFORMANCE RESULTS THAT HAVE CERTAIN INHERENT
@@ -194,7 +194,7 @@ export default function TermsCondition() {
                 future results.
               </p>
 
-              <p class="mt-3">
+              <p className="mt-3">
                 The software is provided FREE of charge and you agree to use it
                 at your own risk. You agree to indemnify, defend and hold
                 harmless The Developer, its officers, directors, employees,
@@ -206,7 +206,7 @@ export default function TermsCondition() {
                 information.
               </p>
 
-              <p class="mt-3">
+              <p className="mt-3">
                 "Fully automated trading of a strategy - automated trading that
                 requires no confirmation of the decision to place the trade
                 before it is placed - is a tool that should be used only by
@@ -238,7 +238,7 @@ export default function TermsCondition() {
                 YOUR ACCOUNT AT ALL TIMES.
               </p>
 
-              <p class="mt-3">
+              <p className="mt-3">
                 The sole purpose of fully-automated trading is to increase the
                 speed of the execution of your trading strategies. The Developer
                 strongly recommends that you do not use fully automated trading
@@ -249,7 +249,7 @@ export default function TermsCondition() {
                 your trade placement.
               </p>
 
-              <p class="mt-3">
+              <p className="mt-3">
                 You agree to indemnify, defend and hold harmless The Developer,
                 its officers, directors, employees, agents, licensors,
                 suppliers, affiliates from and against all losses, expenses,
@@ -260,8 +260,8 @@ export default function TermsCondition() {
               </p>
             </div>
 
-            <div class="mt-6">
-              <h4 class="mb-3">Confidentiality</h4>
+            <div className="mt-6">
+              <h4 className="mb-3">Confidentiality</h4>
               <p>
                 This agreement covers proprietary information belonging to The
                 Developer ("The Developer") that is made available or disclosed
@@ -296,8 +296,8 @@ export default function TermsCondition() {
               </p>
             </div>
 
-            <div class="mt-6">
-              <p class="mb-3">
+            <div className="mt-6">
+              <p className="mb-3">
                 The Recipient shall refrain from directly or indirectly
                 acquiring any interest in, or designing, creating,
                 manufacturing, selling or otherwise dealing with any item or
@@ -309,7 +309,7 @@ export default function TermsCondition() {
                 following limitations:
               </p>
 
-              <div class="space-y-3 pl-6">
+              <div className="space-y-3 pl-6">
                 <p>
                   1.) Recipient may use the Software Products only on their own
                   computer or VPS and Forex Broker Account at the Broker that is
@@ -342,13 +342,13 @@ export default function TermsCondition() {
                 </p>
               </div>
 
-              <p class="mt-3">
+              <p className="mt-3">
                 This agreement shall be governed by and construed in accordance
                 with the laws of the United States, and state of Florida.
               </p>
             </div>
 
-            <div class="mt-6">
+            <div className="mt-6">
               <p>
                 The Developer provides the Confidential Information on an AS IS
                 basis and is not responsible for any loss or damages arising
@@ -361,8 +361,8 @@ export default function TermsCondition() {
               </p>
             </div>
 
-            <div class="mt-6">
-              <h4 class="mb-3">Termination.</h4>
+            <div className="mt-6">
+              <h4 className="mb-3">Termination.</h4>
               <p>
                 This Agreement may be terminated by either party without notice
                 at any time for any reason. This Agreement shall survive any

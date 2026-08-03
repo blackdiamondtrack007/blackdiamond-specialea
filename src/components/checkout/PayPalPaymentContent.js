@@ -5,16 +5,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Copy, 
-  ExternalLink, 
-  CheckCircle2, 
+import {
+  Copy,
+  ExternalLink,
+  CheckCircle2,
   ChevronDown,
   Wallet,
   Building2,
   CreditCard,
   Coins,
-  BadgeDollarSign
+  BadgeDollarSign,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -26,9 +26,11 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import UnlimitedPlan from "./UnlimitedPlan";
 
 const PAYPAL_EMAIL = "support@blackdiamondea.info"; // ← replace with your PayPal email
 const PAYPAL_LINK = "https://paypal.me/YOUR_ID"; // ← replace with your PayPal.me link
+const TELEGRAM_VIP_LINK = "https://t.me/bdeaspecial"; // ← replace with your VIP Telegram link
 
 export default function PayPalPaymentContent() {
   const searchParams = useSearchParams();
@@ -49,17 +51,60 @@ export default function PayPalPaymentContent() {
   const currentParams = `product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`;
 
   // Helper builder to streamline alternative navigation links
-  const buildPath = (gateway) => `/checkout/payment/${gateway}?${currentParams}`;
+  const buildPath = (gateway) =>
+    `/checkout/payment/${gateway}?${currentParams}`;
 
   // Complete settings array mapping every gateway target out beautifully
   const alternativeMethods = [
-    { value: "card", label: "Visa / Mastercard", path: buildPath("card"), icon: CreditCard, color: "text-blue-600" },
-    { value: "paypal", label: "PayPal", path: buildPath("paypal"), icon: Wallet, color: "text-[#003087]" },
-    { value: "stripe", label: "Stripe", path: buildPath("stripe"), icon: CreditCard, color: "text-[#635bff]" },
-    { value: "crypto", label: "Bitcoin / Cryptocurrency", path: buildPath("crypto"), icon: Coins, color: "text-[#f7931a]" },
-    { value: "bank", label: "Bank Transfer", path: buildPath("bank"), icon: Building2, color: "text-emerald-600" },
-    { value: "skrill", label: "Skrill", path: buildPath("skrill"), icon: CreditCard, color: "text-[#862165]" },
-    { value: "perfect", label: "Perfect Money", path: buildPath("perfect"), icon: BadgeDollarSign, color: "text-[#ff0000]" },
+    {
+      value: "card",
+      label: "Visa / Mastercard",
+      path: buildPath("card"),
+      icon: CreditCard,
+      color: "text-blue-600",
+    },
+    {
+      value: "paypal",
+      label: "PayPal",
+      path: buildPath("paypal"),
+      icon: Wallet,
+      color: "text-[#003087]",
+    },
+    {
+      value: "stripe",
+      label: "Stripe",
+      path: buildPath("stripe"),
+      icon: CreditCard,
+      color: "text-[#635bff]",
+    },
+    {
+      value: "crypto",
+      label: "Bitcoin / Cryptocurrency",
+      path: buildPath("crypto"),
+      icon: Coins,
+      color: "text-[#f7931a]",
+    },
+    {
+      value: "bank",
+      label: "Bank Transfer",
+      path: buildPath("bank"),
+      icon: Building2,
+      color: "text-emerald-600",
+    },
+    {
+      value: "skrill",
+      label: "Skrill",
+      path: buildPath("skrill"),
+      icon: CreditCard,
+      color: "text-[#862165]",
+    },
+    {
+      value: "perfect",
+      label: "Perfect Money",
+      path: buildPath("perfect"),
+      icon: BadgeDollarSign,
+      color: "text-[#ff0000]",
+    },
   ];
 
   const handleMethodChange = (selectedValue) => {
@@ -68,6 +113,9 @@ export default function PayPalPaymentContent() {
       router.push(target.path);
     }
   };
+
+  // Flag to check if this is the high-tier Unlimited plan
+  const isUnlimitedPlan = product === "BlackDiamond_Unlimited";
 
   return (
     <section className="w-full min-h-screen">
@@ -85,157 +133,179 @@ export default function PayPalPaymentContent() {
             </div>
             <div>
               <h2 className="text-xl font-semibold text-text-primary">
-                Account Information
+                {isUnlimitedPlan
+                  ? "VIP Order Activation"
+                  : "Account Information"}
               </h2>
               <p className="text-body text-muted-foreground text-sm">
-                Send your payment to the details below
+                {isUnlimitedPlan
+                  ? "Secure your unlimited license directly with our elite team"
+                  : "Send your payment to the details below"}
               </p>
             </div>
           </div>
 
-          {/* Info Table */}
-          <div className="rounded-xl overflow-hidden border">
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4">
-                <span className="text-white font-semibold text-sm">Plan</span>
+          {/* DYNAMIC DESIGN BOX */}
+          {isUnlimitedPlan ? (
+            /* --- DESIGN FOR UNLIMITED PLAN --- */
+            <UnlimitedPlan product={product} price={price} orderId={orderId} />
+          ) : (
+            /* --- ORIGINAL INFO TABLE FOR REGULAR PLANS --- */
+            <div className="rounded-xl overflow-hidden border">
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4">
+                  <span className="text-white font-semibold text-sm">Plan</span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b">
+                  <span className="text-body font-medium break-words">
+                    {product}
+                  </span>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b">
-                <span className="text-body font-medium break-words">
-                  {product}
-                </span>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                <span className="text-white font-semibold text-sm">Amount</span>
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                  <span className="text-white font-semibold text-sm">
+                    Amount
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b">
+                  <Badge
+                    variant="secondary"
+                    className="bg-primary text-white text-base font-bold px-3 py-1"
+                  >
+                    ${parseFloat(price).toFixed(2)}
+                  </Badge>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b">
-                <Badge
-                  variant="secondary"
-                  className="bg-primary text-white text-base font-bold px-3 py-1"
-                >
-                  ${parseFloat(price).toFixed(2)}
-                </Badge>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                <span className="text-white font-semibold text-sm">
-                  Order ID
-                </span>
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                  <span className="text-white font-semibold text-sm">
+                    Order ID
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b">
+                  <span className="text-body text-muted-foreground font-mono text-sm">
+                    {orderId}
+                  </span>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b">
-                <span className="text-body text-muted-foreground font-mono text-sm">
-                  {orderId}
-                </span>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                <span className="text-white font-semibold text-sm">
-                  Send Amount To The Address
-                </span>
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                  <span className="text-white font-semibold text-sm">
+                    Send Amount To The Address
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
+                  <span className="text-body text-sm font-medium break-all">
+                    {PAYPAL_EMAIL}
+                  </span>
+                  <button
+                    onClick={handleCopy}
+                    className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
+                    title="Copy email"
+                  >
+                    {copied ? (
+                      <CheckCircle2 className="size-4 text-green-500" />
+                    ) : (
+                      <Copy className="size-4" />
+                    )}
+                  </button>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                <span className="text-body text-sm font-medium break-all">
-                  {PAYPAL_EMAIL}
-                </span>
-                <button
-                  onClick={handleCopy}
-                  className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
-                  title="Copy email"
-                >
-                  {copied ? (
-                    <CheckCircle2 className="size-4 text-green-500" />
-                  ) : (
-                    <Copy className="size-4" />
-                  )}
-                </button>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                <span className="text-white font-semibold text-sm">
-                  Pay Directly via PayPal.me
-                </span>
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                  <span className="text-white font-semibold text-sm">
+                    Pay Directly via PayPal.me
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b">
+                  <a
+                    href={`${PAYPAL_LINK}/${price}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                  >
+                    Send ${price} via PayPal.me{" "}
+                    <ExternalLink className="size-3" />
+                  </a>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b">
-                <a
-                  href={`${PAYPAL_LINK}/${price}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                >
-                  Send ${price} via PayPal.me{" "}
-                  <ExternalLink className="size-3" />
-                </a>
-              </div>
-            </div>
 
-            <div className="grid grid-cols-2">
-              <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
-                <span className="text-white font-semibold text-sm">
-                  Don&apos;t have a PayPal Account?
-                </span>
+              <div className="grid grid-cols-2">
+                <div className="bg-[#003087] px-5 py-4 border-t border-[#003087]/50">
+                  <span className="text-white font-semibold text-sm">
+                    Don&apos;t have a PayPal Account?
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card border-b">
+                  <a
+                    href="https://www.paypal.com/signup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
+                  >
+                    Open PayPal Here <ExternalLink className="size-3" />
+                  </a>
+                </div>
               </div>
-              <div className="px-5 py-4 bg-card border-b">
-                <a
-                  href="https://www.paypal.com/signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#009cde] hover:underline underline-offset-4 text-sm font-medium flex items-center gap-1"
-                >
-                  Open PayPal Here <ExternalLink className="size-3" />
-                </a>
-              </div>
-            </div>
 
-            {/* Go another method row with dynamic Shadcn Dropdown component */}
-            <div className="grid grid-cols-2">
-              <div className="bg-black px-5 py-4 border-t border-white/10 flex items-center">
-                <span className="text-white font-semibold text-sm">
-                  Go Another Payment Method
-                </span>
-              </div>
-              <div className="px-5 py-4 bg-card flex items-center justify-start">
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="w-full max-w-[240px] justify-between text-sm">
-                      PayPal
-                      <ChevronDown className="size-4 opacity-50 ml-2" />
-                    </Button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="min-w-60 bg-primary text-white" align="start">
-                    <DropdownMenuGroup>
-                      <DropdownMenuLabel>Alternative Gateways</DropdownMenuLabel>
-                      <DropdownMenuRadioGroup
-                        value="paypal" 
-                        onValueChange={handleMethodChange}
+              {/* Go another method row with dynamic Shadcn Dropdown component */}
+              <div className="grid grid-cols-2">
+                <div className="bg-black px-5 py-4 border-t border-white/10 flex items-center">
+                  <span className="text-white font-semibold text-sm">
+                    Go Another Payment Method
+                  </span>
+                </div>
+                <div className="px-5 py-4 bg-card flex items-center justify-start">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className="w-full max-w-[240px] justify-between text-sm"
                       >
-                        {alternativeMethods.map((method) => {
-                          const IconComponent = method.icon;
-                          return (
-                            <DropdownMenuRadioItem 
-                              key={method.value} 
-                              value={method.value}
-                              className="flex items-center gap-2 cursor-pointer"
-                            >
-                              <IconComponent className={`size-4 ${method.color}`} />
-                              <span>{method.label}</span>
-                            </DropdownMenuRadioItem>
-                          );
-                        })}
-                      </DropdownMenuRadioGroup>
-                    </DropdownMenuGroup>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                        PayPal
+                        <ChevronDown className="size-4 opacity-50 ml-2" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent
+                      className="min-w-60 bg-primary text-white"
+                      align="start"
+                    >
+                      <DropdownMenuGroup>
+                        <DropdownMenuLabel>
+                          Alternative Gateways
+                        </DropdownMenuLabel>
+                        <DropdownMenuRadioGroup
+                          value="paypal"
+                          onValueChange={handleMethodChange}
+                        >
+                          {alternativeMethods.map((method) => {
+                            const IconComponent = method.icon;
+                            return (
+                              <DropdownMenuRadioItem
+                                key={method.value}
+                                value={method.value}
+                                className="flex items-center gap-2 cursor-pointer"
+                              >
+                                <IconComponent
+                                  className={`size-4 ${method.color}`}
+                                />
+                                <span>{method.label}</span>
+                              </DropdownMenuRadioItem>
+                            );
+                          })}
+                        </DropdownMenuRadioGroup>
+                      </DropdownMenuGroup>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* After payment notice */}
           <Separator className="my-8 border-dashed" />
@@ -277,7 +347,7 @@ export default function PayPalPaymentContent() {
               <div className="flex gap-2">
                 <span className="text-muted-foreground">Telegram</span>
                 <a
-                  href="#"
+                  href={TELEGRAM_VIP_LINK}
                   className="text-[#009cde] hover:underline underline-offset-4"
                 >
                   Telegram
