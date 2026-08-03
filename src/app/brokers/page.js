@@ -8,6 +8,7 @@ import icMarketsForexBroker from "../../../public/assets/home/partners/ICMarkets
 import fbsForexBroker from "../../../public/assets/home/partners/FBS-Forex-Broker.webp";
 import vantageFullLogo from "../../../public/assets/home/partners/vantage-full-logo.webp";
 import xbtfxLogo from "../../../public/assets/home/partners/xbtfx-logo.webp";
+import Link from "next/link";
 
 export default function Brokers() {
   return (
@@ -36,12 +37,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -62,12 +63,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -88,12 +89,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -114,12 +115,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -140,12 +141,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -166,12 +167,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -192,12 +193,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://one.exness.link/a/of0mf0mf"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
           <div className="space-y-5 bg-nav-bg rounded-md p-4">
             <div>
@@ -218,12 +219,12 @@ export default function Brokers() {
               </div>
               <div className="flex justify-between">
                 <p className="font-medium">EUR/USD Spread:</p>
-                <p>4.1</p>
+                <p>-</p>
               </div>
             </div>
-            <div>
+            <Link href={"https://my.roboforex.com/en/?a=vuhy"} target="_blank">
               <Button className="w-full text-white">Open Live Account</Button>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
