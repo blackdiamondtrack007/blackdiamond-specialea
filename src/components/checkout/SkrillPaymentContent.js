@@ -29,6 +29,7 @@ import {
 import UnlimitedPlan from "./UnlimitedPlan";
 
 const SKRILL_EMAIL = "support@blackdiamondea.info"; // ← replace with your Skrill email
+const SUPPORT_EMAIL = "support@blackdiamondea.info";
 
 export default function SkrillPaymentContent() {
   const searchParams = useSearchParams();
@@ -59,7 +60,7 @@ export default function SkrillPaymentContent() {
       label: "Visa / Mastercard",
       path: buildPath("card"),
       icon: CreditCard,
-      color: "text-blue-600",
+      color: "text-[#862165]",
     },
     {
       value: "paypal",
@@ -301,40 +302,44 @@ export default function SkrillPaymentContent() {
               After Payment — Inbox Us
             </h3>
             <p className="text-body text-muted-foreground text-sm">
-              Email, Facebook, Skype or Telegram
+              Email, Facebook, Instagram or Telegram
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 text-sm">
               <div className="flex gap-2">
-                <span className="text-muted-foreground">Email</span>
+                <span className="text-muted-foreground">Email:</span>
                 <a
-                  href="mailto:support@blackdiamondea.info"
+                  href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@blackdiamondea.info"
+                  target="_blank"
                   className="text-[#862165] hover:underline underline-offset-4 break-all"
                 >
-                  support@blackdiamondea.info
+                  {SUPPORT_EMAIL}
                 </a>
               </div>
               <div className="flex gap-2">
-                <span className="text-muted-foreground">Skype</span>
+                <span className="text-muted-foreground">Instagram:</span>
                 <a
-                  href="skype:Blackdiamond_special"
+                  href="https://www.instagram.com/blackdiamondea/"
+                  target="_blank"
                   className="text-[#862165] hover:underline underline-offset-4"
                 >
-                  Blackdiamond_special
+                  Instagram
                 </a>
               </div>
               <div className="flex gap-2">
-                <span className="text-muted-foreground">FB</span>
+                <span className="text-muted-foreground">Facebook:</span>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/blackdiamondspecialea"
+                  target="_blank"
                   className="text-[#862165] hover:underline underline-offset-4"
                 >
-                  FaceBook
+                  Facebook
                 </a>
               </div>
               <div className="flex gap-2">
-                <span className="text-muted-foreground">Telegram</span>
+                <span className="text-muted-foreground">Telegram:</span>
                 <a
-                  href="#"
+                  href="https://t.me/bdeaspecial"
+                  target="_blank"
                   className="text-[#862165] hover:underline underline-offset-4"
                 >
                   Telegram
