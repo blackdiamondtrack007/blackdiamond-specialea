@@ -4,7 +4,7 @@ export default function RefundPolicy() {
   return (
     <div className="w-full mt-18 lg:mt-36.75">
       <div className="container pt-10 lg:pt-15">
-        <h1 className="text-center">Terms And Conditions</h1>
+        <h1 className="text-center">Refund Policy</h1>
 
         <div className="text-text-primary mt-10">
           <div className="border-b-2 border-gray-300 pb-4 mb-6">
