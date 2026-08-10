@@ -14,7 +14,7 @@ export default function TermsCondition() {
             </h4>
           </div>
 
-          <div className="space-y-4 text-sm leading-relaxed">
+          <div className="space-y-4 leading-relaxed">
             <p>
               Commodity Futures Trading Commission Futures, Options trading, and
               Forex trading has large potential rewards, but also large
