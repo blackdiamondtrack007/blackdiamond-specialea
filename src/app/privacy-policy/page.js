@@ -83,19 +83,6 @@ export default function PrivacyPolicy() {
               </div>
             </div>
 
-            {/* <div className="mt-6">
-              <h4 className="mb-3">2. No Refund After Delivery</h4>
-              <p className="mb-3">
-                Once a license key, download link, software file, or digital
-                product has been delivered, refunds will generally not be
-                issued.
-              </p>
-              <p className="mb-3">
-                This policy exists because digital products cannot be "returned"
-                after delivery.
-              </p>
-            </div> */}
-
             <div className="mt-6">
               <h4 className="mb-3">2. How We Use Your Information</h4>
             </div>
