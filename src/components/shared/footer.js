@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import payments from "../../../public/assets/footer/payments.webp";
@@ -63,7 +61,9 @@ export default function Footer() {
               vary.
             </p>
           </div>
-          <h5 className="text-body-large font-semibold mt-5">Legal Disclaimer</h5>
+          <h5 className="text-body-large font-semibold mt-5">
+            Legal Disclaimer
+          </h5>
           <div className="text-body space-y-2 md:space-y-3 lg:space-y-4 mt-2 md:mt-3 lg:mt-4">
             <p>
               This website is not affiliated with, endorsed by, or associated
@@ -83,6 +83,21 @@ export default function Footer() {
               decisions.
             </p>
           </div>
+        </div>
+      </div>
+
+      <div className="py-5 border-t">
+        <div className="container my-0 flex justify-center gap-5 flex-wrap">
+          <Link href={"/website-disclaimer"}>Website Disclaimer</Link>
+          <Link href={"/risk-disclaimer"}>Risk Disclaimer</Link>
+          <Link href={"/refund-policy"}>Refund Policy</Link>
+          <Link href={"/cookie-policy"}>Cookie Policy</Link>
+          <Link href={"/software-license-agreement"}>
+            Software License Agreement
+          </Link>
+          <Link href={"/anti-money-laundering-policy"}>
+            Anti-Money Laundering (AML) Policy
+          </Link>
         </div>
       </div>
 
