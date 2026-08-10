@@ -31,7 +31,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <div className="mt-6">
-              <h4 className="mb-3">Personal Information</h4>
+              <h4 className="mb-3">1. Information We Collect</h4>
               <div className="mt-6">
                 <p className="mb-3">
                   We may collect the following types of information:
