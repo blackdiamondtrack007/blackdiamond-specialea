@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
           <footer>
             <Footer />
           </footer>
-          <OrdersNotification />
+          {/* <OrdersNotification /> */}
           <SocialSidebar />
           <ScrollToTop />
           <TelegramButton />

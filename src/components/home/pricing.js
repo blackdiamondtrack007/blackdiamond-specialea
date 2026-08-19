@@ -91,11 +91,11 @@ export default function Pricing() {
           </p> */}
         </div>
 
-        <div className="mt-8 grid gap-10 md:mt-20 md:grid-cols-3 mx-auto max-w-6xl px-3 md:px-6 items-start">
+        <div className="mt-8 grid gap-10 md:mt-20 md:grid-cols-3 mx-auto max-w-6xl px-4 md:px-6 items-start">
           {/* CARD 1: BASIC */}
           <Card className="flex flex-col h-full relative">
-            <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
-              30%
+            <span className="text-center bg-red-400 text-base font-semibold w-14 h-14 rounded-full flex justify-center items-center absolute -left-7 -top-7 leading-4">
+              30% Off
             </span>
             <CardHeader className={"text-center"}>
               <CardTitle className="font-medium">BlackDiamond_Basic</CardTitle>
@@ -153,8 +153,8 @@ export default function Pricing() {
             </span>
 
             <Card className="flex flex-col h-full grow relative">
-              <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
-                30%
+              <span className="text-center bg-red-400 text-base font-semibold w-14 h-14 rounded-full flex justify-center items-center absolute -left-7 -top-7 leading-4">
+                30% Off
               </span>
               <CardHeader className={"text-center"}>
                 <CardTitle className="font-medium">BlackDiamond_Pro</CardTitle>
@@ -207,8 +207,8 @@ export default function Pricing() {
 
           {/* CARD 3: UNLIMITED */}
           <Card className="flex flex-col h-full relative">
-            <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
-              30%
+            <span className="text-center bg-red-400 text-base font-semibold w-14 h-14 rounded-full flex justify-center items-center absolute -left-7 -top-7 leading-4">
+              30% Off
             </span>
             <CardHeader className={"text-center"}>
               <CardTitle className="font-medium">

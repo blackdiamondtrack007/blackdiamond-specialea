@@ -98,12 +98,12 @@ export default function Pricing() {
             Description of the section
           </p> */}
         </div>
-        <div className="mx-auto max-w-7xl px-3 md:px-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="mt-8 grid gap-10 md:mt-20 lg:grid-cols-3">
             {plans.map((plan) => (
               <Card key={plan.name} className="py-10 relative">
-                <span className="text-center bg-red-400 text-l font-semibold w-12 h-12 rounded-full flex justify-center items-center absolute -left-5 -top-5">
-                  {plan.price_off}%
+                <span className="text-center bg-red-400 text-base font-semibold w-14 h-14 rounded-full flex justify-center items-center absolute -left-7 -top-7 leading-4">
+                  {plan.price_off}% Off
                 </span>
                 {plan.popular && (
                   <span className="bg-linear-to-br absolute inset-x-0 -top-5 mx-auto flex h-6 w-fit items-center rounded-full from-red-400 to-amber-300 px-5 py-5 text-2xl font-semibold text-amber-950 ring-1 ring-inset ring-white/20 ring-offset-1 ring-offset-gray-950/5 z-10">
