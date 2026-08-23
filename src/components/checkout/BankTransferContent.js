@@ -3,20 +3,18 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
-  Copy,
-  CheckCircle2,
-  ChevronDown,
-  Wallet,
+  MessageCircle,
+  ArrowRight,
+  Sparkles,
   Building2,
+  Wallet,
   CreditCard,
   Coins,
   BadgeDollarSign,
-  Globe,
+  ChevronDown,
 } from "lucide-react";
-import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,72 +28,6 @@ import UnlimitedPlan from "./UnlimitedPlan";
 
 const SUPPORT_EMAIL = "support@blackdiamondea.info";
 
-// Real multi-region corporate bank details
-const BANK_ACCOUNTS = {
-  ach: {
-    label: "USA Local (ACH / Wire)",
-    bankName: "JP Morgan Chase NA",
-    accountName: "Abdullah Al Main",
-    accountNumber: "30000002947484",
-    routingNumber: "028000024",
-    branch: "270 Park Avenue, New York, NY 10017",
-    accountType: "Checking (Current)",
-    extraLabel: "Routing Number",
-    extraValue: "028000024",
-    extraField: "routing",
-  },
-  swift: {
-    label: "International (SWIFT Wire)",
-    bankName: "Clear Bank",
-    accountName: "Abdullah Al Main",
-    accountNumber: "21798496",
-    iban: "GB15CLRB04281221798496",
-    swiftCode: "CLRBGB22XXX",
-    branch: "133 Houndsditch, LONDON, EC3A 7BX",
-    accountType: "Checking (Current)",
-    extraLabel: "IBAN",
-    extraValue: "GB15CLRB04281221798496",
-    extraField: "iban",
-  },
-  sepa: {
-    label: "Eurozone Region (SEPA)",
-    bankName: "Clear Bank",
-    accountName: "Abdullah Al Main",
-    accountNumber: "05536627",
-    iban: "GB75CLRB04281205536627",
-    swiftCode: "CLRBGB22XXX",
-    sortCode: "042812",
-    branch: "133 Houndsditch, LONDON, EC3A 7BX",
-    accountType: "Checking (Current)",
-    extraLabel: "IBAN (EUR Transfer Only)",
-    extraValue: "GB75CLRB04281205536627",
-    extraField: "iban",
-  },
-};
-
-const CopyBtn = ({ value, field }) => {
-  const [copiedField, setCopiedField] = useState(null);
-  const handleCopy = (value, field) => {
-    if (!value) return;
-    navigator.clipboard.writeText(value);
-    setCopiedField(field);
-    setTimeout(() => setCopiedField(null), 2000);
-  };
-  return (
-    <button
-      onClick={() => handleCopy(value, field, copiedField)}
-      className="shrink-0 text-muted-foreground hover:text-foreground transition-colors"
-      title="Copy"
-    >
-      {copiedField === field ? (
-        <CheckCircle2 className="size-4 text-green-500" />
-      ) : (
-        <Copy className="size-4" />
-      )}
-    </button>
-  );
-};
-
 export default function BankTransferContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -103,61 +35,6 @@ export default function BankTransferContent() {
   const product = searchParams.get("product") || "—";
   const price = searchParams.get("price") || "0";
   const orderId = searchParams.get("orderId") || "—";
-
-  // Default regional account configuration selection state
-  const [activeAccountKey, setActiveAccountKey] = useState("swift");
-
-  const activeAccount = BANK_ACCOUNTS[activeAccountKey];
-
-  // Core transaction rows that stay static
-  const commonRows = [
-    { label: "Plan", value: product, field: null },
-    { label: "Amount", value: null, field: null, isBadge: true },
-  ];
-
-  // System-level details mapping out dynamically according to active regional tab selection
-  const dynamicBankRows = [
-    { label: "Bank Name", value: activeAccount.bankName, field: "bank" },
-    {
-      label: "Account Name",
-      value: activeAccount.accountName,
-      field: "accName",
-    },
-    ...(activeAccount.accountNumber
-      ? [
-          {
-            label: "Account Number",
-            value: activeAccount.accountNumber,
-            field: "accNum",
-          },
-        ]
-      : []),
-    {
-      label: activeAccount.extraLabel,
-      value: activeAccount.extraValue,
-      field: activeAccount.extraField,
-    },
-    ...(activeAccount.swiftCode
-      ? [
-          {
-            label: "SWIFT / BIC Code",
-            value: activeAccount.swiftCode,
-            field: "swift",
-          },
-        ]
-      : []),
-    ...(activeAccount.sortCode
-      ? [
-          {
-            label: "Sort Code",
-            value: activeAccount.sortCode,
-            field: "sortCode",
-          },
-        ]
-      : []),
-    { label: "Account Type", value: activeAccount.accountType, field: null },
-    { label: "Bank Address", value: activeAccount.branch, field: null },
-  ];
 
   const currentParams = `product=${encodeURIComponent(product)}&price=${price}&orderId=${orderId}`;
   const buildPath = (gateway) =>
@@ -248,7 +125,7 @@ export default function BankTransferContent() {
               <p className="text-body text-muted-foreground text-sm">
                 {isUnlimitedPlan
                   ? "Secure your unlimited license directly with our elite team"
-                  : "Wire the exact amount to the account below"}
+                  : "Pay securely via bank transfer with our admin support"}
               </p>
             </div>
           </div>
@@ -257,115 +134,84 @@ export default function BankTransferContent() {
           {isUnlimitedPlan ? (
             <UnlimitedPlan product={product} price={price} orderId={orderId} />
           ) : (
-            /* --- INFO TABLE FOR REGULAR PLANS WITH REGIONAL SWITCHER INTEGRATION --- */
-            <div className="rounded-xl overflow-hidden border shadow-sm">
-              {/* Core System Rows (Plan details & price metrics) */}
-              {commonRows.map((row, i) => (
-                <div key={row.label} className="grid grid-cols-2">
-                  <div
-                    className={`bg-emerald-700 px-5 py-4 ${i > 0 ? "border-t border-emerald-600/40" : ""}`}
-                  >
-                    <span className="text-white font-semibold text-sm">
-                      {row.label}
-                    </span>
-                  </div>
-                  <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                    {row.isBadge ? (
-                      <Badge
-                        variant="secondary"
-                        className="bg-primary text-white text-base font-bold px-3 py-1"
-                      >
-                        ${parseFloat(price).toFixed(2)}
-                      </Badge>
-                    ) : (
-                      <span className="text-body text-sm font-medium break-all">
-                        {row.value}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
+            /* --- NEW CARD-STYLE DESIGN FOR REGULAR BANK TRANSFERS --- */
+            <div className="relative rounded-2xl overflow-hidden border border-emerald-500/30 bg-gradient-to-b from-emerald-500/5 to-transparent p-6 md:p-8 shadow-xl space-y-6">
+              <div className="absolute top-4 right-4 flex items-center gap-1 text-xs font-semibold text-emerald-600 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                <Sparkles className="size-3" /> Bank Transfer
+              </div>
 
-              {/* Order Tracking Verification Identifier */}
-              <div className="grid grid-cols-2">
-                <div className="bg-emerald-700 px-5 py-4 border-t border-emerald-600/40">
-                  <span className="text-white font-semibold text-sm">
-                    Order ID
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600">
+                  Selected Plan
+                </span>
+                <h3 className="text-2xl font-black text-foreground mt-1 tracking-tight">
+                  {product.replace(/_/g, " ")}
+                </h3>
+                <div className="flex items-baseline gap-2 mt-2">
+                  <span className="text-3xl font-extrabold text-foreground">
+                    ${parseFloat(price).toFixed(2)}
                   </span>
-                </div>
-                <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                  <span className="text-body text-sm font-mono text-muted-foreground break-all">
-                    {orderId}
+                  <span className="text-xs text-muted-foreground font-medium">
+                    Order Payment
                   </span>
-                  <CopyBtn value={orderId} field="orderId" />
                 </div>
               </div>
 
-              {/* DYNAMIC ACCOUNT REGION DROPDOWN SWITCHER ROW */}
-              <div className="grid grid-cols-2 bg-muted/40 border-b border-t">
-                <div className="bg-emerald-800 px-5 py-4 flex items-center">
-                  <span className="text-white font-bold text-sm flex items-center gap-1.5">
-                    <Globe className="size-4 opacity-80" /> Switch Account Info
-                  </span>
-                </div>
-                <div className="px-5 py-3 bg-card flex items-center">
-                  <div className="relative w-full">
-                    <select
-                      value={activeAccountKey}
-                      onChange={(e) => setActiveAccountKey(e.target.value)}
-                      className="w-full bg-background border border-input rounded-md px-3 py-2 text-sm font-medium shadow-sm focus:outline-none focus:ring-1 focus:ring-emerald-500 cursor-pointer appearance-none pr-8"
-                    >
-                      {Object.entries(BANK_ACCOUNTS).map(([key, config]) => (
-                        <option key={key} value={key}>
-                          {config.label}
-                        </option>
-                      ))}
-                    </select>
-                    <ChevronDown className="absolute right-2.5 top-1/2 -translate-y-1/2 size-4 pointer-events-none text-muted-foreground opacity-60" />
-                  </div>
+              {/* Order ID Box */}
+              <div className="bg-card border border-border/60 rounded-xl p-4 text-sm text-muted-foreground space-y-1 font-mono">
+                <div className="flex justify-between">
+                  <span>Order ID:</span>
+                  <span className="text-foreground font-medium">{orderId}</span>
                 </div>
               </div>
 
-              {/* Dynamic Bank Account Information Processing Output */}
-              {dynamicBankRows.map((row) => (
-                <div key={row.label} className="grid grid-cols-2">
-                  <div className="bg-emerald-700 px-5 py-4 border-t border-emerald-600/40">
-                    <span className="text-white font-semibold text-sm">
-                      {row.label}
-                    </span>
-                  </div>
-                  <div className="px-5 py-4 bg-card border-b flex items-center justify-between gap-2">
-                    <span className="text-body text-sm font-medium break-all">
-                      {row.value}
-                    </span>
-                    {row.field && (
-                      <CopyBtn value={row.value} field={row.field} />
-                    )}
-                  </div>
-                </div>
-              ))}
+              {/* Info Callout */}
+              <div className="p-4 bg-emerald-500/5 rounded-xl border border-emerald-500/20 text-sm leading-relaxed text-foreground">
+                💡{" "}
+                <strong className="text-emerald-600">
+                  Complete Your Payment:
+                </strong>{" "}
+                Please pay with bank transfer via our admin. Click below to
+                contact us through <strong>Telegram</strong> to receive the
+                account details and complete your order.
+              </div>
 
-              {/* Alternative Payment Gateway Configuration Selection Router */}
-              <div className="grid grid-cols-2">
-                <div className="bg-black px-5 py-4 border-t border-white/10 flex items-center">
-                  <span className="text-white font-semibold text-sm">
-                    Go Another Payment Method
+              {/* Main Action CTA */}
+              <Button
+                asChild
+                className="w-full py-6 bg-[#24A1DE] hover:bg-[#208ec4] text-white font-bold text-base rounded-xl shadow-lg shadow-blue-500/10 group transition-all"
+              >
+                <Link
+                  href="https://t.me/bdeaspecial"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 size-5 fill-white" />
+                  Contact Admin via Telegram
+                  <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+
+              {/* Alternative Payment Gateway Selector */}
+              <div className="pt-2">
+                <div className="flex items-center justify-between gap-4 p-3 bg-card border rounded-xl">
+                  <span className="text-xs font-semibold text-muted-foreground">
+                    Change Payment Method:
                   </span>
-                </div>
-                <div className="px-5 py-4 bg-card flex items-center justify-start">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="outline"
-                        className="w-full max-w-[240px] justify-between text-sm"
+                        size="sm"
+                        className="justify-between text-xs h-9"
                       >
                         Bank Transfer
-                        <ChevronDown className="size-4 opacity-50 ml-2" />
+                        <ChevronDown className="size-3.5 opacity-50 ml-2" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       className="min-w-60 bg-primary text-white"
-                      align="start"
+                      align="end"
                     >
                       <DropdownMenuGroup>
                         <DropdownMenuLabel>
@@ -381,7 +227,7 @@ export default function BankTransferContent() {
                               <DropdownMenuRadioItem
                                 key={method.value}
                                 value={method.value}
-                                className="flex items-center gap-2 cursor-pointer"
+                                className="flex items-center gap-2 cursor-pointer text-xs"
                               >
                                 <IconComponent
                                   className={`size-4 ${method.color}`}
@@ -412,8 +258,9 @@ export default function BankTransferContent() {
               <div className="flex gap-2">
                 <span className="text-muted-foreground">Email:</span>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@blackdiamondea.info"
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${SUPPORT_EMAIL}`}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-emerald-600 hover:underline underline-offset-4 break-all"
                 >
                   {SUPPORT_EMAIL}
@@ -424,6 +271,7 @@ export default function BankTransferContent() {
                 <a
                   href="https://www.instagram.com/blackdiamondea/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-emerald-600 hover:underline underline-offset-4"
                 >
                   Instagram
@@ -434,6 +282,7 @@ export default function BankTransferContent() {
                 <a
                   href="https://www.facebook.com/blackdiamondspecialea"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-emerald-600 hover:underline underline-offset-4"
                 >
                   Facebook
@@ -444,6 +293,7 @@ export default function BankTransferContent() {
                 <a
                   href="https://t.me/bdeaspecial"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-emerald-600 hover:underline underline-offset-4"
                 >
                   Telegram
