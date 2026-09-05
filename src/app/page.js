@@ -12,6 +12,7 @@ import OurSpecialty from "@/components/home/OurSpecialty";
 import BacktestResult from "@/components/home/BacktestResult";
 import BestForexEA from "@/components/home/BestForexEA";
 import AnimatedBuyNow from "@/components/home/AnimatedBuyNow";
+import Myfxbook from "@/components/home/Myfxbook";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       <HeroSection />
       <BestForexEA />
       <WhatMakeUsDifferent />
-      <OurSpecialty />
+      <Myfxbook />
       <div className="bg-[url('/assets/home/backtest-result/performance_bg.webp')] bg-cover bg-center bg-no-repeat bg-fixed">
         <div className="w-full bg-black/80">
           <BacktestResult />
@@ -27,6 +28,7 @@ export default function Home() {
         </div>
       </div>
       <Pricing />
+      <OurSpecialty />
       <Articles />
       <AnimatedBuyNow />
       <OurPartners />
