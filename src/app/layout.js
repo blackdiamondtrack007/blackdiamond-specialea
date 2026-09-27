@@ -11,6 +11,7 @@ import OrdersNotification from "@/components/shared/OrdersNotification";
 import ScrollToTop from "@/components/shared/scroll-to-top";
 import SocialSidebar from "@/components/shared/SocialSidebar";
 import Script from "next/script";
+import FreeOfferPopup from "@/components/popup/FreeOfferPopup";
 
 export const metadata = {
   title: "Best Forex Robot",
@@ -69,6 +70,7 @@ export default function RootLayout({ children }) {
             pauseOnHover
             theme="light"
           />
+          <FreeOfferPopup />
         </ThemeProvider>
 
         {/* Histats */}
