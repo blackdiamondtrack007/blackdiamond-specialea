@@ -1,20 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "@/lib/firebase";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Loader2, Download } from "lucide-react";
-import { X } from "lucide-react";
+import { Loader2, Download, X } from "lucide-react";
 
-export default function FreeOfferPopup() {
+export default function FreeOfferPopup({ isOpen, setIsOpen }) {
   const [user, loadingAuth] = useAuthState(auth);
-  const [isOpen, setIsOpen] = useState(false);
   const [hasDownloaded, setHasDownloaded] = useState(false);
   const [checkingStatus, setCheckingStatus] = useState(true);
-
-  const pathname = usePathname();
 
   // 'Buy Free' order state
   const [processing, setProcessing] = useState(false);
@@ -22,85 +17,40 @@ export default function FreeOfferPopup() {
   const [downloadUrl, setDownloadUrl] = useState("");
 
   // 1. Check if logged-in user already downloaded the free version via API route
-  useEffect(() => {
-    async function checkDownloadStatus() {
-      if (user?.email) {
-        try {
-          setCheckingStatus(true);
-          const res = await fetch(
-            `/api/orders?email=${encodeURIComponent(user.email)}`,
-          );
-          const data = await res.json();
-          console.log("Download: ", data);
+  const checkDownloadStatus = useCallback(async () => {
+    if (user?.email) {
+      try {
+        setCheckingStatus(true);
+        const res = await fetch(
+          `/api/orders?email=${encodeURIComponent(user.email)}`,
+        );
+        const data = await res.json();
 
-          if (data.success && data.hasDownloaded) {
-            setHasDownloaded(true);
-            setIsOpen(false);
-            return;
+        if (data.success && data.hasDownloaded) {
+          setHasDownloaded(true);
+          setSuccess(true); // Automatically mark as success state if already downloaded
+          if (data.downloadLink) {
+            setDownloadUrl(data.downloadLink);
           }
-        } catch (err) {
-          console.error("Failed to check download status", err);
-        } finally {
-          setCheckingStatus(false);
         }
-      } else {
+      } catch (err) {
+        console.error("Failed to check download status", err);
+      } finally {
         setCheckingStatus(false);
       }
+    } else {
+      setCheckingStatus(false);
     }
+  }, [user]);
 
+  useEffect(() => {
     if (!loadingAuth) {
       checkDownloadStatus();
     }
-  }, [user, loadingAuth]);
+  }, [user, loadingAuth, checkDownloadStatus]);
 
-  // 2. Control popup behavior based on current path, auth flags, and download status
-  useEffect(() => {
-    // Never show if already downloaded, checking status, or on login/register pages
-    if (
-      hasDownloaded ||
-      checkingStatus ||
-      pathname === "/login" ||
-      pathname === "/register"
-    ) {
-      setIsOpen(false);
-      return;
-    }
-
-    const dismissed = sessionStorage.getItem("free_popup_dismissed");
-    const cameFromAuth = sessionStorage.getItem("came_from_auth");
-
-    // Clear the auth flag once read so it only triggers once per login/register flow
-    if (cameFromAuth) {
-      sessionStorage.removeItem("came_from_auth");
-    }
-
-    if (!dismissed) {
-      if (cameFromAuth) {
-        // Open instantly if they just came from login or register
-        setIsOpen(true);
-      } else {
-        // Otherwise, wait for the 7-second timer
-        const timer = setTimeout(() => {
-          if (
-            !hasDownloaded &&
-            window.location.pathname !== "/login" &&
-            window.location.pathname !== "/register"
-          ) {
-            setIsOpen(true);
-          }
-        }, 7000);
-        return () => clearTimeout(timer);
-      }
-    }
-  }, [pathname, hasDownloaded, checkingStatus]);
-
+  
   const handleClose = () => {
-    setIsOpen(false);
-    sessionStorage.setItem("free_popup_dismissed", "true");
-  };
-
-  const handleAuthNavigation = () => {
-    sessionStorage.setItem("came_from_auth", "true");
     setIsOpen(false);
   };
 
@@ -127,7 +77,7 @@ export default function FreeOfferPopup() {
 
       setDownloadUrl(data.downloadLink);
       setSuccess(true);
-      setHasDownloaded(true); // Instantly flag as downloaded so it won't show again
+      setHasDownloaded(true);
 
       // Automatically open the Google Drive download link in a new tab
       window.open(data.downloadLink, "_blank", "noopener,noreferrer");
@@ -138,11 +88,11 @@ export default function FreeOfferPopup() {
     }
   };
 
-  // Do not render anything if closed, already downloaded, or still verifying database state
-  if (!isOpen || hasDownloaded || checkingStatus) return null;
+  // Do not render anything if closed or still verifying database state
+  if (!isOpen || checkingStatus) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-5 bg-[#020408]/[0.88] backdrop-blur-[12px] animate-in fade-in duration-200 font-sans">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-5 bg-black/67 animate-in fade-in duration-200 font-sans">
       <div className="relative w-full max-w-[540px] bg-[radial-gradient(circle_at_50%_0%,#161c28_0%,#080a0f_100%)] border-[1.5px] border-[#d4af37]/45 rounded-[24px] shadow-[0_25px_60px_rgba(0,0,0,0.95),0_0_40px_rgba(212,175,55,0.2)] overflow-hidden">
         {/* Close Button */}
         <button
@@ -154,7 +104,7 @@ export default function FreeOfferPopup() {
 
         {/* Media & Diamond Section */}
         <div className="w-full min-h-[250px] px-5 pt-[26px] pb-5 bg-[radial-gradient(circle_at_center,#1b2336_0%,#0a0e17_100%)] flex flex-col items-center justify-center relative border-b border-[#d4af37]/20">
-          <div className="text-[80px] drop-shadow-[0_0_25px_rgba(0,208,255,0.85)] animate-[floatPulse_3s_infinite_ease-in-out]">
+          <div className="text-[80px] drop-shadow-[0_0_25px_rgba(0,208,255,0.85)] animate-zoom-pulse">
             💎
           </div>
           <div className="mt-3 font-serif text-center leading-[1.4]">
@@ -193,7 +143,7 @@ export default function FreeOfferPopup() {
 
               <Link
                 href="/login"
-                onClick={handleAuthNavigation}
+                onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center gap-3 w-full p-4 rounded-[12px] border border-[#ffd700]/40 bg-[linear-gradient(90deg,#d4af37_0%,#aa7c11_100%)] text-[#0b0e14] text-[16px] font-extrabold tracking-[1px] uppercase cursor-pointer no-underline shadow-[0_8px_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-[linear-gradient(90deg,#ffe28a_0%,#c49219_100%)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(212,175,55,0.5)]"
               >
                 <span>Get VIP Free Access Now</span> &rarr;
@@ -203,14 +153,14 @@ export default function FreeOfferPopup() {
                 Already registered?{" "}
                 <Link
                   href="/login"
-                  onClick={handleAuthNavigation}
+                  onClick={() => setIsOpen(false)}
                   className="text-[#f7d070] no-underline font-semibold hover:underline"
                 >
                   Sign In to Dashboard
                 </Link>
               </div>
             </>
-          ) : success ? (
+          ) : success || hasDownloaded ? (
             /* ================= SUCCESS STATE DESIGN ================= */
             <>
               <span className="inline-block bg-[linear-gradient(135deg,#10b981,#047857)] text-white text-[11px] font-extrabold px-[18px] py-[6px] rounded-full tracking-[1.5px] uppercase shadow-[0_0_15px_rgba(16,185,129,0.35)] mb-4">
@@ -222,27 +172,41 @@ export default function FreeOfferPopup() {
                   Your Order Is Confirmed!
                 </span>
                 <span className="block text-[18px] text-[#f1f5f9] tracking-[1.5px] mt-1.5">
-                  Download Opened in New Tab
+                  Download Ready
                 </span>
               </h2>
 
               <div className="bg-white/[0.03] border border-[#d4af37]/20 rounded-[12px] p-[14px_18px] mb-[22px] text-left">
                 <p className="text-[12px] text-[#94a3b8] leading-[1.5]">
-                  Your download link has been successfully launched. Since you
-                  have claimed your free version, this popup will no longer
-                  appear.
+                  You have already successfully claimed your free version. You
+                  can access your files below anytime.
                 </p>
               </div>
 
-              <a
-                href={downloadUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 w-full p-4 rounded-[12px] border border-[#ffd700]/40 bg-[linear-gradient(90deg,#d4af37_0%,#aa7c11_100%)] text-[#0b0e14] text-[16px] font-extrabold tracking-[0.5px] uppercase cursor-pointer no-underline shadow-[0_8px_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-[linear-gradient(90deg,#ffe28a_0%,#c49219_100%)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(212,175,55,0.5)]"
-              >
-                <Download className="w-5 h-5" />
-                <span>Open Download Link Again</span>
-              </a>
+              {downloadUrl ? (
+                <a
+                  href={downloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 w-full p-4 rounded-[12px] border border-[#ffd700]/40 bg-[linear-gradient(90deg,#d4af37_0%,#aa7c11_100%)] text-[#0b0e14] text-[16px] font-extrabold tracking-[0.5px] uppercase cursor-pointer no-underline shadow-[0_8px_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-[linear-gradient(90deg,#ffe28a_0%,#c49219_100%)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(212,175,55,0.5)]"
+                >
+                  <Download className="w-5 h-5" />
+                  <span>Open Download Link</span>
+                </a>
+              ) : (
+                <button
+                  onClick={handleBuyFree}
+                  disabled={processing}
+                  className="flex items-center justify-center gap-3 w-full p-4 rounded-[12px] border border-[#ffd700]/40 bg-[linear-gradient(90deg,#d4af37_0%,#aa7c11_100%)] text-[#0b0e14] text-[16px] font-extrabold tracking-[0.5px] uppercase cursor-pointer no-underline shadow-[0_8px_25px_rgba(212,175,55,0.35)] transition-all duration-300 hover:bg-[linear-gradient(90deg,#ffe28a_0%,#c49219_100%)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(212,175,55,0.5)]"
+                >
+                  {processing ? (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  ) : (
+                    <Download className="w-5 h-5" />
+                  )}
+                  <span>Get Download Link</span>
+                </button>
+              )}
 
               <div className="mt-4 text-[12px] text-[#64748b]">
                 Instant Secure Access &bull; Installation Guide Included

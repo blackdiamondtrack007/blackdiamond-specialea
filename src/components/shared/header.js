@@ -21,8 +21,12 @@ import LoginIcon from "./login-icon";
 import { auth } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
 import LogoutIcon from "./login-icon";
+import { CloudDownloadIcon } from "lucide-react";
+import FreeOfferPopup from "../popup/FreeOfferPopup";
+import { useState } from "react";
 
 export const Header = () => {
+  const [isFreePopupOpen, setIsFreePopupOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
   const [user, loading, error] = useAuthState(auth);
@@ -38,48 +42,55 @@ export const Header = () => {
   };
 
   return (
-    <StickyHeader>
-      <nav className="w-full">
-        <div className="bg-black py-2 lg:py-3">
-          <div className="container my-0 flex justify-between items-center gap-4 lg:gap-0">
-            <div className="w-32 md:w-50">
-              <Link href="/">
-                <Image src={Logo} alt="Logo" />
-              </Link>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="mt-1.5 lg:mt-0">
-                <GoogleTranslate />
+    <>
+      <div className="relative w-full">
+        <FreeOfferPopup
+          isOpen={isFreePopupOpen}
+          setIsOpen={setIsFreePopupOpen}
+        />
+      </div>
+      <StickyHeader>
+        <nav className="w-full">
+          <div className="bg-black py-2 lg:py-3">
+            <div className="container my-0 flex justify-between items-center gap-4 lg:gap-0">
+              <div className="w-32 md:w-50">
+                <Link href="/">
+                  <Image src={Logo} alt="Logo" />
+                </Link>
               </div>
-              <div className="hidden lg:block">
-                <ThemeToggleButton />
-              </div>
-            </div>
 
-            <div className="lg:hidden">
-              <MobileMenu />
+              <div className="flex gap-4">
+                <div className="mt-1.5 lg:mt-0">
+                  <GoogleTranslate />
+                </div>
+                <div className="hidden lg:block">
+                  <ThemeToggleButton />
+                </div>
+              </div>
+
+              <div className="lg:hidden">
+                <MobileMenu />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="relative hidden py-3 lg:gap-0 lg:py-4 bg-nav-bg lg:block">
-          <div className="container my-0 flex flex-wrap items-center justify-between gap-6">
-            <div className="hidden size-fit lg:block">
-              <ul className="flex gap-6 xl:gap-8">
-                <li>
-                  <Link
-                    href={"/"}
-                    className={
-                      pathname === "/"
-                        ? "text-primary text-body-large font-bold"
-                        : "text-nav-text hover:text-primary  duration-200 text-body-large"
-                    }
-                  >
-                    {"Home"}
-                  </Link>
-                </li>
-                {/* <li>
+          <div className="relative hidden py-3 lg:gap-0 lg:py-4 bg-nav-bg lg:block">
+            <div className="container my-0 flex flex-wrap items-center justify-between gap-6">
+              <div className="hidden size-fit lg:block">
+                <ul className="flex gap-6 xl:gap-8">
+                  <li>
+                    <Link
+                      href={"/"}
+                      className={
+                        pathname === "/"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
+                    >
+                      {"Home"}
+                    </Link>
+                  </li>
+                  {/* <li>
                   <Link
                     href={"/forex-ea"}
                     className={
@@ -91,7 +102,7 @@ export const Header = () => {
                     {"Forex EA"}
                   </Link>
                 </li> */}
-                {/* <li>
+                  {/* <li>
                   <Link
                     href={"/indicator"}
                     className={
@@ -103,19 +114,19 @@ export const Header = () => {
                     {"Indicator"}
                   </Link>
                 </li> */}
-                <li>
-                  <Link
-                    href={"/brokers"}
-                    className={
-                      pathname === "/brokers"
-                        ? "text-primary text-body-large font-bold"
-                        : "text-nav-text hover:text-primary  duration-200 text-body-large"
-                    }
-                  >
-                    {"Brokers"}
-                  </Link>
-                </li>
-                {/* <li>
+                  <li>
+                    <Link
+                      href={"/brokers"}
+                      className={
+                        pathname === "/brokers"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
+                    >
+                      {"Brokers"}
+                    </Link>
+                  </li>
+                  {/* <li>
                   <Link
                     href={"/blogs"}
                     className={
@@ -127,71 +138,71 @@ export const Header = () => {
                     {"Blogs"}
                   </Link>
                 </li> */}
-                <li>
-                  <NavigationMenu>
-                    <NavigationMenuList>
-                      <NavigationMenuItem>
-                        <NavigationMenuTrigger
-                          className={
-                            "bg-transparent rounded-none text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer"
-                          }
-                        >
-                          <span className="text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer">
-                            Live Chart
-                          </span>
-                        </NavigationMenuTrigger>
+                  <li>
+                    <NavigationMenu>
+                      <NavigationMenuList>
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger
+                            className={
+                              "bg-transparent rounded-none text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer"
+                            }
+                          >
+                            <span className="text-nav-text hover:text-primary duration-200 text-body-large cursor-pointer">
+                              Live Chart
+                            </span>
+                          </NavigationMenuTrigger>
 
-                        <NavigationMenuContent className={""}>
-                          <ul className="w-[200px] p-1">
-                            <li>
-                              <NavigationMenuLink
-                                href={"/live-forex-chart"}
-                                className={"p-1"}
-                              >
-                                <span
-                                  className={
-                                    pathname === "/live-forex-chart"
-                                      ? "text-primary text-body font-semibold"
-                                      : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
-                                  }
+                          <NavigationMenuContent className={""}>
+                            <ul className="w-[200px] p-1">
+                              <li>
+                                <NavigationMenuLink
+                                  href={"/live-forex-chart"}
+                                  className={"p-1"}
                                 >
-                                  {"Live Forex Chart"}
-                                </span>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink
-                                href={"/economic-calendar"}
-                                className="p-1"
-                              >
-                                <span
-                                  className={
-                                    pathname === "/economic-calendar"
-                                      ? "text-primary text-body font-semibold"
-                                      : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
-                                  }
+                                  <span
+                                    className={
+                                      pathname === "/live-forex-chart"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Live Forex Chart"}
+                                  </span>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink
+                                  href={"/economic-calendar"}
+                                  className="p-1"
                                 >
-                                  {"Economic Calendar"}
-                                </span>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink
-                                href={"/forex-heat-map"}
-                                className="p-1"
-                              >
-                                <span
-                                  className={
-                                    pathname === "/forex-heat-map"
-                                      ? "text-primary text-body font-semibold"
-                                      : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
-                                  }
+                                  <span
+                                    className={
+                                      pathname === "/economic-calendar"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Economic Calendar"}
+                                  </span>
+                                </NavigationMenuLink>
+                              </li>
+                              <li>
+                                <NavigationMenuLink
+                                  href={"/forex-heat-map"}
+                                  className="p-1"
                                 >
-                                  {"Forex Heat Map"}
-                                </span>
-                              </NavigationMenuLink>
-                            </li>
-                            {/* <li>
+                                  <span
+                                    className={
+                                      pathname === "/forex-heat-map"
+                                        ? "text-primary text-body font-semibold"
+                                        : "text-gray-600 hover:text-primary duration-100 text-body hover:font-semibold"
+                                    }
+                                  >
+                                    {"Forex Heat Map"}
+                                  </span>
+                                </NavigationMenuLink>
+                              </li>
+                              {/* <li>
                               <NavigationMenuLink
                                 href={"/forex-screener"}
                                 className="p-1"
@@ -273,53 +284,61 @@ export const Header = () => {
                                 </span>
                               </NavigationMenuLink>
                             </li> */}
-                          </ul>
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                </li>
-                <li>
-                  <Link
-                    href={"/contact-us"}
-                    className={
-                      pathname === "/contact-us"
-                        ? "text-primary text-body-large font-bold"
-                        : "text-nav-text hover:text-primary  duration-200 text-body-large"
-                    }
-                  >
-                    {"Contact"}
-                  </Link>
-                </li>
-              </ul>
-            </div>
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                      </NavigationMenuList>
+                    </NavigationMenu>
+                  </li>
+                  <li>
+                    <Link
+                      href={"/contact-us"}
+                      className={
+                        pathname === "/contact-us"
+                          ? "text-primary text-body-large font-bold"
+                          : "text-nav-text hover:text-primary  duration-200 text-body-large"
+                      }
+                    >
+                      {"Contact"}
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-              <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                <a href="https://t.me/bdspecialea" target="_blank">
-                  Join Telegram Channel ↗
-                </a>
-              </Button>
-              {user ? (
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                 <Button
-                  className="bg-primary text-white rounded py-2 px-4 cursor-pointer"
-                  onClick={handleLogout}
+                  onClick={() => setIsFreePopupOpen(true)}
+                  className="bg-primary text-white rounded py-2 px-4 cursor-pointer flex justify-center items-center gap-2"
                 >
-                  <LogoutIcon className="text-white" />
-                  <span>Logout</span>
+                  Get Free AI <CloudDownloadIcon />
                 </Button>
-              ) : (
+
                 <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
-                  <Link href="/login" className="flex gap-0.5 items-center">
-                    <LoginIcon className="text-white" />
-                    <span>Login</span>
-                  </Link>
+                  <a href="https://t.me/bdspecialea" target="_blank">
+                    Join Telegram Channel ↗
+                  </a>
                 </Button>
-              )}
+                {user ? (
+                  <Button
+                    className="bg-primary text-white rounded py-2 px-4 cursor-pointer"
+                    onClick={handleLogout}
+                  >
+                    <LogoutIcon className="text-white" />
+                    <span>Logout</span>
+                  </Button>
+                ) : (
+                  <Button className="bg-primary text-white rounded py-2 px-4 cursor-pointer">
+                    <Link href="/login" className="flex gap-0.5 items-center">
+                      <LoginIcon className="text-white" />
+                      <span>Login</span>
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </StickyHeader>
+        </nav>
+      </StickyHeader>
+    </>
   );
 };
