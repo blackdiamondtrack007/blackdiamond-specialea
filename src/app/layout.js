@@ -7,6 +7,7 @@ import { Oswald, Lato } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TelegramButton from "@/components/shared/TelegramButton";
+import GetFreeAIButton from "@/components/shared/GetFreeAIButton";
 import OrdersNotification from "@/components/shared/OrdersNotification";
 import ScrollToTop from "@/components/shared/scroll-to-top";
 import SocialSidebar from "@/components/shared/SocialSidebar";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
           {/* <OrdersNotification /> */}
           <SocialSidebar />
           <ScrollToTop />
+          <GetFreeAIButton />
           <TelegramButton />
           <ToastContainer
             position="top-right"

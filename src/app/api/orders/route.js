@@ -100,7 +100,7 @@ export async function POST(req) {
     });
 
     const downloadLink =
-      "https://drive.google.com/drive/folders/your-google-drive-folder-id";
+      "https://drive.google.com/file/d/1nuGZ9DxFWS7PXOyxKt75E-THkm09wru5/view?usp=sharing";
 
     return Response.json({ success: true, orderId, downloadLink });
   } catch (error) {
