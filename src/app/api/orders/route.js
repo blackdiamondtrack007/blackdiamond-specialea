@@ -100,7 +100,7 @@ export async function POST(req) {
     });
 
     const downloadLink =
-      "https://drive.google.com/file/d/1KENlzN3jj61wrXxT4UjY9lmeMiaYDRHL/view?usp=sharing";
+      "https://drive.google.com/drive/folders/1wiEiIECiBPi3W5K3TCf8OwbuAtgEao8P?usp=sharing";
 
     return Response.json({ success: true, orderId, downloadLink });
   } catch (error) {
