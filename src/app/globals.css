@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Theme Variables & Typography */
+/* Theme */
 @theme inline {
   --color-background: var(--background);
   --color-primary: var(--primary);
@@ -12,99 +12,130 @@
   --color-nav-text: var(--nav-text);
   --color-text-primary: var(--text-primary);
   --color-section-bg: var(--section-bg);
-  
-  /* Modern Professional Font Families */
-  --font-heading: var(--font-oswald), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: var(--font-lato), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-body: var(--font-lato), serif;
   --background-image-article-bg-1: url("../../public/assets/home/articles/article-background-I.webp");
   --background-image-article-bg-2: url("../../public/assets/home/articles/article-background-II.webp");
   --animate-zoom-pulse: zoomPulse 3s ease-in-out infinite;
 }
 
-/* =========================================
-   LIGHT THEME (Soft Deep Blue - Non-Harsh & Professional)
-   ========================================= */
 :root {
-  --background: #f4f7fb;       /* খুব হালকা সফট ব্যাকগ্রাউন্ড */
-  --primary: #1e3a8a;          /* সফট ডিপ ব্লু (চোখে লাগবে না) */
-  --secondary: #3b82f6;        /* মডার্ন ব্লু হাইলাইট */
-  --nav-bg: #ffffff;
-  --nav-text: #0f172a;
-  --text-primary: #1e293b;     /* আরামদায়ক রিডেবল বডি টেক্সট */
-  --section-bg: #ffffff;
+  --background: oklch(1 0 0);
+  --primary: #aa570b;
+  --secondary: #0f5071;
+  --nav-bg: #f9f3ee;
+  --nav-text: #333333;
+  --text-primary: #0f0f0f;
+  --section-bg: #f6f6f6;
 }
 
-/* =========================================
-   DARK THEME (Soft Instagram Vibe - Non-Harsh & Deep)
-   ========================================= */
 .dark {
-  --background: #0e1116;       /* সফট ডার্ক ব্যাকগ্রাউন্ড (চোখে লাগে না) */
-  --primary: #d62976;          /* ইনস্টাগ্রাম পিংক-ম্যাজেন্টা (নন-হার্শ ব্যালেন্সড টোন) */
-  --secondary: #962fbf;        /* ইনস্টাগ্রাম পার্পল অ্যাকসেন্ট */
-  --nav-bg: #161b22;           /* সোবার ডার্ক কার্ড ব্যাকগ্রাউন্ড */
-  --nav-text: #f3f4f6;
-  --text-primary: #d1d5db;     /* আরামদায়ক রিডেবল বডি টেক্সট */
-  --section-bg: #161b22;
+  --background: oklch(0.13 0.028 261.692);
+  --primary: #0f5071;
+  --secondary: #aa570b;
+  --nav-bg: #121719;
+  --nav-text: #eddfdf;
+  --text-primary: oklch(95.155% 0.00753 16.5);
+  --section-bg: #060f35;
 }
 
-/* Base Adjustments for Professional Rendering */
+/* Base */
 @layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-
   body {
     font-family: var(--font-body);
-    background-color: var(--background);
-    color: var(--text-primary);
-    line-height: 1.6;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
   }
 
   h1 {
-    @apply text-3xl md:text-4xl xl:text-5xl font-bold leading-tight text-text-primary;
+    @apply text-[28px] md:text-4xl xl:text-5xl font-bold;
   }
   h2 {
-    @apply text-2xl md:text-3xl xl:text-4xl font-semibold leading-snug text-text-primary;
+    @apply text-2xl md:text-[28px] xl:text-4xl font-semibold;
   }
   h3 {
-    @apply text-xl md:text-2xl xl:text-3xl font-semibold text-text-primary;
+    @apply text-xl md:text-2xl xl:text-3xl font-semibold;
   }
   h4 {
-    @apply text-lg md:text-xl xl:text-2xl font-medium text-text-primary;
+    @apply text-lg md:text-xl xl:text-2xl font-medium;
   }
 
   button {
-    @apply text-sm md:text-base font-medium transition-all duration-200 cursor-pointer;
+    @apply text-sm md:text-base xl:text-base font-medium;
   }
 }
 
 /* Components */
 @layer components {
   .container {
-    @apply mx-auto px-4 sm:px-6 max-w-7xl my-8 md:my-12 xl:my-16;
+    @apply mx-auto px-4 max-w-7xl my-10 md:my-14 xl:my-20;
   }
 
   .text-body {
-    @apply text-sm md:text-base font-normal text-gray-600 dark:text-gray-300;
+    @apply text-sm md:text-base xl:text-base font-normal;
   }
 
   .text-body-large {
-    @apply text-base md:text-lg xl:text-xl font-normal text-gray-600 dark:text-gray-300;
+    @apply text-base md:text-lg xl:text-xl font-normal;
   }
+}
+
+/* Utilities */
+@layer utilities {
 }
 
 /* Language Switcher Style */
 .goog-logo-link,
-.goog-te-gadget span,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0;
+}
+
+.gt-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  @apply w-[160px]
+  md:w-40
+    text-primary
+    rounded
+    border
+    bg-gray-900
+    px-4
+    py-2
+    pr-10
+    text-xs
+    md:text-sm
+    shadow-sm
+    cursor-pointer
+    transition
+    focus:outline-none
+    focus:ring-2
+    focus:ring-blue-500
+    border-gray-700
+    hover:bg-gray-800;
+}
+
 .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-logo-link {
   display: none !important;
 }
 
@@ -117,28 +148,47 @@
   background: transparent !important;
 }
 
-.gt-wrapper select {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  @apply w-[165px] md:w-40 text-primary rounded-md border bg-gray-900 px-3 py-2 pr-8 text-xs md:text-sm shadow-sm cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-700 hover:bg-gray-800;
+.goog-te-gadget-simple span {
+  display: none !important;
 }
 
-body {
-  top: 0 !important;
+.goog-te-gadget .goog-te-combo {
+  margin: 0px !important;
 }
 
-/* Animations */
 @utility animate-zoom-shake {
   animation: zoomShakeSequence 1.5s ease-in-out infinite;
 }
 
+/* Timeline breakdown:
+  0% - 15%   -> Zooms in from 100% to 110%
+  15% - 70%  -> Holds the 110% zoom while shaking rapidly
+  70% - 80%  -> Zooms back down from 110% to 100% and stops rotating
+  80% - 100% -> Sits still at 100% scale before starting over
+*/
 @keyframes zoomShakeSequence {
-  0% { transform: scale(1) rotate(0deg); }
-  15% { transform: scale(1.1) rotate(0deg); }
-  22%, 36%, 50%, 64% { transform: scale(1.1) rotate(-8deg); }
-  29%, 43%, 57%, 70% { transform: scale(1.1) rotate(8deg); }
-  80%, 100% { transform: scale(1) rotate(0deg); }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  15% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  22%,
+  36%,
+  50%,
+  64% {
+    transform: scale(1.1) rotate(-8deg);
+  }
+  29%,
+  43%,
+  57%,
+  70% {
+    transform: scale(1.1) rotate(8deg);
+  }
+  80%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 @utility animate-shadow-pulse {
@@ -146,12 +196,32 @@ body {
 }
 
 @keyframes shadowPulse {
-  0% { transform: scale(1); opacity: 0.65; box-shadow: 0 0 0 0px rgba(30, 58, 138, 0.5); }
-  70% { transform: scale(1.04, 1.3); opacity: 0; box-shadow: 0 0 0 24px rgba(30, 58, 138, 0); }
-  100% { transform: scale(1); opacity: 0; box-shadow: 0 0 0 0px rgba(30, 58, 138, 0); }
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+    box-shadow: 0 0 0 0px rgba(239, 68, 68, 0.7); /* Starts tight */
+  }
+  70% {
+    transform: scale(1.04, 1.3); /* Expands slightly outwards */
+    opacity: 0;
+    box-shadow: 0 0 0 24px rgba(239, 68, 68, 0); /* Fades into transparency */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+    box-shadow: 0 0 0 0px rgba(239, 68, 68, 0);
+  }
 }
 
 @keyframes zoomPulse {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(12px) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(0);
+    transform: scale(1);
+  }
+
+  50% {
+    transform: translateY(18px);
+    transform: scale(1.1);
+  }
 }
